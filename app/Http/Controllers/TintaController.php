@@ -66,4 +66,10 @@ class TintaController extends Controller
         return $pdf_doc->download('pdf.pdf');
     }
 
+    public function showTinta()
+    {
+        $tintas = Tinta::all();
+
+        return view('tinta.showTinta', ['tintas' => $tintas]);
+    }
 }

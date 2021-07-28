@@ -10,9 +10,10 @@
     <table class="table table-striped table-bordered">
     <h1>Tonners
         <hr>
-        <a href="/cadastro" type="button" class="btn btn-success">Cadastrar Tonner</a>
+        <a href="/cadastro" type="button" style="margin-bottom: 18px" class="btn btn-success">Cadastrar Tonner</a>
     <div class="dashboard-tinta-container">
-    <a href="tonner/create-pdf" type="button" class="btn btn-dark">Download PDF</a>
+        <a href="tonner/create-pdf" type="button" class="btn btn-dark">Download PDF</a>
+        <a href="/showTonner" id="show" style="margin-right: 5px" class="btn btn-dark">Imprimir</a></h5>
     </div>
     <br>
     </h1>
@@ -58,7 +59,8 @@
         <hr>
         <a href="/cadastroTinta" id="cadastro" style="margin-bottom: 18px" class="btn btn-success">Cadastrar Tinta</a></h5>
         <div class="dashboard-tinta-container">
-        <a href="tinta/create-pdf" type="button" class="btn btn-dark">Download PDF</a>
+            <a href="tinta/create-pdf" type="button" class="btn btn-dark">Download PDF</a>
+            <a href="/showTinta" id="show" style="margin-right: 5px" class="btn btn-dark">Imprimir</a></h5>
         </div>
         <br>
     </h1>
@@ -103,9 +105,10 @@
 <table class="table table-striped table table-bordered">
     <h1>Cilindros
         <hr>
-        <a href="/cadastroCilindro" id="cadastro" class="btn btn-success">Cadastrar Cilindro</a></h5>
+        <a href="/cadastroCilindro" id="cadastro" style="margin-bottom: 18px" class="btn btn-success">Cadastrar Cilindro</a></h5>
         <div class="dashboard-tinta-container">
-        <a href="cilindro/create-pdf" type="button" class="btn btn-dark">Download PDF</a>
+            <a href="cilindro/create-pdf" type="button" class="btn btn-dark">Download PDF</a>
+            <a href="/showCilindro" id="show" style="margin-right: 5px" class="btn btn-dark">Imprimir</a></h5>
         </div>
         <br>
     </h1>

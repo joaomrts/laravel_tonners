@@ -63,4 +63,12 @@ class CilindroController extends Controller
 
         return $pdf_doc->download('pdf.pdf');
     }
+
+    public function showCilindro()
+    {
+        $cilindros = Cilindro::all();
+
+        return view('cilindro.showCilindro', ['cilindros' => $cilindros]);
+
+    }
 }

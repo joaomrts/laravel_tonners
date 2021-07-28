@@ -79,4 +79,10 @@ class TonnerController extends Controller
         return $pdf_doc->download('pdf.pdf');
     }
 
+    public function showTonner()
+    {
+        $tonners = Tonner::all();
+
+        return view('tonner.showTonner', ['tonners' => $tonners]);
+    }
 }
