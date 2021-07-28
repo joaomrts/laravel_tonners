@@ -356,11 +356,13 @@ padding: 5px;
 
 .dashboard-events-container th {
     width: 100px;
+    text-align: center;
 
 }
 
 .dashboard-events-container td {
     width: 100px;
+    text-align: center;
 
 }
 

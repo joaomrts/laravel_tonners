@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="col-md-10 offset-md-1 dashboard-events-container">
+<div class="col-md-6 col-sm-12 dashboard-events-container">
     @if(count($tonners)>0)
     <br>
     <table class="table table-striped table-bordered">
@@ -21,7 +21,7 @@
                 <th scope="col" class="">Modelo</th>
                 <th scope="col">Impressoras Compatíveis</th>
                 <th scope="col">Estoque</th>
-                <th scope="col">Ações</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -31,11 +31,11 @@
                 <td scropt="row">{{ $tonner->qtde_impressora }}</td>
                 <td scropt="row">{{ $tonner->estoque }}</td>
                 <td>
-                <a href="/edit/{{ $tonner->id }}" style="margin-right: 15px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon>Editar</a>
+                <a href="/edit/{{ $tonner->id }}" style="margin-left: 35px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
                 <form action="/{{ $tonner->id }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger delete-btn" onclick="if (!confirm('Deseja realmente excluir?')) { return false }"><ion-icon name="trash-outline"></ion-icon>Deletar</button>
+                <button type="submit" class="btn btn-danger delete-btn" onclick="if (!confirm('Deseja realmente excluir?')) { return false }"><ion-icon name="trash-outline"></ion-icon></button>
                 </form>
                 </td>
             </tr>
@@ -50,13 +50,13 @@
 </div>
 <br>
 
-<div class="col-md-10 offset-md-1 dashboard-events-container">
+<div class="col-md-6 col-sm-12 dashboard-events-container">
     @if(count($tintas)>0)
     <br>
 <table class="table table-striped table table-bordered">
     <h1>Tintas
         <hr>
-        <a href="/cadastroTinta" id="cadastro" class="btn btn-success">Cadastrar Tinta</a></h5>
+        <a href="/cadastroTinta" id="cadastro" style="margin-bottom: 18px" class="btn btn-success">Cadastrar Tinta</a></h5>
         <div class="dashboard-tinta-container">
         <a href="tinta/create-pdf" type="button" class="btn btn-dark">Download PDF</a>
         </div>
@@ -78,11 +78,11 @@
                 <td scropt="row">{{ $tinta->qtde_impressora }}</td>
                 <td scropt="row">{{ $tinta->estoque }}</td>
                 <td>
-                <a href="/editTinta/{{ $tinta->id }}" style="margin-right: 15px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon>Editar</a>
+                <a href="/editTinta/{{ $tinta->id }}"style="margin-left: 35px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
                 <form action="/deleteTinta/{{ $tinta->id }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger delete-btn" onclick="if (!confirm('Deseja realmente excluir?')) { return false }"><ion-icon name="trash-outline"></ion-icon>Deletar</button>
+                <button type="submit" class="btn btn-danger delete-btn" onclick="if (!confirm('Deseja realmente excluir?')) { return false }"><ion-icon name="trash-outline"></ion-icon></button>
                 </form>
                 </td>
             </tr>
@@ -97,7 +97,7 @@
 </div>
 
 
-<div class="col-md-10 offset-md-1 dashboard-events-container">
+<div class="col-md-6 col-sm-12 offset-md-3 dashboard-events-container">
     @if(count($cilindros)>0)
     <br>
 <table class="table table-striped table table-bordered">
@@ -125,11 +125,11 @@
                 <td scropt="row">{{ $cilindro->qtde_impressora }}</td>
                 <td scropt="row">{{ $cilindro->estoque }}</td>
                 <td>
-                <a href="/editCilindro/{{ $cilindro->id }}" style="margin-right: 15px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon>Editar</a>
+                <a href="/editCilindro/{{ $cilindro->id }}" style="margin-left: 35px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
                 <form action="/deleteCilindro/{{ $cilindro->id }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger delete-btn" onclick="if (!confirm('Deseja realmente excluir?')) { return false }"><ion-icon name="trash-outline"></ion-icon>Deletar</button>
+                <button type="submit" class="btn btn-danger delete-btn" onclick="if (!confirm('Deseja realmente excluir?')) { return false }"><ion-icon name="trash-outline"></ion-icon></button>
                 </form>
                 </td>
             </tr>
