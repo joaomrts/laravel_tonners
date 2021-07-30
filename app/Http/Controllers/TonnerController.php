@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Tonner;
 use App\Models\Tinta;
 use App\Models\Cilindro;
+use App\Models\Impressora;
 use App\Http\Requests\StoreUpdateTonner;
 use PDF;
 
@@ -12,15 +13,12 @@ use Illuminate\Http\Request;
 
 class TonnerController extends Controller
 {
-    public function index()
+    public function indexTonner()
     {
-        $user = auth()->user();
 
         $tonners = Tonner::all();
-        $tintas = Tinta::all();
-        $cilindros = Cilindro::all();
 
-        return view('welcome', ['tonners' => $tonners, 'tintas' => $tintas, 'cilindros' => $cilindros]);
+        return view('tonner.indexTonner', ['tonners' => $tonners]);
 
     }
 
@@ -40,13 +38,13 @@ class TonnerController extends Controller
         $user = auth()->user();
 
         $tonner->save();
-        return redirect('/')->with('msg', 'Tonner cadastrado com sucesso');
+        return redirect('/indexTonner')->with('msg', 'Tonner cadastrado com sucesso');
     }
 
     public function delete($id)
     {
         Tonner::findOrFail($id)->delete();
-        return redirect('/')->with('msg', 'Tonner excluído com sucesso');
+        return redirect('/indexTonner')->with('msg', 'Tonner excluído com sucesso');
     }
 
     public function edit($id){
@@ -64,7 +62,7 @@ class TonnerController extends Controller
 
         Tonner::findOrFail($request->id)->update($data);
 
-        return redirect('/')->with('msg', 'Tonner editado com sucesso!');
+        return redirect('/indexTonner')->with('msg', 'Tonner editado com sucesso!');
     }
 
     public function exportTonnerPDF() {

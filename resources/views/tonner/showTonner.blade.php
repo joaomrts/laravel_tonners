@@ -16,8 +16,8 @@
             <br>
             <h1 style="text-align: center"><strong>Tonners</strong></h1>
     </div>
-        <a href="/" class="d-print-none btn btn-dark" style="margin-right: 5px">Fechar</a>
-        <a href="" class="d-print-none btn btn-dark" onclick="javascript:window.print()" title="Imprimir">Imprimir</a>
+        <a href="/indexTonner" class="d-print-none btn btn-outline-dark" style="margin-right: 5px"><ion-icon name="close-circle-outline"></ion-icon> Fechar</a>
+        <a href="" class="d-print-none btn btn-outline-dark" onclick="javascript:window.print()" title="Imprimir"><ion-icon name="print-outline"></ion-icon> Imprimir</a>
         <hr>
             <thead>
                 <tr>
@@ -37,6 +37,7 @@
                 @endforeach
             </tbody>
     </table>
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 </body>
 
 </html>

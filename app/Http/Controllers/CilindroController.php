@@ -11,6 +11,13 @@ use PDF;
 class CilindroController extends Controller
 {
 
+    public function indexCilindro()
+    {
+        $cilindros = Cilindro::all();
+
+        return view('cilindro.indexCilindro', ['cilindros' => $cilindros]);
+    }
+
     public function cadastroCilindro()
     {
         return view('cilindro.cadastroCilindro');
@@ -27,13 +34,13 @@ class CilindroController extends Controller
         $user = auth()->user();
 
         $cilindro->save();
-        return redirect('/')->with('msg', 'Cilindro cadastrado com sucesso');
+        return redirect('/indexCilindro')->with('msg', 'Cilindro cadastrado com sucesso');
     }
 
     public function deleteCilindro($id)
     {
         Cilindro::findOrFail($id)->delete();
-        return redirect('/')->with('msg', 'Cilindro excluído com sucesso');
+        return redirect('/indexCilindro')->with('msg', 'Cilindro excluído com sucesso');
     }
 
     public function editCilindro ($id){
@@ -50,7 +57,7 @@ class CilindroController extends Controller
 
         Cilindro::findOrFail($request->id)->update($data);
 
-        return redirect('/')->with('msg', 'Cilindro editado com sucesso!');
+        return redirect('/indexCilindro')->with('msg', 'Cilindro editado com sucesso!');
     }
 
     public function exportCilindroPDF() {

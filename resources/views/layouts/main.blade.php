@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>@yield('title')</title>
         <!-- Fonte do Google -->
@@ -21,22 +21,15 @@
     </head>
     <body>
         <header>
-            <nav class="navbar-expand">
+            <nav class="navnavbar-expand-lg ">
                 <div class="collapse navbar-collapse" id="navbar">
                     <a href="/" class="navbar-brand">
-                        <img src="/img/logo.png" alt="Logo">
+                        <img src="/img/logo.png" alt="logo">
                     </a>
+                    <h1>Controle de Ti</h1>
                     <ul class="navbar-nav">
                         @auth
-                        <li class="nav-item">
-                            <a href="/cadastro" class="nav-link">Cadastrar Tonner</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/cadastroTinta" class="nav-link">Cadastrar Tinta</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/cadastroCilindro" class="nav-link">Cadastrar Cilindro</a>
-                        </li>
+
                          <li class="nav-form">
                             <form action="/logout" method="POST">
                             @csrf
@@ -50,17 +43,6 @@
                             </form>
                          </li>
                         @endauth
-                       @guest
-                       <li class="nav-item">
-                            <a href="/cadastro" class="nav-link">Cadastrar Tonner</a>
-                       </li>
-                       <li class="nav-item">
-                        <a href="/cadastroTinta" class="nav-link">Cadastrar Tinta</a>
-                       </li>
-                       <li class="nav-item">
-                        <a href="/cadastroCilindro" class="nav-link">Cadastrar Cilindro</a>
-                    </li>
-                       @endguest
                     </ul>
                 </div>
             </nav>
@@ -76,7 +58,7 @@
             </div>
         </main>
         <footer>
-            <p>Souza e Cambos Confecções Ltda. &copy; 2021</p>
+            <p>Eventos &copy; 2021</p>
         </footer>
         <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     </body>
