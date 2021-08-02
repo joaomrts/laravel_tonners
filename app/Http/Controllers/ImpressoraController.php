@@ -15,7 +15,7 @@ class ImpressoraController extends Controller
     {
         $impressoras = Impressora::all();
 
-        return view('impressora.indexImpressora', ['impressoras' => $impressoras, 'impressorasXavantess' => $impressorasXavantess, 'impressorasMendesJrs' => $impressorasMendesJrs]);
+        return view('impressora.indexImpressora', ['impressoras' => $impressoras]);
     }
 
     public function cadastroImpressora()
