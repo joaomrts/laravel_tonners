@@ -55,6 +55,12 @@
         <h5><br>Não há cilindros cadastrados
             <hr>
             <a href="/cadastroCilindro" id="cadastro" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Cilindro</a></h5>
-        @endif
+            <div class="dashboard-tinta-container">
+                <a href="/indexCilindro" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="film-outline"></ion-icon> Cilindros</a></h5>
+                <a href="/indexTinta" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="color-palette-outline"></ion-icon> Tintas</a></h5>
+                <a href="/indexTonner"  style="margin-right: 5px" class="btn btn-dark"><ion-icon name="repeat-outline"></ion-icon> Tonners</a>
+                <a href="/indexImpressora" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="print-outline"></ion-icon> Impressoras</a></h5>
+            </div>
+            @endif
 </div>
 @endsection

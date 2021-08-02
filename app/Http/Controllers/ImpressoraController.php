@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Impressora;
-
+use App\Models\ImpressorasXavantes;
+use App\Models\ImpressorasMendesJr;
 use App\Http\Requests\StoreUpdateImpressora;
 use PDF;
 
@@ -14,8 +15,10 @@ class ImpressoraController extends Controller
     public function indexImpressora()
     {
         $impressoras = Impressora::all();
+        $impressorasXavantess = ImpressorasXavantes::all();
+        $impressorasMendesJrs = ImpressorasMendesJr::all();
 
-        return view('impressora.indexImpressora', ['impressoras' => $impressoras]);
+        return view('impressora.indexImpressora', ['impressoras' => $impressoras, 'impressorasXavantess' => $impressorasXavantess, 'impressorasMendesJrs' => $impressorasMendesJrs]);
     }
 
     public function cadastroImpressora()
