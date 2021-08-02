@@ -13,7 +13,7 @@ class ImpressorasXavantes extends Migration
      */
     public function up()
     {
-        Schema::create('impressorasxavantes', function (Blueprint $table) {
+        Schema::create('impressorasXavantes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('modelo');
@@ -29,6 +29,6 @@ class ImpressorasXavantes extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('impressorasxavantes');
+        Schema::dropIfExists('impressorasXavantes');
     }
 }
