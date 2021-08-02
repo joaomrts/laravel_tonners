@@ -52,6 +52,7 @@
         </tbody>
     </table>
         @elseif (count($cilindros) == 0)
+        <br>
         <h5><br>Não há cilindros cadastrados
             <hr>
             <a href="/cadastroCilindro" id="cadastro" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Cilindro</a></h5>
