@@ -53,7 +53,7 @@
     </table>
         @elseif (count($impressoras) == 0)
         <br>
-        <h5><br>Não há Impressoras cadastradas
+        <h5><br>Não há Impressoras de MG cadastradas
             <hr>
             <a href="/cadastroImpressora" id="cadastro" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Impressora</a></h5>
         @endif
@@ -103,7 +103,7 @@
     </table>
         @elseif (count($impressorasXavantess) == 0)
         <br>
-        <h5><br>Não há Impressoras Xavantes cadastradas
+        <h5><br>Não há Impressoras da loja Xavantes cadastradas
             <hr>
             <a href="/cadastroImpressorasXavantes" id="cadastro" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Impressora</a></h5>
         @endif
@@ -153,7 +153,7 @@
     </table>
         @elseif (count($impressorasMendesJrs) == 0)
         <br>
-        <h5><br>Não há Impressoras Mendes Jr. cadastradas
+        <h5><br>Não há Impressoras da loja Mendes Jr. cadastradas
             <hr>
             <a href="/cadastroImpressorasMendesJr" id="cadastro" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Impressora</a></h5>
         @endif
