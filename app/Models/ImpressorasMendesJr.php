@@ -12,7 +12,6 @@ class ImpressorasMendesJr extends Model
     protected $table = "impressorasmendesjr";
 
     protected $fillable = [
-        'token',
         'modelo',
         'tonner',
         'setor',

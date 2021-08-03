@@ -12,7 +12,6 @@ class ImpressorasXavantes extends Model
     protected $table = "impressorasxavantes";
 
     protected $fillable = [
-        'token',
         'modelo',
         'tonner',
         'setor',
