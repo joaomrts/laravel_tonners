@@ -64,6 +64,7 @@ Route::get('/showImpressorasXavantes', [ImpressorasXavantesController::class, 's
 Route::get('impressorasXavantes/create-pdf', [ImpressorasXavantesController::class, 'exportImpressorasXavantesPDF'])->middleware('auth');
 Route::get('/cadastroImpressorasXavantes', [ImpressorasXavantesController::class, 'cadastroImpressorasXavantes'])->middleware('auth');
 Route::get('/indexImpressorasXavantes', [ImpressorasXavantesController::class, 'indexImpressorasXavantes'])->middleware('auth');
+Route::get('/indexXavantes', [ImpressorasXavantesController::class, 'indexXavantes'])->middleware('auth');
 Route::post('cadastroImpressorasXavantes/salvar', [ImpressorasXavantesController::class, 'storeImpressorasXavantes'])->middleware('auth');
 Route::delete('/deleteImpressorasXavantes/{id}', [ImpressorasXavantesController::class, 'deleteImpressorasXavantes'])->middleware('auth');
 Route::get('/editImpressorasXavantes/{id}', [ImpressorasXavantesController::class, 'editImpressorasXavantes'])->middleware('auth');
@@ -73,6 +74,7 @@ Route::put('/editImpressorasXavantes/update/{id}', [ImpressorasXavantesControlle
 Route::get('/showImpressorasMendesJr', [ImpressorasMendesJrController::class, 'showImpressorasMendesJr'])->middleware('auth');
 Route::get('impressorasMendesJr/create-pdf', [ImpressorasMendesJrController::class, 'exportImpressorasMendesJrPDF'])->middleware('auth');
 Route::get('/cadastroImpressorasMendesJr', [ImpressorasMendesJrController::class, 'cadastroImpressorasMendesJr'])->middleware('auth');
+Route::get('/indexMendesJr', [ImpressorasMendesJrController::class, 'indexMendesJr'])->middleware('auth');
 Route::get('/indexImpressorasMendesJr', [ImpressorasMendesJrController::class, 'indexImpressorasMendesJr'])->middleware('auth');
 Route::post('cadastroImpressorasMendesJr/salvar', [ImpressorasMendesJrController::class, 'storeImpressorasMendesJr'])->middleware('auth');
 Route::delete('/deleteImpressorasMendesJr/{id}', [ImpressorasMendesJrController::class, 'deleteImpressorasMendesJr'])->middleware('auth');

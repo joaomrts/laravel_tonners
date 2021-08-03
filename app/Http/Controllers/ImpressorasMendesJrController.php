@@ -10,6 +10,11 @@ use PDF;
 class ImpressorasMendesJrController extends Controller
 {
 
+    public function indexMendesJr()
+    {
+        $impressorasMendesJrs = ImpressorasMendesJr::all();
+        return view('impressorasMendesJr.indexImpressorasMendesJr', ['impressorasMendesJrs' => $impressorasMendesJrs]);
+    }
 
     public function cadastroImpressorasMendesJr()
     {

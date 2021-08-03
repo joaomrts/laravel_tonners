@@ -10,6 +10,12 @@ use PDF;
 class ImpressorasXavantesController extends Controller
 {
 
+    public function indexXavantes()
+    {
+        $impressorasXavantess = ImpressorasXavantes::all();
+        return view ('impressorasXavantes.indexImpressorasXavantes', ['impressorasXavantess' => $impressorasXavantess]);
+    }
+
     public function cadastroImpressorasXavantes()
     {
         return view('impressorasXavantes.cadastroImpressorasXavantes');
