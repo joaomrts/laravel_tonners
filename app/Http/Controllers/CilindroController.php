@@ -18,6 +18,16 @@ class CilindroController extends Controller
         return view('cilindro.indexCilindro', ['cilindros' => $cilindros]);
     }
 
+    public function searchCilindro(Request $request)
+    {
+        $filters = $request->except('_token');
+
+        $cilindros = Cilindro::where('modelo', 'LIKE', "%{$request->search}%")
+                            ->paginate(300);
+
+        return view('cilindro.indexCilindro', ['cilindros' => $cilindros, 'filters' => $filters]);
+    }
+
     public function cadastroCilindro()
     {
         return view('cilindro.cadastroCilindro');

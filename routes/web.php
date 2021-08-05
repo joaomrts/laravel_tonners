@@ -19,7 +19,13 @@ use App\Http\Controllers\EquipamentoController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+if(version_compare(PHP_VERSION, '7.2.0', '>=')) {
+    error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
+}
 
+
+
+Route::any('/indexTonner', [TonnerController::class,'searchTonner']);
 Route::get('/showTonner', [TonnerController::class, 'showTonner'])->middleware('auth');
 Route::get('tonner/create-pdf', [TonnerController::class, 'exportTonnerPDF'])->middleware('auth');
 Route::delete('/{id}', [TonnerController::class, 'delete'])->middleware('auth');
@@ -30,6 +36,7 @@ Route::get('/edit/{id}', [TonnerController::class, 'edit'])->middleware('auth');
 Route::put('/edit/update/{id}', [TonnerController::class, 'update'])->middleware('auth');
 
 
+Route::any('/indexTinta', [TintaController::class,'searchTinta']);
 Route::get('/showTinta', [TintaController::class, 'showTinta'])->middleware('auth');
 Route::get('tinta/create-pdf', [TintaController::class, 'exportTintaPDF'])->middleware('auth');
 Route::get('/cadastroTinta', [TintaController::class, 'cadastroTinta'])->middleware('auth');
@@ -40,6 +47,7 @@ Route::get('/editTinta/{id}', [TintaController::class, 'editTinta'])->middleware
 Route::put('/editTinta/update/{id}', [TintaController::class, 'updateTinta'])->middleware('auth');
 
 
+Route::any('/indexCilindro', [CilindroController::class,'searchCilindro']);
 Route::get('/showCilindro', [CilindroController::class, 'showCilindro'])->middleware('auth');
 Route::get('cilindro/create-pdf', [CilindroController::class, 'exportCilindroPDF'])->middleware('auth');
 Route::get('/cadastroCilindro', [CilindroController::class, 'cadastroCilindro'])->middleware('auth');
@@ -50,6 +58,7 @@ Route::get('/editCilindro/{id}', [CilindroController::class, 'editCilindro'])->m
 Route::put('/editCilindro/update/{id}', [CilindroController::class, 'updateCilindro'])->middleware('auth');
 
 
+Route::any('/indexImpressora', [ImpressoraController::class,'search']);
 Route::get('/showImpressora', [ImpressoraController::class, 'showImpressora'])->middleware('auth');
 Route::get('impressora/create-pdf', [ImpressoraController::class, 'exportImpressoraPDF'])->middleware('auth');
 Route::get('/cadastroImpressora', [ImpressoraController::class, 'cadastroImpressora'])->middleware('auth');
@@ -80,6 +89,7 @@ Route::get('/editImpressorasMendesJr/{id}', [ImpressorasMendesJrController::clas
 Route::put('/editImpressorasMendesJr/update/{id}', [ImpressorasMendesJrController::class, 'updateImpressorasMendesJr'])->middleware('auth');
 
 
+Route::any('/indexEquipamento', [EquipamentoController::class,'searchEquipamento']);
 Route::get('/showEquipamento', [EquipamentoController::class, 'showEquipamento'])->middleware('auth');
 Route::get('equipamento/create-pdf', [EquipamentoController::class, 'exportEquipamentoPDF'])->middleware('auth');
 Route::get('/cadastroEquipamento', [EquipamentoController::class, 'cadastroEquipamento'])->middleware('auth');

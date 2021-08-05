@@ -10,13 +10,19 @@
     <br>
 <table class="table table-striped table table-bordered">
     <div class="dashboard-tinta-container">
-        <a href="/indexTinta" class="btn btn-dark"><ion-icon name="color-palette-outline"></ion-icon> Tintas</a>
-        <a href="/indexTonner" style="margin-right: 5px" id="show" class="btn btn-dark"><ion-icon name="repeat-outline"></ion-icon> Tonners</a>
-        <a href="/indexImpressora" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="print-outline"></ion-icon> Impressoras</a>
+        <a href="/indexTinta" style="margin-left: 5px" class="btn btn-dark"><ion-icon name="color-palette-outline"></ion-icon> Tintas</a>
+        <a href="/indexTonner" style="margin-left: 5px" id="show" class="btn btn-dark"><ion-icon name="repeat-outline"></ion-icon> Tonners</a>
+        <a href="/indexImpressora" id="show" style="margin-left: 320px" class="btn btn-dark"><ion-icon name="print-outline"></ion-icon> Impressoras</a>
     </div>
     <a href="/" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="home-outline"></ion-icon> Início</a></h5>
-    <h1>Cilindros</h1>
-        <hr>
+    <h1>Cilindros
+            <hr>
+            <div id="search-container-tonner" class="col-sm-6 col-md-6">
+                <form action="/indexCilindro" method="POST">
+                    @csrf
+                    <input type="text" id="search" name="search" class="form-control" placeholder="Procurar...">
+                </form>
+            </div>
         <a href="/cadastroCilindro" id="cadastro" style="margin-bottom: 18px" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Cilindro</a>
         <div class="dashboard-tinta-container">
             <a href="cilindro/create-pdf" type="button" class="btn btn-outline-dark"><ion-icon name="cloud-download-outline"></ion-icon> Download Pdf</a>
@@ -51,6 +57,10 @@
             @endforeach
         </tbody>
     </table>
+    @if (isset($filters))
+        {{ $cilindros->appends($filters)->links() }}
+    @else
+    @endif
         @elseif (count($cilindros) == 0)
         <br>
         <h5><br>Não há cilindros cadastrados

@@ -18,6 +18,16 @@ class TintaController extends Controller
         return view('tinta.indexTinta', ['tintas' => $tintas]);
     }
 
+    public function searchTinta(Request $request)
+    {
+        $filters = $request->except('_token');
+
+        $tintas = Tinta::where('modelo', 'LIKE', "%{$request->search}%")
+                            ->paginate(300);
+
+        return view('tinta.indexTinta', ['tintas' => $tintas, 'filters' => $filters]);
+    }
+
     public function cadastroTinta()
     {
         return view('tinta.cadastroTinta');

@@ -5,17 +5,25 @@
 @section('content')
 
 
-<div class="col-md-10 col-sm-10 offset-md-1 dashboard-events-container">
     @if(count($impressoras)>0)
-    <br>
+
+    <div id="search-container" class="col-sm-12 col-md-12">
+        <h1>IMPRESSORAS</h1>
+        <form action="/indexImpressora" method="POST">
+            @csrf
+            <input type="text" id="search" name="search" class="form-control" placeholder="Procurar...">
+        </form>
+    </div>
+    <div class="col-md-10 col-sm-10 offset-md-1 dashboard-events-container">
+        <br>
 <table class="table table-striped table table-bordered">
     <div class="dashboard-tinta-container">
-        <a href="/indexCilindro" id="show" class="btn btn-dark"><ion-icon name="film-outline"></ion-icon> Cilindros</a></h5>
-        <a href="/indexTinta" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="color-palette-outline"></ion-icon> Tintas</a></h5>
-        <a href="/indexTonner"  style="margin-right: 5px" class="btn btn-dark"><ion-icon name="repeat-outline"></ion-icon> Tonners</a>
+        <a href="/indexCilindro" id="show" style="margin-left: 5px" class="btn btn-dark"><ion-icon name="film-outline"></ion-icon> Cilindros</a></h5>
+        <a href="/indexTinta" id="show" style="margin-left: 5px" class="btn btn-dark"><ion-icon name="color-palette-outline"></ion-icon> Tintas</a></h5>
+        <a href="/indexTonner"  style="margin-left: 320px" class="btn btn-dark"><ion-icon name="repeat-outline"></ion-icon> Tonners</a>
     </div>
     <a href="/" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="home-outline"></ion-icon> Início</a></h5>
-    <h1>Impressoras MG
+    <h1> Minas Gerais
         <hr>
         <a href="/cadastroImpressora" id="cadastro" style="margin-bottom: 18px" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Impressora</a></h5>
         <div class="dashboard-tinta-container">
@@ -51,6 +59,11 @@
             @endforeach
         </tbody>
     </table>
+    @if (isset($filters))
+        {{ $impressoras->appends($filters)->links() }}
+    @else
+    @endif
+
         @elseif (count($impressoras) == 0)
         <br>
         <h5><br>Não há Impressoras de MG cadastradas
@@ -64,8 +77,8 @@
     @if(count($impressorasXavantess)>0)
     <br>
 <table class="table table-striped table table-bordered">
-
-    <h1>Impressoras Xavantes
+    <div class="col-md-12 col-sm-12  dashboard-mendes-container">
+    <h1>Xavantes
         <hr>
         <a href="/cadastroImpressorasXavantes" id="cadastro" style="margin-bottom: 18px" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Impressora</a></h5>
         <div class="dashboard-tinta-container">
@@ -74,6 +87,7 @@
         </div>
         <br>
     </h1>
+    </div>
     <br>
         <thead>
             <tr>
@@ -114,8 +128,8 @@
     @if(count($impressorasMendesJrs)>0)
     <br>
 <table class="table table-striped table table-bordered">
-
-    <h1>Impressoras Mendes Jr.
+    <div class="col-md-12 col-sm-12  dashboard-mendes-container">
+    <h1>Mendes Jr.
         <hr>
         <a href="/cadastroImpressorasMendesJr" id="cadastro" style="margin-bottom: 18px" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Impressora</a></h5>
         <div class="dashboard-tinta-container">
@@ -124,6 +138,7 @@
         </div>
         <br>
     </h1>
+    </div>
     <br>
         <thead>
             <tr>

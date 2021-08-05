@@ -22,6 +22,16 @@ class TonnerController extends Controller
 
     }
 
+    public function searchTonner(Request $request)
+    {
+        $filters = $request->except('_token');
+
+        $tonners = Tonner::where('modelo', 'LIKE', "%{$request->search}%")
+                            ->paginate(300);
+
+        return view('tonner.indexTonner', ['tonners' => $tonners, 'filters' => $filters]);
+    }
+
     public function cadastro()
     {
         return view('tonner.cadastro');

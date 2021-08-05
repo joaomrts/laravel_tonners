@@ -5,17 +5,26 @@
 @section('content')
 
 
-<div class="col-md-10 col-sm-10 offset-md-1 dashboard-events-container">
+
     @if(count($equipamentos)>0)
-    <br>
-<table class="table table-striped table table-bordered">
-    <div class="dashboard-tinta-container">
-        <a href="/indexCilindro" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="film-outline"></ion-icon> Cilindros</a></h5>
-        <a href="/indexTinta" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="color-palette-outline"></ion-icon> Tintas</a></h5>
-        <a href="/indexTonner"  style="margin-right: 5px" class="btn btn-dark"><ion-icon name="repeat-outline"></ion-icon> Tonners</a>
-        <a href="/indexImpressora" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="print-outline"></ion-icon> Impressoras</a></h5>
+    <div id="search-container-equipamento" class="col-sm-12 col-md-12">
+        <h1>EQUIPAMENTOS</h1>
+        <form action="/indexEquipamento" method="POST">
+            @csrf
+            <input type="text" id="search" name="search" class="form-control" placeholder="Procurar...">
+        </form>
     </div>
-    <h1>Equipamentos de MG</h1>
+    <div class="col-md-10 col-sm-10 offset-md-1 dashboard-events-container">
+        <br>
+    <table class="table table-striped table table-bordered">
+        <div class="dashboard-tinta-container">
+            <a href="/indexCilindro" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="film-outline"></ion-icon> Cilindros</a></h5>
+            <a href="/indexTinta" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="color-palette-outline"></ion-icon> Tintas</a></h5>
+            <a href="/indexTonner"  style="margin-right: 5px" class="btn btn-dark"><ion-icon name="repeat-outline"></ion-icon> Tonners</a>
+            <a href="/indexImpressora" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="print-outline"></ion-icon> Impressoras</a></h5>
+        <br>
+        </div>
+        <br>
         <hr>
         <a href="/cadastroEquipamento" id="cadastro" style="margin-bottom: 18px" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Equipamento</a></h5>
         <div class="dashboard-tinta-container">
@@ -50,6 +59,10 @@
             @endforeach
         </tbody>
     </table>
+    @if (isset($filters))
+        {{ $equipamentos->appends($filters)->links() }}
+    @else
+    @endif
         @elseif (count($equipamentos) == 0)
         <br>
         <h5><br>Não há Equipamentos cadastrados

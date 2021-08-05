@@ -108,17 +108,17 @@ header{
 
 /* Search container */
 
-#search-container{
-    background-image: url("../public/impressora.jpg");
+#search-container {
+    background-image: url("../public/impressoras.jpg");
     background-size:cover;
     background-position: center;
-    height: 300px;
+    height: 350px;
     padding: 80px;
     text-align: center;
 }
 
 #search-container h1{
-    color: rgb(255, 255, 255);
+    color: rgb(245, 245, 245);
     margin-bottom: 30px;
     text-shadow: 2px 2px black ;
     font-weight: 900;
@@ -127,6 +127,43 @@ header{
 #search-container form{
     width: 50%;
     margin: 0 auto;
+    font-style:italic;
+}
+
+#search-container-equipamento {
+    background-image: url("../public/equipamentos.jpg");
+    background-size:cover;
+    background-position: center;
+    height: 350px;
+    padding: 80px;
+    text-align: center;
+}
+
+#search-container-equipamento h1{
+    color: rgb(245, 245, 245);
+    margin-bottom: 30px;
+    text-shadow: 2px 2px black ;
+    font-weight: 900;
+}
+
+#search-container-equipamento form{
+    width: 50%;
+    margin: 0 auto;
+    font-style:italic;
+}
+
+#search-container-tonner h1{
+    color: rgb(245, 245, 245);
+    margin-bottom: 30px;
+    text-shadow: 2px 2px black ;
+    font-weight: 900;
+}
+
+#search-container-tonner input{
+    width: 600px;
+    position: absolute;
+    left: 50%;
+    margin-left: -300px;
 }
 
 /* Events list*/
@@ -387,10 +424,16 @@ padding: 5px;
 .dashboard-events-container h1{
     font-size: 40px;
     font-weight: bold;
-    text-align: center;
+    text-align: right;
     color: #000000
 }
 
+.dashboard-mendes-container h1{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    color: #000000
+}
 
 /* Edit Image */
 .img-preview {

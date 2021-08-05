@@ -11,7 +11,6 @@ use PDF;
 
 class ImpressoraController extends Controller
 {
-
     public function indexImpressora()
     {
         $impressoras = Impressora::all();
@@ -19,6 +18,28 @@ class ImpressoraController extends Controller
         $impressorasMendesJrs = ImpressorasMendesJr::all();
 
         return view('impressora.indexImpressora', ['impressoras' => $impressoras, 'impressorasXavantess' => $impressorasXavantess, 'impressorasMendesJrs' => $impressorasMendesJrs]);
+    }
+
+    public function search(Request $request)
+    {
+        $filters = $request->except('_token');
+
+        $impressoras = Impressora::where('modelo', 'LIKE', "%{$request->search}%")
+                            ->orWhere('tonner', 'LIKE', "%{$request->search}%")
+                            ->orWhere('setor', 'LIKE', "%{$request->search}%")
+                            ->paginate(300);
+
+        $impressorasXavantess = ImpressorasXavantes::where('modelo', 'LIKE', "%{$request->search}%")
+                            ->orWhere('tonner', 'LIKE', "%{$request->search}%")
+                            ->orWhere('setor', 'LIKE', "%{$request->search}%")
+                            ->paginate(300);
+
+        $impressorasMendesJrs = ImpressorasMendesJr::where('modelo', 'LIKE', "%{$request->search}%")
+                            ->orWhere('tonner', 'LIKE', "%{$request->search}%")
+                            ->orWhere('setor', 'LIKE', "%{$request->search}%")
+                            ->paginate(300);
+
+        return view('impressora.indexImpressora', ['impressoras' => $impressoras, 'filters' => $filters, 'impressorasXavantess' => $impressorasXavantess, 'impressorasMendesJrs' => $impressorasMendesJrs]);
     }
 
     public function cadastroImpressora()

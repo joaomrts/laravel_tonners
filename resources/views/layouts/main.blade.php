@@ -26,7 +26,7 @@
                     <a href="/" class="navbar-brand">
                         <img src="/img/logo.png" alt="logo">
                     </a>
-                    <h1>Controle de Ti</h1>
+                    <h1>Controle de T.I.</h1>
                     <ul class="navbar-nav">
                         @auth
 
