@@ -24,7 +24,9 @@ class StoreUpdateEquipamento extends FormRequest
     public function rules()
     {
         return [
-        'numeroIp' => 'required'
+        'numeroIp' => 'required',
+        'setor' => 'required',
+        'equipamento' => 'required'
         ];
     }
 
