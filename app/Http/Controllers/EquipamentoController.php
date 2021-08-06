@@ -11,7 +11,7 @@ class EquipamentoController extends Controller
 {
     public function indexEquipamento()
     {
-        $equipamentos = Equipamento::paginate(20);
+        $equipamentos = Equipamento::paginate(30);
 
         return view('equipamento.indexEquipamento', ['equipamentos' => $equipamentos]);
     }
