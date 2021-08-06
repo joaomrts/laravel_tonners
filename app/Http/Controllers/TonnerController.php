@@ -27,14 +27,14 @@ class TonnerController extends Controller
     {
         $filters = $request->except('_token');
 
-        $tonners = Tonner::where('modelo', 'LIKE', "%{$request->search}%")
-                            ->paginate(300);
+        $tonners = Tonner::where('modelo', 'LIKE', "%{$request->search}%");
 
-        $cilindros = Cilindro::where('modelo', 'LIKE', "%{$request->search}%")
-                            ->paginate(300);
 
-        $tintas = Tinta::where('modelo', 'LIKE', "%{$request->search}%")
-                            ->paginate(300);
+        $cilindros = Cilindro::where('modelo', 'LIKE', "%{$request->search}%");
+
+
+        $tintas = Tinta::where('modelo', 'LIKE', "%{$request->search}%");
+
 
         return view('tonner.indexTonner', ['tonners' => $tonners, 'filters' => $filters, 'cilindros' => $cilindros, 'tintas' => $tintas]);
     }

@@ -57,6 +57,9 @@
             @endforeach
         </tbody>
     </table>
+    <div class="d-flex justify-content-center">
+        {{ $equipamentos->links() }}
+    </div>
     @elseif (count($equipamentos) == 0 && $filters)
     <div class="col-sm-10 col-md-10 offset-md-1">
         <h5><br>Não foi possível retornar resultados com sua busca para Equipamentos
