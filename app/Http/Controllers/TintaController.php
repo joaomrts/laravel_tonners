@@ -27,13 +27,13 @@ class TintaController extends Controller
         $user = auth()->user();
 
         $tinta->save();
-        return redirect('/indexTonner')->with('msg', 'Tinta cadastrada com sucesso');
+        return redirect('/Suprimentos')->with('msg', 'Tinta cadastrada com sucesso');
     }
 
     public function deleteTinta($id)
     {
         Tinta::findOrFail($id)->delete();
-        return redirect('/indexTonner')->with('msg', 'Tinta excluída com sucesso');
+        return redirect('/Suprimentos')->with('msg', 'Tinta excluída com sucesso');
     }
 
     public function editTinta($id){
@@ -51,7 +51,7 @@ class TintaController extends Controller
 
         Tinta::findOrFail($request->id)->update($data);
 
-        return redirect('/indexTonner')->with('msg', 'Tinta editada com sucesso!');
+        return redirect('/Suprimentos')->with('msg', 'Tinta editada com sucesso!');
     }
 
     public function exportTintaPDF() {
