@@ -15,7 +15,7 @@
         <br>
         <h1 style="text-align: center"><strong>Cilindros</strong></h1>
     </div>
-    <a href="/indexTonner" class="d-print-none btn btn-outline-dark" style="margin-right: 5px"><ion-icon name="close-circle-outline"></ion-icon> Fechar</a>
+    <a href="/Suprimentos" class="d-print-none btn btn-outline-dark" style="margin-right: 5px"><ion-icon name="close-circle-outline"></ion-icon> Fechar</a>
     <a href="" class="d-print-none btn btn-outline-dark" onclick="javascript:window.print()" title="Imprimir"><ion-icon name="print-outline"></ion-icon> Imprimir</a>
     <hr>
             <thead>

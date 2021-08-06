@@ -18,8 +18,8 @@
         <br>
     <table class="table table-striped table table-bordered">
         <div class="dashboard-tinta-container">
-            <a href="/indexTonner"  style="margin-right: 5px" class="btn btn-dark"><ion-icon name="color-filter-outline"></ion-icon> Suprimentos</a>
-            <a href="/indexImpressora" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="print-outline"></ion-icon> Impressoras</a></h5>
+            <a href="/Suprimentos"  style="margin-right: 5px" class="btn btn-dark"><ion-icon name="color-filter-outline"></ion-icon> Suprimentos</a>
+            <a href="/Impressoras" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="print-outline"></ion-icon> Impressoras</a></h5>
         <br>
         </div>
         <br>
@@ -57,21 +57,20 @@
             @endforeach
         </tbody>
     </table>
-    @if (isset($filters))
-        {{ $equipamentos->appends($filters)->links() }}
-    @else
-    @endif
-        @elseif (count($equipamentos) == 0)
-        <br>
-        <h5><br>Não há Equipamentos cadastrados
-            <hr>
-            <a href="/cadastroEquipamento" id="cadastro" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Equipamento</a></h5>
-            <div class="dashboard-tinta-container">
-                <a href="/indexCilindro" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="film-outline"></ion-icon> Cilindros</a></h5>
-                <a href="/indexTinta" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="color-palette-outline"></ion-icon> Tintas</a></h5>
-                <a href="/indexTonner"  style="margin-right: 5px" class="btn btn-dark"><ion-icon name="repeat-outline"></ion-icon> Tonners</a>
-                <a href="/indexImpressora" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="print-outline"></ion-icon> Impressoras</a></h5>
-            </div>
+    @elseif (count($equipamentos) == 0 && $filters)
+    <div class="col-sm-10 col-md-10 offset-md-1">
+        <h5><br>Não foi possível retornar resultados com sua busca para Equipamentos
+        <hr>
+        <a href="/indexEquipamento" style="margin-right: 5px" class="btn btn-success">Ver todos os Equipamentos</a>
+        <a href="/cadastroEquipamento" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Equipamento</a></h5>
+    </div>
+    @elseif (count($equipamentos)== 0)
+    <div class="col-sm-10 col-md-10 offset-md-1">
+    <br>
+        <h5><br>Não há equipamentos cadastrados
+    <hr>
+        <a href="/cadastroEquipamento" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Equipamentos</a></h5>
+    </div>
     @endif
 </div>
 @endsection

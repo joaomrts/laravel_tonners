@@ -9,7 +9,7 @@
 
     <div id="search-container" class="col-sm-12 col-md-12">
         <h1>IMPRESSORAS</h1>
-        <form action="/indexImpressora" method="POST">
+        <form action="/Impressoras" method="POST">
             @csrf
             <input type="text" id="search" name="search" class="form-control" placeholder="Procurar...">
         </form>
@@ -18,7 +18,7 @@
         <br>
 <table class="table table-striped table table-bordered">
     <div class="dashboard-tinta-container">
-        <a href="/indexTonner" class="btn btn-dark"><ion-icon name="color-filter-outline"></ion-icon> Suprimentos</a>
+        <a href="/Suprimentos" class="btn btn-dark"><ion-icon name="color-filter-outline"></ion-icon> Suprimentos</a>
     </div>
     <a href="/" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="home-outline"></ion-icon> Início</a></h5>
     <h1> Minas Gerais
@@ -57,17 +57,21 @@
             @endforeach
         </tbody>
     </table>
-    @if (isset($filters))
-        {{ $impressoras->appends($filters)->links() }}
-    @else
+    @elseif (count($impressoras) == 0 && $filters)
+    <div class="col-sm-10 col-md-10 offset-md-1 ">
+        <h5><br>Não foi possível retornar resultados com sua busca para Impressorass
+    <hr>
+        <a href="/Impressoras" class="btn btn-success">Ver todas as Impressoras</a>
+        <a href="/cadastroImpressora" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Impressora</a></h5>
+    </div>
+    @elseif (count($impressoras)== 0)
+    <div class="col-sm-10 col-md-10 offset-md-1">
+    <br>
+        <h5><br>Não há impressoras cadastrados
+    <hr>
+        <a href="/cadastroImpressora" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Impressora</a></h5>
+    </div>
     @endif
-
-        @elseif (count($impressoras) == 0)
-        <br>
-        <h5><br>Não há Impressoras de MG cadastradas
-            <hr>
-            <a href="/cadastroImpressora" id="cadastro" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Impressora</a></h5>
-        @endif
 </div>
 
 
@@ -113,12 +117,22 @@
             @endforeach
         </tbody>
     </table>
-        @elseif (count($impressorasXavantess) == 0)
-        <br>
-        <h5><br>Não há Impressoras da loja Xavantes cadastradas
-            <hr>
-            <a href="/cadastroImpressorasXavantes" id="cadastro" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Impressora</a></h5>
-        @endif
+    @elseif (count($impressorasXavantess) == 0 && $filters)
+    <div class="col-sm-10 col-md-10 offset-md-1">
+    <br>
+        <h5><br>Não foi possível retornar resultados com sua busca para Impressoras
+    <hr>
+        <a href="/Impressoras" style="margin-right: 5px" class="btn btn-success">Ver todas as Impressoras</a>
+        <a href="/cadastroImpressorasXavantes" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Impressora</a></h5>
+    </div>
+    @elseif (count($impressorasXavantess)== 0)
+    <div class="col-sm-10 col-md-10 offset-md-1">
+    <br>
+        <h5><br>Não há impressoras Xavantes cadastradas
+    <hr>
+        <a href="/cadastroImpressorasXavantes" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Impressora</a></h5>
+    </div>
+    @endif
 </div>
 
 
@@ -164,11 +178,22 @@
             @endforeach
         </tbody>
     </table>
-        @elseif (count($impressorasMendesJrs) == 0)
-        <br>
-        <h5><br>Não há Impressoras da loja Mendes Jr. cadastradas
-            <hr>
-            <a href="/cadastroImpressorasMendesJr" id="cadastro" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Impressora</a></h5>
-        @endif
+
+    @elseif (count($impressorasMendesJrs) == 0 && $filters)
+    <div class="col-sm-10 col-md-10 offset-md-1">
+    <br>
+        <h5><br>Não foi possível retornar resultados com sua busca para Impressoras
+    <hr>
+        <a href="/Impressoras" style="margin-right: 5px" class="btn btn-success">Ver todas as Impressoras</a>
+        <a href="/cadastroImpressorasMendesJr" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Impressora</a></h5>
+    </div>
+    @elseif (count($impressorasMendesJrs)== 0)
+    <div class="col-sm-10 col-md-10 offset-md-1">
+    <br>
+        <h5><br>Não há impressoras Mendes Junior cadastradas
+    <hr>
+        <a href="/cadastroimpressorasMendesJr" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Impressora</a></h5>
+    </div>
+    @endif
 </div>
 @endsection

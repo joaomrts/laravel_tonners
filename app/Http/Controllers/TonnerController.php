@@ -55,13 +55,13 @@ class TonnerController extends Controller
         $user = auth()->user();
 
         $tonner->save();
-        return redirect('/indexTonner')->with('msg', 'Tonner cadastrado com sucesso');
+        return redirect('/Suprimentos')->with('msg', 'Tonner cadastrado com sucesso');
     }
 
     public function delete($id)
     {
         Tonner::findOrFail($id)->delete();
-        return redirect('/indexTonner')->with('msg', 'Tonner excluído com sucesso');
+        return redirect('/Suprimentos')->with('msg', 'Tonner excluído com sucesso');
     }
 
     public function edit($id){
@@ -79,7 +79,7 @@ class TonnerController extends Controller
 
         Tonner::findOrFail($request->id)->update($data);
 
-        return redirect('/indexTonner')->with('msg', 'Tonner editado com sucesso!');
+        return redirect('/Suprimentos')->with('msg', 'Tonner editado com sucesso!');
     }
 
     public function exportTonnerPDF() {

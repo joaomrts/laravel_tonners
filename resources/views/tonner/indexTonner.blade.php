@@ -56,15 +56,19 @@
         </tbody>
         </table>
     @elseif (count($tonners) == 0 && $filters)
-            <h5><br>Não foi possível retornar resultados com sua busca para Tonners
-            <hr>
-            <a href="/indexTonner" class="btn btn-success">Ver todos os tonners</a>
-            <a href="/cadastro" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Tonner</a></h5>
+    <div class="col-sm-10 colmd 10 offset-md-1">
+        <h5><br>Não foi possível retornar resultados com sua busca para Tonners
+        <hr>
+        <a href="/indexTonner" class="btn btn-success">Ver todos os tonners</a>
+        <a href="/cadastro" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Tonner</a></h5>
+    </div>
     @elseif (count($tonners)== 0)
+    <div class="col-sm-10 colmd 10 offset-md-1">
     <br>
         <h5><br>Não há tonners cadastrados
     <hr>
         <a href="/cadastro" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Tonner</a></h5>
+    </div>
     @endif
 </div>
 

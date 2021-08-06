@@ -58,13 +58,13 @@ class ImpressoraController extends Controller
         $user = auth()->user();
 
         $impressora->save();
-        return redirect('/indexImpressora')->with('msg', 'Impressora cadastrada com sucesso');
+        return redirect('/Impressoras')->with('msg', 'Impressora cadastrada com sucesso');
     }
 
     public function deleteImpressora($id)
     {
         Impressora::findOrFail($id)->delete();
-        return redirect('/indexImpressora')->with('msg', 'Impressora excluída com sucesso');
+        return redirect('/Impressoras')->with('msg', 'Impressora excluída com sucesso');
     }
 
     public function editImpressora ($id){
@@ -81,7 +81,7 @@ class ImpressoraController extends Controller
 
         Impressora::findOrFail($request->id)->update($data);
 
-        return redirect('/indexImpressora')->with('msg', 'Impressora editada com sucesso!');
+        return redirect('/Impressoras')->with('msg', 'Impressora editada com sucesso!');
     }
 
     public function exportImpressoraPDF() {

@@ -7,7 +7,7 @@
 
 <div id="events-create-container" class="col-md-10 offset-md-1">
     <br>
-    <a href="/indexImpressora" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="arrow-back-outline"></ion-icon> Voltar</a>
+    <a href="/Impressoras" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="arrow-back-outline"></ion-icon> Voltar</a>
     <h1>Cadastre a Impressora</h1>
     <hr>
     @if ($errors->any())
@@ -33,7 +33,7 @@
         </div>
         <br>
         <input type="submit" class="btn btn-success" value="Cadastrar Impressora">
-        <a href="/indexImpressorasXavantes" class="btn btn-danger">Cancelar</a>
+        <a href="/Impressoras" class="btn btn-danger">Cancelar</a>
     </form>
 </div>
 

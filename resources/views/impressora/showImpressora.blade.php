@@ -15,7 +15,7 @@
         <br>
         <h1 style="text-align: center"><strong>Impressoras</strong></h1>
     </div>
-    <a href="/indexImpressora" class="d-print-none btn btn-outline-dark" style="margin-right: 5px"><ion-icon name="close-circle-outline"></ion-icon> Fechar</a>
+    <a href="/Impressoras" class="d-print-none btn btn-outline-dark" style="margin-right: 5px"><ion-icon name="close-circle-outline"></ion-icon> Fechar</a>
     <a href="" class="d-print-none btn btn-outline-dark" onclick="javascript:window.print()" title="Imprimir"><ion-icon name="print-outline"></ion-icon> Imprimir</a>
     <hr>
             <thead>
