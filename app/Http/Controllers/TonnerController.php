@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Tonner;
 use App\Models\Tinta;
 use App\Models\Cilindro;
-use App\Models\Impressora;
 use App\Http\Requests\StoreUpdateTonner;
 use PDF;
 
@@ -17,8 +16,10 @@ class TonnerController extends Controller
     {
 
         $tonners = Tonner::all();
+        $tintas = Tinta::all();
+        $cilindros = Cilindro::all();
 
-        return view('tonner.indexTonner', ['tonners' => $tonners]);
+        return view('tonner.indexTonner', ['tonners' => $tonners, 'tintas' => $tintas, 'cilindros' => $cilindros]);
 
     }
 
@@ -29,7 +30,13 @@ class TonnerController extends Controller
         $tonners = Tonner::where('modelo', 'LIKE', "%{$request->search}%")
                             ->paginate(300);
 
-        return view('tonner.indexTonner', ['tonners' => $tonners, 'filters' => $filters]);
+        $cilindros = Cilindro::where('modelo', 'LIKE', "%{$request->search}%")
+                            ->paginate(300);
+
+        $tintas = Tinta::where('modelo', 'LIKE', "%{$request->search}%")
+                            ->paginate(300);
+
+        return view('tonner.indexTonner', ['tonners' => $tonners, 'filters' => $filters, 'cilindros' => $cilindros, 'tintas' => $tintas]);
     }
 
     public function cadastro()

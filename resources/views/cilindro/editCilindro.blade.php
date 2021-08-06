@@ -7,7 +7,7 @@
 
 <div id="events-create-container" class="col-md-10 offset-md-1">
     <br>
-    <a href="/indexCilindro" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="arrow-back-outline"></ion-icon> Voltar</a>
+    <a href="/indexTonner" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="arrow-back-outline"></ion-icon> Voltar</a>
     <h1>Edite o Cilindro</h1>
         <hr>
     @if ($errors->any())
@@ -34,7 +34,7 @@
         </div>
         <br>
         <input type="submit" class="btn btn-success" value="Editar Cilindro">
-        <a href="/indexCilindro" class="btn btn-danger">Cancelar</a>
+        <a href="/indexTonner" class="btn btn-danger">Cancelar</a>
     </form>
 </div>
 

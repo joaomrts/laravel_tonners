@@ -11,23 +11,6 @@ use PDF;
 class TintaController extends Controller
 {
 
-    public function indexTinta()
-    {
-        $tintas = Tinta::all();
-
-        return view('tinta.indexTinta', ['tintas' => $tintas]);
-    }
-
-    public function searchTinta(Request $request)
-    {
-        $filters = $request->except('_token');
-
-        $tintas = Tinta::where('modelo', 'LIKE', "%{$request->search}%")
-                            ->paginate(300);
-
-        return view('tinta.indexTinta', ['tintas' => $tintas, 'filters' => $filters]);
-    }
-
     public function cadastroTinta()
     {
         return view('tinta.cadastroTinta');
@@ -44,13 +27,13 @@ class TintaController extends Controller
         $user = auth()->user();
 
         $tinta->save();
-        return redirect('/indexTinta')->with('msg', 'Tinta cadastrada com sucesso');
+        return redirect('/indexTonner')->with('msg', 'Tinta cadastrada com sucesso');
     }
 
     public function deleteTinta($id)
     {
         Tinta::findOrFail($id)->delete();
-        return redirect('/indexTinta')->with('msg', 'Tinta excluída com sucesso');
+        return redirect('/indexTonner')->with('msg', 'Tinta excluída com sucesso');
     }
 
     public function editTinta($id){
@@ -68,7 +51,7 @@ class TintaController extends Controller
 
         Tinta::findOrFail($request->id)->update($data);
 
-        return redirect('/indexTinta')->with('msg', 'Tinta editada com sucesso!');
+        return redirect('/indexTonner')->with('msg', 'Tinta editada com sucesso!');
     }
 
     public function exportTintaPDF() {

@@ -36,22 +36,18 @@ Route::get('/edit/{id}', [TonnerController::class, 'edit'])->middleware('auth');
 Route::put('/edit/update/{id}', [TonnerController::class, 'update'])->middleware('auth');
 
 
-Route::any('/indexTinta', [TintaController::class,'searchTinta']);
 Route::get('/showTinta', [TintaController::class, 'showTinta'])->middleware('auth');
 Route::get('tinta/create-pdf', [TintaController::class, 'exportTintaPDF'])->middleware('auth');
 Route::get('/cadastroTinta', [TintaController::class, 'cadastroTinta'])->middleware('auth');
-Route::get('/indexTinta', [TintaController::class, 'indexTinta'])->middleware('auth');
 Route::post('cadastroTinta/salvar', [TintaController::class, 'storeTinta'])->middleware('auth');
 Route::delete('/deleteTinta/{id}', [TintaController::class, 'deleteTinta'])->middleware('auth');
 Route::get('/editTinta/{id}', [TintaController::class, 'editTinta'])->middleware('auth');
 Route::put('/editTinta/update/{id}', [TintaController::class, 'updateTinta'])->middleware('auth');
 
 
-Route::any('/indexCilindro', [CilindroController::class,'searchCilindro']);
 Route::get('/showCilindro', [CilindroController::class, 'showCilindro'])->middleware('auth');
 Route::get('cilindro/create-pdf', [CilindroController::class, 'exportCilindroPDF'])->middleware('auth');
 Route::get('/cadastroCilindro', [CilindroController::class, 'cadastroCilindro'])->middleware('auth');
-Route::get('/indexCilindro', [CilindroController::class, 'indexCilindro'])->middleware('auth');
 Route::post('cadastroCilindro/salvar', [CilindroController::class, 'storeCilindro'])->middleware('auth');
 Route::delete('/deleteCilindro/{id}', [CilindroController::class, 'deleteCilindro'])->middleware('auth');
 Route::get('/editCilindro/{id}', [CilindroController::class, 'editCilindro'])->middleware('auth');

@@ -166,6 +166,28 @@ header{
     margin-left: -300px;
 }
 
+#search-suprimentos-container {
+    background-image: url("../public/suprimentos.jpg");
+    background-size:cover;
+    background-position: center;
+    height: 350px;
+    padding: 80px;
+    text-align: center;
+}
+
+#search-suprimentos-container h1{
+    color: rgb(245, 245, 245);
+    margin-bottom: 30px;
+    text-shadow: 2px 2px black ;
+    font-weight: 900;
+}
+
+#search-suprimentos-container form{
+    width: 50%;
+    margin: 0 auto;
+    font-style:italic;
+}
+
 /* Events list*/
 
 #events-container img{
@@ -424,7 +446,7 @@ padding: 5px;
 .dashboard-events-container h1{
     font-size: 40px;
     font-weight: bold;
-    text-align: right;
+    text-align: center;
     color: #000000
 }
 

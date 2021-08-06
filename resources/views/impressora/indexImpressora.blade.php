@@ -18,9 +18,7 @@
         <br>
 <table class="table table-striped table table-bordered">
     <div class="dashboard-tinta-container">
-        <a href="/indexCilindro" id="show" style="margin-left: 5px" class="btn btn-dark"><ion-icon name="film-outline"></ion-icon> Cilindros</a></h5>
-        <a href="/indexTinta" id="show" style="margin-left: 5px" class="btn btn-dark"><ion-icon name="color-palette-outline"></ion-icon> Tintas</a></h5>
-        <a href="/indexTonner"  style="margin-left: 300px" class="btn btn-dark"><ion-icon name="repeat-outline"></ion-icon> Tonners</a>
+        <a href="/indexTonner" class="btn btn-dark"><ion-icon name="color-filter-outline"></ion-icon> Supimentos</a>
     </div>
     <a href="/" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="home-outline"></ion-icon> Início</a></h5>
     <h1> Minas Gerais
