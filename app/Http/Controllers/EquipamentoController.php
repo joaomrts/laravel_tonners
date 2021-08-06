@@ -23,7 +23,7 @@ class EquipamentoController extends Controller
         $equipamentos = Equipamento::where('numeroIp', 'LIKE', "%{$request->search}%")
                             ->orWhere('setor', 'LIKE', "%{$request->search}%")
                             ->orWhere('equipamento', 'LIKE', "%{$request->search}%")
-                            ->paginate(20);
+                            ->paginate(30);
 
         return view('equipamento.indexEquipamento', ['equipamentos' => $equipamentos, 'filters' => $filters]);
     }
@@ -55,7 +55,6 @@ class EquipamentoController extends Controller
 
     public function editEquipamento ($id){
 
-
         $equipamento  = Equipamento::findOrFail($id);
 
         return view('equipamento.editEquipamento',['equipamento' => $equipamento ]);
@@ -71,7 +70,6 @@ class EquipamentoController extends Controller
     }
 
     public function exportEquipamentoPDF() {
-
 
         $equipamentos = Equipamento::all();
 
