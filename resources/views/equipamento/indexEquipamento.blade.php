@@ -9,7 +9,7 @@
     @if(count($equipamentos)>0)
     <div id="search-container-equipamento" class="col-sm-12 col-md-12">
         <h1>EQUIPAMENTOS</h1>
-        <form action="/indexEquipamento" method="POST">
+        <form action="/" method="POST">
             @csrf
             <input type="text" id="search" name="search" class="form-control" placeholder="Procurar...">
         </form>
