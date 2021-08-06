@@ -112,7 +112,7 @@ header{
     background-image: url("../public/impressoras.jpg");
     background-size:cover;
     background-position: center;
-    height: 350px;
+    height: 250px;
     padding: 80px;
     text-align: center;
 }
@@ -134,7 +134,7 @@ header{
     background-image: url("../public/equipamentos.jpg");
     background-size:cover;
     background-position: center;
-    height: 350px;
+    height: 250px;
     padding: 80px;
     text-align: center;
 }
@@ -170,7 +170,7 @@ header{
     background-image: url("../public/suprimentos.jpg");
     background-size:cover;
     background-position: center;
-    height: 350px;
+    height: 250px;
     padding: 80px;
     text-align: center;
 }
