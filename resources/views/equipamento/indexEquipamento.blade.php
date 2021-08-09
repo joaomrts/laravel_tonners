@@ -9,7 +9,7 @@
     @if(count($equipamentos)>0)
     <div id="search-container-equipamento" class="col-sm-12 col-md-12">
         <h1>EQUIPAMENTOS</h1>
-        <form action="/" method="POST">
+        <form action="/search" method="POST">
             @csrf
             <input type="text" id="search" name="search" class="form-control" placeholder="Procurar...">
         </form>
@@ -58,7 +58,7 @@
         </tbody>
     </table>
     <div class="d-flex justify-content-center">
-        {{ $equipamentos->links() }}
+        {{ $equipamentos->appends($filters)->links() }}
     </div>
     @elseif (count($equipamentos) == 0 && $filters)
     <div class="col-sm-10 col-md-10 offset-md-1">

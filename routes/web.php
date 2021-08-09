@@ -85,7 +85,7 @@ Route::get('/editImpressorasMendesJr/{id}', [ImpressorasMendesJrController::clas
 Route::put('/editImpressorasMendesJr/update/{id}', [ImpressorasMendesJrController::class, 'updateImpressorasMendesJr'])->middleware('auth');
 
 
-Route::any('/', [EquipamentoController::class,'searchEquipamento']);
+Route::any('/search', [EquipamentoController::class,'searchEquipamento']);
 Route::get('/showEquipamento', [EquipamentoController::class, 'showEquipamento'])->middleware('auth');
 Route::get('equipamento/create-pdf', [EquipamentoController::class, 'exportEquipamentoPDF'])->middleware('auth');
 Route::get('/cadastroEquipamento', [EquipamentoController::class, 'cadastroEquipamento'])->middleware('auth');
