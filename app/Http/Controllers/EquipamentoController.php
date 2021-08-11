@@ -11,7 +11,9 @@ class EquipamentoController extends Controller
 {
     public function indexEquipamento()
     {
-        $equipamentos = Equipamento::paginate(25);
+        $equipamentos = Equipamento::select('equipamento.*')
+                        ->orderBy('numeroIp')
+                        ->paginate(25);
 
         return view('equipamento.indexEquipamento', ['equipamentos' => $equipamentos]);
     }
@@ -23,7 +25,8 @@ class EquipamentoController extends Controller
         $equipamentos = Equipamento::where('numeroIp', 'LIKE', "%{$request->search}%")
                             ->orWhere('setor', 'LIKE', "%{$request->search}%")
                             ->orWhere('equipamento', 'LIKE', "%{$request->search}%")
-                            ->paginate(20);
+                            ->orderBy('numeroIp')
+                            ->paginate(25);
 
         return view('equipamento.indexEquipamento', ['equipamentos' => $equipamentos, 'filters' => $filters]);
     }
