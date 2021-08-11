@@ -27,17 +27,17 @@ class ImpressoraController extends Controller
         $impressoras = Impressora::where('modelo', 'LIKE', "%{$request->search}%")
                             ->orWhere('tonner', 'LIKE', "%{$request->search}%")
                             ->orWhere('setor', 'LIKE', "%{$request->search}%")
-                            ->paginate(300);
+                            ->paginate(40);
 
         $impressorasXavantess = ImpressorasXavantes::where('modelo', 'LIKE', "%{$request->search}%")
                             ->orWhere('tonner', 'LIKE', "%{$request->search}%")
                             ->orWhere('setor', 'LIKE', "%{$request->search}%")
-                            ->paginate(300);
+                            ->paginate();
 
         $impressorasMendesJrs = ImpressorasMendesJr::where('modelo', 'LIKE', "%{$request->search}%")
                             ->orWhere('tonner', 'LIKE', "%{$request->search}%")
                             ->orWhere('setor', 'LIKE', "%{$request->search}%")
-                            ->paginate(300);
+                            ->paginate();
 
         return view('impressora.indexImpressora', ['impressoras' => $impressoras, 'filters' => $filters, 'impressorasXavantess' => $impressorasXavantess, 'impressorasMendesJrs' => $impressorasMendesJrs]);
     }
