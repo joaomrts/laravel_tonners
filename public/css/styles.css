@@ -39,7 +39,7 @@ header{
     width: 100%;
     margin-bottom: 0;
     text-align: center;
-    padding: 0px;
+    padding: 10px;
 }
 
 #produto-container .already-joined-msg {
@@ -119,7 +119,7 @@ header{
 
 #search-container h1{
     color: rgb(245, 245, 245);
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     text-shadow: 2px 2px black ;
     font-weight: 900;
 }
@@ -141,7 +141,7 @@ header{
 
 #search-container-equipamento h1{
     color: rgb(245, 245, 245);
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     text-shadow: 2px 2px black ;
     font-weight: 900;
 }
@@ -149,7 +149,6 @@ header{
 #search-container-equipamento form{
     width: 50%;
     margin: 0 auto;
-    font-style:italic;
 }
 
 #search-container-tonner h1{
@@ -177,7 +176,7 @@ header{
 
 #search-suprimentos-container h1{
     color: rgb(245, 245, 245);
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     text-shadow: 2px 2px black ;
     font-weight: 900;
 }
