@@ -27,13 +27,13 @@ class CilindroController extends Controller
         $user = auth()->user();
 
         $cilindro->save();
-        return redirect('/indexTonner')->with('msg', 'Cilindro cadastrado com sucesso');
+        return redirect('/Suprimentos')->with('msg', 'Cilindro cadastrado com sucesso');
     }
 
     public function deleteCilindro($id)
     {
         Cilindro::findOrFail($id)->delete();
-        return redirect('/indexTonner')->with('msg', 'Cilindro excluído com sucesso');
+        return redirect('/Suprimentos')->with('msg', 'Cilindro excluído com sucesso');
     }
 
     public function editCilindro ($id){
@@ -50,7 +50,7 @@ class CilindroController extends Controller
 
         Cilindro::findOrFail($request->id)->update($data);
 
-        return redirect('/indexTonner')->with('msg', 'Cilindro editado com sucesso!');
+        return redirect('/Suprimentos')->with('msg', 'Cilindro editado com sucesso!');
     }
 
     public function exportCilindroPDF() {
