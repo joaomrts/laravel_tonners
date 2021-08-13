@@ -196,17 +196,18 @@ header{
     text-align: center;
 }
 
+#search-container-office form{
+    width: 50%;
+    margin: 0 auto;
+    font-style:italic;
+}
+
+
 #search-container-office h1{
     color: rgb(255, 255, 255);
     margin-bottom: 10px;
     text-shadow: 2px 3px 2px black;
     font-weight: 900;
-}
-
-#search-container-office form{
-    width: 50%;
-    margin: 0 auto;
-    font-style:italic;
 }
 
 /* Events list*/
