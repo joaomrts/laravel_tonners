@@ -142,7 +142,7 @@ header{
 #search-container-equipamento h1{
     color: rgb(245, 245, 245);
     margin-bottom: 10px;
-    text-shadow: 2px 2px black ;
+    text-shadow: 2px 3px 2px black ;
     font-weight: 900;
 }
 
@@ -154,7 +154,7 @@ header{
 #search-container-tonner h1{
     color: rgb(245, 245, 245);
     margin-bottom: 30px;
-    text-shadow: 2px 2px black ;
+    text-shadow: 2px 3px 2px black ;
     font-weight: 900;
 }
 
@@ -177,11 +177,33 @@ header{
 #search-suprimentos-container h1{
     color: rgb(245, 245, 245);
     margin-bottom: 10px;
-    text-shadow: 2px 2px black ;
+    text-shadow: 2px 3px 2px black ;
     font-weight: 900;
 }
 
 #search-suprimentos-container form{
+    width: 50%;
+    margin: 0 auto;
+    font-style:italic;
+}
+
+#search-container-office {
+    background-image: url("../public/office.png");
+    background-size:cover;
+    background-position: center;
+    height: 250px;
+    padding: 80px;
+    text-align: center;
+}
+
+#search-container-office h1{
+    color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+    text-shadow: 2px 3px 2px black;
+    font-weight: 900;
+}
+
+#search-container-office form{
     width: 50%;
     margin: 0 auto;
     font-style:italic;

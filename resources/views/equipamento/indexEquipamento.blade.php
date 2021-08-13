@@ -18,6 +18,7 @@
         <br>
     <table class="table table-striped table table-bordered">
         <div class="dashboard-tinta-container">
+            <a href="/Office"  style="margin-right: 5px" class="btn btn-dark"><ion-icon name="logo-windows"></ion-icon> Office</a>
             <a href="/Suprimentos"  style="margin-right: 5px" class="btn btn-dark"><ion-icon name="color-filter-outline"></ion-icon> Suprimentos</a>
             <a href="/Impressoras" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="print-outline"></ion-icon> Impressoras</a></h5>
         <br>
@@ -64,7 +65,7 @@
     <div class="col-sm-10 col-md-10 offset-md-1">
         <h5><br>Não foi possível retornar resultados com sua busca para Equipamentos
         <hr>
-        <a href="/indexEquipamento" style="margin-right: 5px" class="btn btn-success">Ver todos os Equipamentos</a>
+        <a href="/" style="margin-right: 5px" class="btn btn-success">Ver todos os Equipamentos</a>
         <a href="/cadastroEquipamento" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Equipamento</a></h5>
     </div>
     @elseif (count($equipamentos)== 0)

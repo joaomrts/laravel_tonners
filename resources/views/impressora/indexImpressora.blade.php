@@ -19,6 +19,7 @@
 <table class="table table-striped table table-bordered">
     <div class="dashboard-tinta-container">
         <a href="/Suprimentos" class="btn btn-dark"><ion-icon name="color-filter-outline"></ion-icon> Suprimentos</a>
+        <a href="/Office" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="logo-windows"></ion-icon> Office</a>
     </div>
     <a href="/" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="home-outline"></ion-icon> Início</a></h5>
     <h1> Minas Gerais

@@ -8,21 +8,12 @@ use App\Http\Controllers\ImpressoraController;
 use App\Http\Controllers\ImpressorasXavantesController;
 use App\Http\Controllers\ImpressorasMendesJrController;
 use App\Http\Controllers\EquipamentoController;
+use App\Http\Controllers\OfficeController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
 if(version_compare(PHP_VERSION, '7.2.0', '>=')) {
     error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 }
-
 
 
 Route::any('/Suprimentos', [TonnerController::class,'searchTonner']);
@@ -95,6 +86,13 @@ Route::delete('/deleteEquipamento/{id}', [EquipamentoController::class, 'deleteE
 Route::get('/editEquipamento/{id}', [EquipamentoController::class, 'editEquipamento'])->middleware('auth');
 Route::put('/editEquipamento/update/{id}', [EquipamentoController::class, 'updateEquipamento'])->middleware('auth');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+
+Route::any('/Office', [OfficeController::class,'searchOffice']);
+Route::get('/showOffice', [OfficeController::class, 'showOffice'])->middleware('auth');
+Route::get('office/create-pdf', [OfficeController::class, 'exportOfficePDF'])->middleware('auth');
+Route::get('/cadastroOffice', [OfficeController::class, 'cadastroOffice'])->middleware('auth');
+Route::get('/Office', [OfficeController::class, 'indexOffice'])->middleware('auth')->middleware('auth');
+Route::post('cadastroOffice/salvar', [OfficeController::class, 'storeOffice'])->middleware('auth');
+Route::delete('/deleteOffice/{id}', [OfficeController::class, 'deleteOffice'])->middleware('auth');
+Route::get('/editOffice/{id}', [OfficeController::class, 'editOffice'])->middleware('auth');
+Route::put('/editOffice/update/{id}', [OfficeController::class, 'updateOffice'])->middleware('auth');
