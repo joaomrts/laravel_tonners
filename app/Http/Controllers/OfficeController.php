@@ -23,7 +23,7 @@ class OfficeController extends Controller
     {
         $filters = $request->except('_token');
 
-        $Offices = Office::where('usuario', 'LIKE', "%{$request->search}%")
+        $offices = Office::where('usuario', 'LIKE', "%{$request->search}%")
                             ->orWhere('setor', 'LIKE', "%{$request->search}%")
                             ->orWhere('versao', 'LIKE', "%{$request->search}%")
                             ->orWhere('conta', 'LIKE', "%{$request->search}%")

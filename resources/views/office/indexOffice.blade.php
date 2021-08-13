@@ -9,7 +9,7 @@
     @if(count($offices)>0)
     <div id="search-container-office" class="col-sm-12 col-md-12">
         <h1>SUÍTES DE ESCRITÓRIO</h1>
-        <form action="/searchOffice" method="POST">
+        <form action="/Office" method="POST">
             @csrf
             <input type="text" id="search" name="search" class="form-control" placeholder="Procurar...">
         </form>
