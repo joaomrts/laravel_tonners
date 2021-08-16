@@ -15,9 +15,15 @@ class TonnerController extends Controller
     public function indexTonner()
     {
 
-        $tonners = Tonner::all();
-        $tintas = Tinta::all();
-        $cilindros = Cilindro::all();
+        $tonners = Tonner::select('tonner.*')
+                    ->orderBy('modelo')
+                    ->paginate(50);
+        $tintas = Tinta::select('tinta.*')
+                    ->orderBy('modelo')
+                    ->paginate(50);
+        $cilindros = Cilindro::select('cilindro.*')
+                    ->orderBy('modelo')
+                    ->paginate(50);
 
         return view('tonner.indexTonner', ['tonners' => $tonners, 'tintas' => $tintas, 'cilindros' => $cilindros]);
 
@@ -27,14 +33,18 @@ class TonnerController extends Controller
     {
         $filters = $request->except('_token');
 
-        $tonners = Tonner::where('modelo', 'LIKE', "%{$request->search}%");
+        $tonners = Tonner::where('modelo', 'LIKE', "%{$request->search}%")
+                    ->orderBy('modelo')
+                    ->paginate(50);
+
+        $cilindros = Cilindro::where('modelo', 'LIKE', "%{$request->search}%")
+                    ->orderBy('modelo')
+                    ->paginate(50);
 
 
-        $cilindros = Cilindro::where('modelo', 'LIKE', "%{$request->search}%");
-
-
-        $tintas = Tinta::where('modelo', 'LIKE', "%{$request->search}%");
-
+        $tintas = Tinta::where('modelo', 'LIKE', "%{$request->search}%")
+                    ->orderBy('modelo')
+                    ->paginate(50);
 
         return view('tonner.indexTonner', ['tonners' => $tonners, 'filters' => $filters, 'cilindros' => $cilindros, 'tintas' => $tintas]);
     }

@@ -13,9 +13,17 @@ class ImpressoraController extends Controller
 {
     public function indexImpressora()
     {
-        $impressoras = Impressora::all();
-        $impressorasXavantess = ImpressorasXavantes::all();
-        $impressorasMendesJrs = ImpressorasMendesJr::all();
+        $impressoras = Impressora::select('impressora.*')
+                                ->orderBy('setor')
+                                ->paginate(50);
+
+        $impressorasXavantess = ImpressorasXavantes::select('impressorasXavantes.*')
+                                ->orderBy('setor')
+                                ->paginate(50);
+
+        $impressorasMendesJrs = ImpressorasMendesJr::select('impressorasMendesJr.*')
+                                ->orderBy('setor')
+                                ->paginate(50);
 
         return view('impressora.indexImpressora', ['impressoras' => $impressoras, 'impressorasXavantess' => $impressorasXavantess, 'impressorasMendesJrs' => $impressorasMendesJrs]);
     }
@@ -27,17 +35,20 @@ class ImpressoraController extends Controller
         $impressoras = Impressora::where('modelo', 'LIKE', "%{$request->search}%")
                             ->orWhere('tonner', 'LIKE', "%{$request->search}%")
                             ->orWhere('setor', 'LIKE', "%{$request->search}%")
-                            ->paginate(40);
+                            ->orderBy('setor')
+                            ->paginate(50);
 
         $impressorasXavantess = ImpressorasXavantes::where('modelo', 'LIKE', "%{$request->search}%")
                             ->orWhere('tonner', 'LIKE', "%{$request->search}%")
                             ->orWhere('setor', 'LIKE', "%{$request->search}%")
-                            ->paginate();
+                            ->orderBy('setor')
+                            ->paginate(50);
 
         $impressorasMendesJrs = ImpressorasMendesJr::where('modelo', 'LIKE', "%{$request->search}%")
                             ->orWhere('tonner', 'LIKE', "%{$request->search}%")
                             ->orWhere('setor', 'LIKE', "%{$request->search}%")
-                            ->paginate();
+                            ->orderBy('setor')
+                            ->paginate(50);
 
         return view('impressora.indexImpressora', ['impressoras' => $impressoras, 'filters' => $filters, 'impressorasXavantess' => $impressorasXavantess, 'impressorasMendesJrs' => $impressorasMendesJrs]);
     }

@@ -32,7 +32,7 @@
                     <h1>Controle de T.I.</h1>
                     <ul class="navbar-nav">
                         @auth
-
+                        <h1>Olá</h1>
                          <li class="nav-form">
                             <form action="/logout" method="POST">
                             @csrf

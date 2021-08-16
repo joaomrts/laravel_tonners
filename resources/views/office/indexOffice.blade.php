@@ -18,10 +18,10 @@
         <br>
     <table class="table table-striped table table-bordered">
         <div class="dashboard-tinta-container">
-            <a href="/Suprimentos"  style="margin-right: 5px" class="btn btn-dark"><ion-icon name="color-filter-outline"></ion-icon> Suprimentos</a>
+            <a href="/Suprimentos" class="btn btn-dark"><ion-icon name="color-filter-outline"></ion-icon> Suprimentos</a>
             <a href="/Impressoras" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="print-outline"></ion-icon> Impressoras</a></h5>
         </div>
-        <a href="/" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="home-outline"></ion-icon> Início</a></h5>
+        <a href="/" id="show" class="btn btn-dark"><ion-icon name="home-outline"></ion-icon> Início</a></h5>
         <h1> Office
             <hr>
             <a href="/cadastroOffice" id="cadastro" style="margin-bottom: 18px" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Office</a></h5>
