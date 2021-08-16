@@ -61,54 +61,7 @@ header{
     width: 275px;
 }
 
-/* navbar */
 
-#navbar {
-    display: flex;
-    background-color: #ad8aff;
-}
-
-#navbar img{
-    width: 70px;
-    display: flex;
-    position:absolute;
-		margin-left:15px;
-		margin-top:-35px;
-}
-
-#navbar img:hover{
-    width: 70px;
-}
-
-#navbar{
-    justify-content: space-between;
-    background-color:#33383f;
-    padding: 15px 0;
-    display: flex;
-}
-
-#navbar h1 {
-    color: #ffffff;
-    font-size: 25px;
-}
-
-#navbar li {
-    font-size: 15px;
-    color: #ffffff;
-    display: flex;
-    margin-right: 20px;
-}
-
-#navbar a {
-    font-size: 20px;
-    color: #ffffff;
-    display: flex;
-    margin-right: 25px;
-}
-
-#navbar a:hover{
-    color: #ff0000;
-}
 
 /* Login */
 
@@ -138,7 +91,7 @@ header{
 
 #guest li {
     font-size: 15px;
-    color: #000000;
+    color: #ffffff;
     display: flex;
     margin-right: 20px;
 }
@@ -419,16 +372,6 @@ padding: 5px;
     display: flex;
 }
 
-#produto-container h3{
-    margin: 15px;
-    font-size: 15px;
-    color: #000000;
-    background-color: #ffefb9;
-    border: 1px solid #ffcd44;
-    padding: 10px;
-    width: 275px;
-}
-
 #produto-container a{
     margin: 3%;
     font-size: 20px;
@@ -449,12 +392,6 @@ padding: 5px;
 #description-container h3 {
     font-size: 20px;
     font-weight: bold;
-}
-
-#info-container ion-icon{
-    font-size: 20px;
-    color: #F2A340;
-    margin-right: 5px ;
 }
 
 #info-container #event-submit{
