@@ -31,21 +31,7 @@
                     </a>
                     <h1>Controle de T.I.</h1>
                     <ul class="navbar-nav">
-                        @auth
-                        <li><ion-icon name="person-circle-outline" style="margin-right: 5px"></ion-icon>Olá {{ Auth::user()->name }}</li>
-                         <li class="nav-form">
-                            <form action="/logout" method="POST">
-                            @csrf
-                            <a href="/logout"
-                            class="nav-link"
-                            id="form-logout"
-                            onclick="event.preventDefault();
-                            this.closest('form').submit();">
-                            Sair
-                            </a>
-                            </form>
-                         </li>
-                        @endauth
+
                     </ul>
                 </div>
             </nav>
