@@ -17,11 +17,11 @@ class ImpressoraController extends Controller
                                 ->orderBy('setor')
                                 ->paginate(50);
 
-        $impressorasXavantess = ImpressorasXavantes::select('impressorasXavantes.*')
+        $impressorasXavantess = ImpressorasXavantes::select('impressorasxavantes.*')
                                 ->orderBy('setor')
                                 ->paginate(50);
 
-        $impressorasMendesJrs = ImpressorasMendesJr::select('impressorasMendesJr.*')
+        $impressorasMendesJrs = ImpressorasMendesJr::select('impressorasmendesjr.*')
                                 ->orderBy('setor')
                                 ->paginate(50);
 
