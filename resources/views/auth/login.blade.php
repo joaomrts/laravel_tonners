@@ -38,23 +38,9 @@
                 </div>
             </nav>
         </header>
-        <main>
-            <div class="container-fluid">
-                <div class="row">
-                    @if (session('msg'))
-                    <p class="msg">{{ session('msg') }}</p></p>
-                    @endif
-                    @yield('content')
-                </div>
-            </div>
-        </main>
-        <footer>
-            <p>Souza e Cambos Confecções &copy; 2021</p>
-        </footer>
         <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     </body>
 </html>
-
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
