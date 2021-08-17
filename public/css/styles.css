@@ -80,6 +80,12 @@ header{
     width: 70px;
 }
 
+#navbar{
+    justify-content: space-between;
+    background-color:#33383f;
+    padding: 20px 0;
+    display: flex;
+}
 
 #navbar h1 {
     color: #ffffff;
@@ -92,6 +98,14 @@ header{
     font-size: 15px;
 }
 
+#navbar a {
+    font-size: 18px;
+    color: #000000;
+}
+
+#navbar a:hover{
+    color: #ff0000;
+}
 
 /* Login */
 
