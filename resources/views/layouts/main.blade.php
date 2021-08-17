@@ -50,7 +50,7 @@
                                     id="form-logout"
                                     onclick="event.preventDefault();
                                     this.closest('form').submit();">
-                                    Sair do sistema
+                                    Sair do Sistema
                                     </a>
                                     </form>
                                  </li>

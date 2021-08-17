@@ -77,17 +77,21 @@ class OfficeController extends Controller
 
     public function exportOfficePDF() {
 
-        $offices = Office::all();
+        $offices = Office::select('office.*')
+                    ->orderBy('setor')
+                    ->paginate(200);
 
         view()->share('offices', $offices,);
         $pdf_doc = PDF::loadView('layouts.export_office_pdf', $offices);
 
-        return $pdf_doc->download('pdf.pdf');
+        return $pdf_doc->download('Office.pdf');
     }
 
     public function showOffice()
     {
-        $offices = Office::all();
+        $offices = Office::select('office.*')
+                    ->orderBy('setor')
+                    ->paginate(200);
 
         return view('office.showOffice', ['offices' => $offices]);
     }

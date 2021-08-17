@@ -74,17 +74,21 @@ class EquipamentoController extends Controller
 
     public function exportEquipamentoPDF() {
 
-        $equipamentos = Equipamento::all();
+        $equipamentos = Equipamento::select('equipamento.*')
+                        ->orderBy('numeroIp')
+                        ->paginate(255);
 
         view()->share('equipamentos', $equipamentos,);
         $pdf_doc = PDF::loadView('layouts.export_equipamento_pdf', $equipamentos);
 
-        return $pdf_doc->download('pdf.pdf');
+        return $pdf_doc->download('Equipamentos.pdf');
     }
 
     public function showEquipamento()
     {
-        $equipamentos = Equipamento::all();
+        $equipamentos = Equipamento::select('equipamento.*')
+                        ->orderBy('numeroIp')
+                        ->paginate(255);
 
         return view('equipamento.showEquipamento', ['equipamentos' => $equipamentos]);
     }

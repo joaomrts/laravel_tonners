@@ -56,17 +56,21 @@ class CilindroController extends Controller
     public function exportCilindroPDF() {
 
 
-        $cilindros = Cilindro::all();
+        $cilindros = Cilindro::select('cilindro.*')
+                        ->orderBy('modelo')
+                        ->paginate(20);
 
         view()->share('cilindros', $cilindros,);
         $pdf_doc = PDF::loadView('layouts.export_cilindro_pdf', $cilindros);
 
-        return $pdf_doc->download('pdf.pdf');
+        return $pdf_doc->download('Cilindro.pdf');
     }
 
     public function showCilindro()
     {
-        $cilindros = Cilindro::all();
+        $cilindros = Cilindro::select('cilindro.*')
+                        ->orderBy('modelo')
+                        ->paginate(20);
 
         return view('cilindro.showCilindro', ['cilindros' => $cilindros]);
 

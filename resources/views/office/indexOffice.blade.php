@@ -65,7 +65,7 @@
     </div>
     @elseif (count($offices) == 0 && $filters)
     <div class="col-sm-10 col-md-10 offset-md-1">
-        <h5><br>Não foi possível retornar resultados com sua busca
+        <h5><br>Não foi possível retornar resultados com sua busca.
         <hr>
         <a href="/Office" style="margin-right: 5px" class="btn btn-success">Ver todos os Offices</a>
         <a href="/cadastroOffice" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Office</a></h5>

@@ -59,17 +59,21 @@ class ImpressorasMendesJrController extends Controller
 
     public function exportImpressorasMendesJrPDF() {
 
-        $impressorasMendesJrs = ImpressorasMendesJr::all();
+        $impressorasMendesJrs = ImpressorasMendesJr::select('impressorasmendesjr.*')
+                                ->orderBy('setor')
+                                ->paginate(20);
 
         view()->share('impressorasMendesJrs', $impressorasMendesJrs,);
         $pdf_doc = PDF::loadView('layouts.export_impressorasMendesJr_pdf', $impressorasMendesJrs);
 
-        return $pdf_doc->download('pdf.pdf');
+        return $pdf_doc->download('ImpressorasMendesJr.pdf');
     }
 
     public function showImpressorasMendesJr()
     {
-        $impressorasMendesJrs = ImpressorasMendesJr::all();
+        $impressorasMendesJrs = ImpressorasMendesJr::select('impressorasmendesjr.*')
+                                ->orderBy('setor')
+                                ->paginate(20);
 
         return view('impressorasMendesJr.showImpressorasMendesJr', ['impressorasMendesJrs' => $impressorasMendesJrs]);
     }

@@ -58,17 +58,21 @@ class TintaController extends Controller
 
         $user = auth()->user();
 
-        $tintas = Tinta::all();
+        $tintas = Tinta::select('tinta.*')
+                    ->orderBy('modelo')
+                    ->paginate(20);
 
         view()->share('tintas', $tintas,);
         $pdf_doc = PDF::loadView('layouts.export_tinta_pdf', $tintas);
 
-        return $pdf_doc->download('pdf.pdf');
+        return $pdf_doc->download('Tinta.pdf');
     }
 
     public function showTinta()
     {
-        $tintas = Tinta::all();
+        $tintas = Tinta::select('tinta.*')
+                    ->orderBy('modelo')
+                    ->paginate(20);
 
         return view('tinta.showTinta', ['tintas' => $tintas]);
     }

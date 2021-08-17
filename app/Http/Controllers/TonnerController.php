@@ -96,17 +96,21 @@ class TonnerController extends Controller
 
         $user = auth()->user();
 
-        $tonners = Tonner::all();
+        $tonners = Tonner::select('tonner.*')
+                    ->orderBy('modelo')
+                    ->paginate(50);
 
         view()->share('tonners', $tonners,);
         $pdf_doc = PDF::loadView('layouts.export_tonner_pdf', $tonners);
 
-        return $pdf_doc->download('pdf.pdf');
+        return $pdf_doc->download('Tonner.pdf');
     }
 
     public function showTonner()
     {
-        $tonners = Tonner::all();
+        $tonners = Tonner::select('tonner.*')
+                    ->orderBy('modelo')
+                    ->paginate(50);
 
         return view('tonner.showTonner', ['tonners' => $tonners]);
     }

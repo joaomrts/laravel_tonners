@@ -98,17 +98,21 @@ class ImpressoraController extends Controller
     public function exportImpressoraPDF() {
 
 
-        $impressoras = Impressora::all();
+        $impressoras = Impressora::select('impressora.*')
+                        ->orderBy('setor')
+                        ->paginate(50);
 
         view()->share('impressoras', $impressoras,);
         $pdf_doc = PDF::loadView('layouts.export_impressora_pdf', $impressoras);
 
-        return $pdf_doc->download('pdf.pdf');
+        return $pdf_doc->download('ImpressorasMG.pdf');
     }
 
     public function showImpressora()
     {
-        $impressoras = Impressora::all();
+        $impressoras = Impressora::select('impressora.*')
+                        ->orderBy('setor')
+                        ->paginate(50);
 
         return view('impressora.showImpressora', ['impressoras' => $impressoras]);
 

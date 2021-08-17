@@ -61,17 +61,21 @@ class ImpressorasXavantesController extends Controller
     public function exportImpressorasXavantesPDF() {
 
 
-        $impressorasXavantess = ImpressorasXavantes::all();
+        $impressorasXavantess = ImpressorasXavantes::select('impressorasxavantes.*')
+                                ->orderBy('setor')
+                                ->paginate(20);
 
         view()->share('impressorasXavantess', $impressorasXavantess,);
         $pdf_doc = PDF::loadView('layouts.export_impressorasXavantes_pdf', $impressorasXavantess);
 
-        return $pdf_doc->download('pdf.pdf');
+        return $pdf_doc->download('ImpressorasXavantes.pdf');
     }
 
     public function showImpressorasXavantes()
     {
-        $impressorasXavantess = ImpressorasXavantes::all();
+        $impressorasXavantess = ImpressorasXavantes::select('impressorasxavantes.*')
+                                ->orderBy('setor')
+                                ->paginate(20);
 
         return view('impressorasXavantes.showImpressorasXavantes', ['impressorasXavantess' => $impressorasXavantess]);
 
