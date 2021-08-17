@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '05dd42081c2a8c8ac480245b69721e0b8aa500cf',
+        'reference' => '7a6415844bdae46664148524d3eaf379f64d764d',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -481,7 +481,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '05dd42081c2a8c8ac480245b69721e0b8aa500cf',
+            'reference' => '7a6415844bdae46664148524d3eaf379f64d764d',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -555,6 +555,15 @@
             'aliases' => array(),
             'reference' => 'de192292d68276d831e5fd9824c80c3b78a21ddf',
             'dev_requirement' => false,
+        ),
+        'lucascudo/laravel-pt-br-localization' => array(
+            'pretty_version' => 'v1.1.7',
+            'version' => '1.1.7.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../lucascudo/laravel-pt-br-localization',
+            'aliases' => array(),
+            'reference' => 'acfba096d25751384bf9f6082ae9060211a3552d',
+            'dev_requirement' => true,
         ),
         'mobiledetect/mobiledetectlib' => array(
             'pretty_version' => '2.8.37',

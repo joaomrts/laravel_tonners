@@ -2922,6 +2922,7 @@ return array(
     'Livewire\\WireDirective' => $vendorDir . '/livewire/livewire/src/WireDirective.php',
     'Livewire\\WithFileUploads' => $vendorDir . '/livewire/livewire/src/WithFileUploads.php',
     'Livewire\\WithPagination' => $vendorDir . '/livewire/livewire/src/WithPagination.php',
+    'Lucascudo\\LaravelPtBRLocalization\\LaravelPtBRLocalizationServiceProvider' => $vendorDir . '/lucascudo/laravel-pt-br-localization/src/LaravelPtBRLocalizationServiceProvider.php',
     'Mobile_Detect' => $vendorDir . '/mobiledetect/mobiledetectlib/Mobile_Detect.php',
     'Mockery' => $vendorDir . '/mockery/mockery/library/Mockery.php',
     'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => $vendorDir . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
