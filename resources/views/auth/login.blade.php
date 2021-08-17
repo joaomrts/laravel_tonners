@@ -29,7 +29,6 @@
                     <a href="/" class="navbar-brand">
                         <img src="/img/logo.png" alt="logo">
                     </a>
-                    <h1>Controle de T.I.</h1>
                     <ul class="navbar-nav">
                         @guest
                         <li><ion-icon name="person-circle-outline" style="margin-right: 5px"></ion-icon>Olá Visitante</li>
