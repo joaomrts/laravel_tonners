@@ -80,12 +80,6 @@ header{
     width: 70px;
 }
 
-#navbar{
-    justify-content: space-between;
-    background-color:#33383f;
-    padding: 20px 0;
-    display: flex;
-}
 
 #navbar h1 {
     color: #ffffff;
@@ -98,14 +92,6 @@ header{
     font-size: 15px;
 }
 
-#navbar a {
-    font-size: 18px;
-    color: #000000;
-}
-
-#navbar a:hover{
-    color: #ff0000;
-}
 
 /* Login */
 
@@ -138,17 +124,6 @@ header{
     color: #ffffff;
     display: flex;
     margin-right: 20px;
-}
-
-#guest a {
-    font-size: 20px;
-    color: #ffffff;
-    display: flex;
-    margin-right: 25px;
-}
-
-#guest a:hover{
-    color: #ff0000;
 }
 
 /* Search container */
