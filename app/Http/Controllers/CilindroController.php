@@ -55,7 +55,6 @@ class CilindroController extends Controller
 
     public function exportCilindroPDF() {
 
-
         $cilindros = Cilindro::select('cilindro.*')
                         ->orderBy('modelo')
                         ->paginate(20);

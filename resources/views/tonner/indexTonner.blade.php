@@ -7,7 +7,7 @@
 
     <div id="search-suprimentos-container" class="col-sm-12 col-md-12">
         <h1>SUPRIMENTOS</h1>
-        <form action="/indexTonner" method="POST">
+        <form action="/Suprimentos" method="POST">
             @csrf
             <input type="text" id="search" name="search" class="form-control" placeholder="Procurar...">
         </form>

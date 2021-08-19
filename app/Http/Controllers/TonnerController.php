@@ -41,7 +41,6 @@ class TonnerController extends Controller
                     ->orderBy('modelo')
                     ->paginate(50);
 
-
         $tintas = Tinta::where('modelo', 'LIKE', "%{$request->search}%")
                     ->orderBy('modelo')
                     ->paginate(50);
