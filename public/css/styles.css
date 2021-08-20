@@ -23,24 +23,118 @@ header{
 
 .btn-primary{
     background-color: #00aced;
-    border: 2px solid #0089bb;
+    border: 1px solid #0089bb;
 
 }
 
 .btn-primary:hover{
     background-color: #0094ca;
-    border-color: #00455e;
+    border-color: 1px solid #00455e;
 }
 
 .msg {
-    background-color: #D4EDDA;
+    background-color: #c7ebd0;
     color: #155724;
     border: 1px solid #AEE7BB;
     width: 100%;
     margin-bottom: 0;
     text-align: center;
-    padding: 10px;
+    padding: 5px;
 }
+
+
+
+.açoes-equipamento{
+    width: 60px;
+}
+
+.tabela-equipamentos-ip{
+    width: 50px;
+}
+
+.tabela-equipamentos-setor{
+    width: 210px;
+}
+
+.tabela-equipamentos-equipamento{
+    width: 210px;
+}
+
+
+
+
+.açoes-impressora{
+    width: 85px;
+}
+
+.tabela-impressora-modelo{
+    width: 400px;
+}
+
+.tabela-impressora-tonner{
+    width: 300px;
+}
+
+.tabela-impressora-setor{
+    width: 300px;
+}
+
+.açoes-impressora-sp{
+    width: 100px;
+}
+
+.tabela-impressora-modelo-sp{
+    width: 250px;
+}
+
+.tabela-impressora-tonner-sp{
+    width: 200px;
+}
+
+.tabela-impressora-setor-sp{
+    width: 200px;
+}
+
+
+.açoes-suprimento{
+    width: 100px;
+}
+
+.tabela-suprimento-modelo{
+    width: 400px;
+}
+
+.tabela-suprimento-qtde_impressora{
+    width: 400px;
+}
+
+.tabela-suprimento-estoque{
+    width: 250px;
+}
+
+
+
+
+.açoes-office{
+    width: 90px;
+}
+
+.tabela-office-usuario{
+    width: 200px;
+}
+
+.tabela-office-setor{
+    width: 200px;
+}
+
+.tabela-office-versao{
+    width: 200px;
+}
+
+.tabela-office-conta{
+    width: 350px;
+}
+
 
 #produto-container .already-joined-msg {
     margin: 15px;
@@ -63,10 +157,7 @@ header{
 
 /* navbar */
 
-#navbar {
-    display: flex;
-    background-color: #ad8aff;
-}
+
 
 #navbar img{
     width: 70px;
@@ -91,16 +182,6 @@ header{
     color: #ffffff;
     font-size: 25px;
     text-align: center;
-}
-
-#navbar button{
-    text-align: right;
-    font-size: 15px;
-}
-
-#navbar a {
-    font-size: 18px;
-    color: #000000;
 }
 
 #navbar a:hover{
@@ -154,7 +235,7 @@ header{
 #search-container h1{
     color: rgb(245, 245, 245);
     margin-bottom: 10px;
-    text-shadow: 2px 2px black ;
+    text-shadow: 2px 3px 2px black ;
     font-weight: 900;
 }
 

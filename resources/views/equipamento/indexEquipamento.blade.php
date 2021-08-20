@@ -16,7 +16,7 @@
     </div>
     <div class="col-md-10 col-sm-10 offset-md-1 dashboard-events-container">
         <br>
-    <table class="table table-striped table table-bordered">
+    <table class="table table-bordered">
         <div class="dashboard-tinta-container">
             <a href="/Office"  style="margin-right: 5px" class="btn btn-dark"><ion-icon name="logo-windows"></ion-icon> Office</a>
             <a href="/Suprimentos"  style="margin-right: 5px" class="btn btn-dark"><ion-icon name="color-filter-outline"></ion-icon> Suprimentos</a>
@@ -37,17 +37,17 @@
                 <th scope="col">Nr Ip</th>
                 <th scope="col">Setor</th>
                 <th scope="col">Equipamento</th>
-                <th scope="col">Ações</th>
+                <th class="açoes-equipamento" scope="col">Ações</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($equipamentos as $equipamento)
             <tr>
-                <td scropt="row">{{ $equipamento->numeroIp }}</td>
-                <td scropt="row">{{ $equipamento->setor }}</td>
-                <td scropt="row">{{ $equipamento->equipamento }}</td>
+                <td class="tabela-equipamentos-ip" style="background-color: {{ $equipamento->cor }}">{{ $equipamento->numeroIp }}</td>
+                <td class="tabela-equipamentos-setor" scropt="row">{{ $equipamento->setor }}</td>
+                <td class="tabela-equipamentos-equipamento" scropt="row">{{ $equipamento->equipamento }}</td>
                 <td>
-                <a href="/editEquipamento/{{ $equipamento->id }}" style="margin-left: 35px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
+                <a href="/editEquipamento/{{ $equipamento->id }}" style="margin-left: 10px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
                 <form action="/deleteEquipamento/{{ $equipamento->id }}" method="POST">
                 @csrf
                 @method('DELETE')

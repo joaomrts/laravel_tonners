@@ -35,17 +35,17 @@
                 <th scope="col" class="">Modelo</th>
                 <th scope="col">Impressoras Compatíveis</th>
                 <th scope="col">Estoque</th>
-                <th>Ações</th>
+                <th class="açoes-suprimento" scope="col">Ações</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($tonners as $tonner)
             <tr>
-                <td scropt="row">{{ $tonner->modelo }}</td>
-                <td scropt="row">{{ $tonner->qtde_impressora }}</td>
-                <td scropt="row">{{ $tonner->estoque }}</td>
+                <td class="tabela-suprimento-modelo" scropt="row">{{ $tonner->modelo }}</td>
+                <td class="tabela-suprimento-qtde_impressora" scropt="row">{{ $tonner->qtde_impressora }}</td>
+                <td class="tabela-suprimento-estoque" scropt="row" style="background-color: {{ $tonner->cor }}">{{ $tonner->estoque }}</td>
                 <td>
-                <a href="/edit/{{ $tonner->id }}" style="margin-left: 35px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
+                <a href="/edit/{{ $tonner->id }}" style="margin-left: 10px"class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
                 <form action="/{{ $tonner->id }}" method="POST">
                 @csrf
                 @method('DELETE')
@@ -93,17 +93,17 @@
                 <th scope="col">Modelo</th>
                 <th scope="col">Impressoras Compatíveis</th>
                 <th scope="col">Estoque</th>
-                <th scope="col">Ações</th>
+                <th class="açoes-suprimento" scope="col">Ações</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($tintas as $tinta)
             <tr>
-                <td scropt="row">{{ $tinta->modelo }}</td>
-                <td scropt="row">{{ $tinta->qtde_impressora }}</td>
-                <td scropt="row">{{ $tinta->estoque }}</td>
+                <td class="tabela-suprimento-modelo" scropt="row">{{ $tinta->modelo }}</td>
+                <td class="tabela-suprimento-qtde_impressora" scropt="row">{{ $tinta->qtde_impressora }}</td>
+                <td class="tabela-suprimento-estoque" scropt="row" style="background-color: {{ $tinta->cor }}">{{ $tinta->estoque }}</td>
                 <td>
-                <a href="/editTinta/{{ $tinta->id }}"style="margin-left: 35px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
+                <a href="/editTinta/{{ $tinta->id }}"style="margin-left: 10px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
                 <form action="/deleteTinta/{{ $tinta->id }}" method="POST">
                 @csrf
                 @method('DELETE')
@@ -148,17 +148,17 @@
                 <th scope="col">Modelo</th>
                 <th scope="col">Impressoras Compatíveis</th>
                 <th scope="col">Estoque</th>
-                <th scope="col">Ações</th>
+                <th class="açoes-suprimento" scope="col">Ações</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($cilindros as $cilindro)
             <tr>
-                <td scropt="row">{{ $cilindro->modelo }}</td>
-                <td scropt="row">{{ $cilindro->qtde_impressora }}</td>
-                <td scropt="row">{{ $cilindro->estoque }}</td>
+                <td class="tabela-suprimento-modelo" scropt="row">{{ $cilindro->modelo }}</td>
+                <td class="tabela-suprimento-qtde_impressora" scropt="row">{{ $cilindro->qtde_impressora }}</td>
+                <td class="tabela-suprimento-estoque" scropt="row" style="background-color: {{ $cilindro->cor }}">{{ $cilindro->estoque }}</td>
                 <td>
-                <a href="/editCilindro/{{ $cilindro->id }}" style="margin-left: 35px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
+                <a href="/editCilindro/{{ $cilindro->id }}" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
                 <form action="/deleteCilindro/{{ $cilindro->id }}" method="POST">
                 @csrf
                 @method('DELETE')

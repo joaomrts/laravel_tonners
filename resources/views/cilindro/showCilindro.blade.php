@@ -30,7 +30,7 @@
                 <tr>
                     <td scropt="row">{{ $cilindro->modelo }}</td>
                     <td scropt="row">{{ $cilindro->qtde_impressora }}</td>
-                    <td scropt="row">{{ $cilindro->estoque }}</td>
+                    <td scropt="row" style="background-color: {{ $cilindro->cor }}">{{ $cilindro->estoque }}</td>
                 </tr>
                 @endforeach
             </tbody>

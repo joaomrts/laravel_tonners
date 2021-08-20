@@ -25,7 +25,7 @@
                 <tr>
                     <td scropt="row">{{ $tonner->modelo }}</td>
                     <td scropt="row">{{ $tonner->qtde_impressora }}</td>
-                    <td scropt="row">{{ $tonner->estoque }}</td>
+                    <td scropt="row" style="background-color: {{ $tonner->cor }}">{{ $tonner->estoque }}</td>
 
                 </tr>
                 @endforeach

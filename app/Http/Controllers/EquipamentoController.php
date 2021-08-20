@@ -15,6 +15,32 @@ class EquipamentoController extends Controller
                         ->orderBy('numeroIp')
                         ->paginate(25);
 
+        foreach($equipamentos as $equipamento)
+
+            if($equipamento->equipamento == 'Servidor'){
+                $equipamento->cor = 'rgba(231, 76, 60, 0.5)';
+            }
+
+            elseif($equipamento->equipamento == 'Outros'){
+                $equipamento->cor = 'rgba(231, 76, 60, 0.5)';
+            }
+
+            elseif($equipamento->equipamento == 'Câmera'){
+                $equipamento->cor = 'rgba(231, 76, 60, 0.5)';
+            }
+
+            elseif($equipamento->equipamento == 'Relógio de Ponto'){
+                $equipamento->cor = 'rgba(231, 76, 60, 0.5)';
+            }
+
+            elseif($equipamento->equipamento == 'Disponível'){
+                $equipamento->cor = 'rgba(39, 174, 96, 0.5)';
+            }
+
+            else{
+                $equipamento->cor = 'rgba(241, 196, 15, 0.5)';
+            }
+
         return view('equipamento.indexEquipamento', ['equipamentos' => $equipamentos]);
     }
 
@@ -27,6 +53,32 @@ class EquipamentoController extends Controller
                             ->orWhere('equipamento', 'LIKE', "%{$request->search}%")
                             ->orderBy('numeroIp')
                             ->paginate(25);
+
+        foreach($equipamentos as $equipamento)
+
+            if($equipamento->equipamento == 'Servidor'){
+                $equipamento->cor = 'rgba(231, 76, 60, 0.5)';
+            }
+
+            elseif($equipamento->equipamento == 'Outros'){
+                $equipamento->cor = 'rgba(231, 76, 60, 0.5)';
+            }
+
+            elseif($equipamento->equipamento == 'Câmera'){
+                $equipamento->cor = 'rgba(231, 76, 60, 0.5)';
+            }
+
+            elseif($equipamento->equipamento == 'Relógio de Ponto'){
+                $equipamento->cor = 'rgba(231, 76, 60, 0.5)';
+            }
+
+            elseif($equipamento->equipamento == 'Disponível'){
+                $equipamento->cor = 'rgba(39, 174, 96, 0.5)';
+            }
+
+            else{
+                $equipamento->cor = 'rgba(241, 196, 15, 0.5)';
+            }
 
         return view('equipamento.indexEquipamento', ['equipamentos' => $equipamentos, 'filters' => $filters]);
     }

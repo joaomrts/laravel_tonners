@@ -37,17 +37,17 @@
                 <th scope="col">Modelo</th>
                 <th scope="col">Tonner</th>
                 <th scope="col">Setor</th>
-                <th scope="col">Ações</th>
+                <th class="açoes-impressora" scope="col">Ações</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($impressoras as $impressora)
             <tr>
-                <td scropt="row">{{ $impressora->modelo }}</td>
-                <td scropt="row">{{ $impressora->tonner }}</td>
-                <td scropt="row">{{ $impressora->setor }}</td>
+                <td class="tabela-impressora-modelo" scropt="row">{{ $impressora->modelo }}</td>
+                <td class="tabela-impressora-tonner" scropt="row">{{ $impressora->tonner }}</td>
+                <td class="tabela-impressora-setor" scropt="row">{{ $impressora->setor }}</td>
                 <td>
-                <a href="/editImpressora/{{ $impressora->id }}" style="margin-left: 35px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
+                <a href="/editImpressora/{{ $impressora->id }}" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
                 <form action="/deleteImpressora/{{ $impressora->id }}" method="POST">
                 @csrf
                 @method('DELETE')
@@ -97,17 +97,17 @@
                 <th scope="col">Modelo</th>
                 <th scope="col">Tonner</th>
                 <th scope="col">Setor</th>
-                <th scope="col">Ações</th>
+                <th class="açoes-impressora-sp" scope="col">Ações</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($impressorasXavantess as $impressorasXavantes)
             <tr>
-                <td scropt="row">{{ $impressorasXavantes->modelo }}</td>
-                <td scropt="row">{{ $impressorasXavantes->tonner }}</td>
-                <td scropt="row">{{ $impressorasXavantes->setor }}</td>
+                <td class="tabela-impressora-modelo-sp" scropt="row">{{ $impressorasXavantes->modelo }}</td>
+                <td class="tabela-impressora-tonner-sp" scropt="row">{{ $impressorasXavantes->tonner }}</td>
+                <td class="tabela-impressora-setor-sp" scropt="row">{{ $impressorasXavantes->setor }}</td>
                 <td>
-                <a href="/editImpressorasXavantes/{{ $impressorasXavantes->id }}" style="margin-left: 35px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
+                <a href="/editImpressorasXavantes/{{ $impressorasXavantes->id }}" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
                 <form action="/deleteImpressorasXavantes/{{ $impressorasXavantes->id }}" method="POST">
                 @csrf
                 @method('DELETE')
@@ -158,17 +158,17 @@
                 <th scope="col">Modelo</th>
                 <th scope="col">Tonner</th>
                 <th scope="col">Setor</th>
-                <th scope="col">Ações</th>
+                <th class="açoes-impressora-sp" scope="col">Ações</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($impressorasMendesJrs as $impressorasMendesJr)
             <tr>
-                <td scropt="row">{{ $impressorasMendesJr->modelo }}</td>
-                <td scropt="row">{{ $impressorasMendesJr->tonner }}</td>
-                <td scropt="row">{{ $impressorasMendesJr->setor }}</td>
+                <td class="tabela-impressora-modelo-sp" scropt="row">{{ $impressorasMendesJr->modelo }}</td>
+                <td class="tabela-impressora-tonner-sp" scropt="row">{{ $impressorasMendesJr->tonner }}</td>
+                <td class="tabela-impressora-setor-sp" scropt="row">{{ $impressorasMendesJr->setor }}</td>
                 <td>
-                <a href="/editImpressorasMendesJr/{{ $impressorasMendesJr->id }}" style="margin-left: 35px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
+                <a href="/editImpressorasMendesJr/{{ $impressorasMendesJr->id }}" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
                 <form action="/deleteImpressorasMendesJr/{{ $impressorasMendesJr->id }}" method="POST">
                 @csrf
                 @method('DELETE')

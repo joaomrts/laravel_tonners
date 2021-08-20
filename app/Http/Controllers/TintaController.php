@@ -62,6 +62,22 @@ class TintaController extends Controller
                     ->orderBy('modelo')
                     ->paginate(20);
 
+        foreach($tintas as $tinta)
+        {
+            if($tinta->estoque > $tinta->qtde_impressora){
+                $tinta->cor =  'rgba(39, 174, 96, 0.5)';
+            }
+
+            elseif($tinta->estoque == $tinta->qtde_impressora){
+                $tinta->cor = 'rgba(241, 196, 15, 0.5)';
+            }
+
+            elseif($tinta->estoque < $tinta->qtde_impressora){
+                $tinta->cor = 'rgba(231, 76, 60, 0.5)';
+            }
+
+        }
+
         view()->share('tintas', $tintas,);
         $pdf_doc = PDF::loadView('layouts.export_tinta_pdf', $tintas);
 
@@ -73,6 +89,22 @@ class TintaController extends Controller
         $tintas = Tinta::select('tinta.*')
                     ->orderBy('modelo')
                     ->paginate(20);
+
+        foreach($tintas as $tinta)
+        {
+            if($tinta->estoque > $tinta->qtde_impressora){
+                $tinta->cor =  'rgba(39, 174, 96, 0.5)';
+            }
+
+            elseif($tinta->estoque == $tinta->qtde_impressora){
+                $tinta->cor = 'rgba(241, 196, 15, 0.5)';
+            }
+
+            elseif($tinta->estoque < $tinta->qtde_impressora){
+                $tinta->cor = 'rgba(231, 76, 60, 0.5)';
+            }
+
+        }
 
         return view('tinta.showTinta', ['tintas' => $tintas]);
     }

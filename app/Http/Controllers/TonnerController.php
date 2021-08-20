@@ -18,12 +18,60 @@ class TonnerController extends Controller
         $tonners = Tonner::select('tonner.*')
                     ->orderBy('modelo')
                     ->paginate(50);
+
+        foreach ($tonners as $tonner)
+        {
+            if($tonner->estoque > $tonner->qtde_impressora){
+                $tonner->cor = 'rgba(39, 174, 96, 0.5)';
+            }
+
+            elseif($tonner->estoque == $tonner->qtde_impressora){
+                $tonner->cor = 'rgba(241, 196, 15, 0.5)';
+            }
+
+            elseif($tonner->estoque < $tonner->qtde_impressora){
+                $tonner->cor = 'rgba(231, 76, 60, 0.5)';
+            }
+        }
+
         $tintas = Tinta::select('tinta.*')
                     ->orderBy('modelo')
                     ->paginate(50);
+
+        foreach($tintas as $tinta)
+        {
+            if($tinta->estoque > $tinta->qtde_impressora){
+                $tinta->cor =  'rgba(39, 174, 96, 0.5)';
+            }
+
+            elseif($tinta->estoque == $tinta->qtde_impressora){
+                $tinta->cor = 'rgba(241, 196, 15, 0.5)';
+            }
+
+            elseif($tinta->estoque < $tinta->qtde_impressora){
+                $tinta->cor = 'rgba(231, 76, 60, 0.5)';
+            }
+
+        }
+
         $cilindros = Cilindro::select('cilindro.*')
                     ->orderBy('modelo')
                     ->paginate(50);
+
+        foreach($cilindros as $cilindro)
+
+        if($cilindro->estoque > $cilindro->qtde_impressora){
+            $cilindro->cor = 'rgba(39, 174, 96, 0.5)';
+        }
+
+        elseif($cilindro->estoque == $cilindro->qtde_impressora){
+            $cilindro->cor = 'rgba(241, 196, 15, 0.5)';
+        }
+
+        elseif($cilindro->estoque < $cilindro->qtde_impressora){
+            $cilindro->cor = 'rgba(231, 76, 60, 0.5)';
+        }
+
 
         return view('tonner.indexTonner', ['tonners' => $tonners, 'tintas' => $tintas, 'cilindros' => $cilindros]);
 
@@ -37,13 +85,56 @@ class TonnerController extends Controller
                     ->orderBy('modelo')
                     ->paginate(50);
 
+        foreach($tonners as $tonner)
+
+        if($tonner->estoque > $tonner->qtde_impressora){
+            $tonner->cor = 'rgba(39, 174, 96, 0.6)';
+        }
+
+        elseif($tonner->estoque == $tonner->qtde_impressora){
+            $tonner->cor = 'rgba(241, 196, 15, 0.6)';
+        }
+
+        elseif($tonner->estoque < $tonner->qtde_impressora){
+            $tonner->cor = 'rgba(231, 76, 60, 0.6)';
+        }
+
         $cilindros = Cilindro::where('modelo', 'LIKE', "%{$request->search}%")
                     ->orderBy('modelo')
                     ->paginate(50);
 
+        foreach($cilindros as $cilindro)
+
+        if($cilindro->estoque > $cilindro->qtde_impressora){
+            $cilindro->cor = 'rgba(39, 174, 96, 0.6)';
+        }
+
+        elseif($cilindro->estoque == $cilindro->qtde_impressora){
+            $cilindro->cor = 'rgba(241, 196, 15, 0.6)';
+        }
+
+        elseif($cilindro->estoque < $cilndro->qtde_impressora){
+            $cilindro->cor = 'rgba(231, 76, 60, 0.6)';
+        }
+
+
         $tintas = Tinta::where('modelo', 'LIKE', "%{$request->search}%")
                     ->orderBy('modelo')
                     ->paginate(50);
+
+        foreach($tintas as $tinta)
+
+        if($tinta->estoque > $tinta->qtde_impressora){
+            $tinta->cor = 'rgba(39, 174, 96, 0.6)';
+        }
+
+        elseif($tinta->estoque == $tinta->qtde_impressora){
+                $tinta->cor = 'rgba(241, 196, 15, 0.6)';
+        }
+
+        elseif($tinta->estoque < $tinta->qtde_impressora){
+                $tinta->cor = 'rgba(231, 76, 60, 0.6)';
+        }
 
         return view('tonner.indexTonner', ['tonners' => $tonners, 'filters' => $filters, 'cilindros' => $cilindros, 'tintas' => $tintas]);
     }
@@ -99,6 +190,20 @@ class TonnerController extends Controller
                     ->orderBy('modelo')
                     ->paginate(50);
 
+        foreach($tonners as $tonner)
+
+        if($tonner->estoque > $tonner->qtde_impressora){
+            $tonner->cor = 'rgba(39, 174, 96, 0.6)';
+        }
+
+        elseif($tonner->estoque == $tonner->qtde_impressora){
+            $tonner->cor = 'rgba(241, 196, 15, 0.6)';
+        }
+
+        elseif($tonner->estoque < $tonner->qtde_impressora){
+            $tonner->cor = 'rgba(231, 76, 60, 0.6)';
+        }
+
         view()->share('tonners', $tonners,);
         $pdf_doc = PDF::loadView('layouts.export_tonner_pdf', $tonners);
 
@@ -110,6 +215,20 @@ class TonnerController extends Controller
         $tonners = Tonner::select('tonner.*')
                     ->orderBy('modelo')
                     ->paginate(50);
+
+        foreach($tonners as $tonner)
+
+        if($tonner->estoque > $tonner->qtde_impressora){
+            $tonner->cor = 'rgba(39, 174, 96, 0.6)';
+        }
+
+        elseif($tonner->estoque == $tonner->qtde_impressora){
+            $tonner->cor = 'rgba(241, 196, 15, 0.6)';
+        }
+
+        elseif($tonner->estoque < $tonner->qtde_impressora){
+            $tonner->cor = 'rgba(231, 76, 60, 0.6)';
+        }
 
         return view('tonner.showTonner', ['tonners' => $tonners]);
     }

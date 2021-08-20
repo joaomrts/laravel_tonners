@@ -38,18 +38,18 @@
                 <th scope="col">Setor</th>
                 <th scope="col">Versão</th>
                 <th scope="col">Conta</th>
-                <th scope="col">Ações</th>
+                <th class="açoes-office" scope="col">Ações</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($offices as $office)
             <tr>
-                <td scropt="row">{{ $office->usuario }}</td>
-                <td scropt="row">{{ $office->setor }}</td>
-                <td scropt="row">{{ $office->versao }}</td>
-                <td scropt="row">{{ $office->conta }}</td>
+                <td class="tabela-office-usuario" scropt="row">{{ $office->usuario }}</td>
+                <td class="tabela-office-setor" scropt="row">{{ $office->setor }}</td>
+                <td class="tabela-office-versao" scropt="row">{{ $office->versao }}</td>
+                <td class="tabela-office-conta" scropt="row">{{ $office->conta }}</td>
                 <td>
-                <a href="/editOffice/{{ $office->id }}" style="margin-left: 35px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
+                <a href="/editOffice/{{ $office->id }}" style="margin-left: 8px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
                 <form action="/deleteOffice/{{ $office->id }}" method="POST">
                 @csrf
                 @method('DELETE')

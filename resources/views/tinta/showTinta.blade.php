@@ -30,7 +30,7 @@
                 <tr>
                     <td scropt="row">{{ $tinta->modelo }}</td>
                     <td scropt="row">{{ $tinta->qtde_impressora }}</td>
-                    <td scropt="row">{{ $tinta->estoque }}</td>
+                    <td scropt="row" style="background-color: {{ $tinta->cor }}">{{ $tinta->estoque }}</td>
                 </tr>
                 @endforeach
             </tbody>

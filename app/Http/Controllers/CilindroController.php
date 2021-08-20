@@ -59,7 +59,21 @@ class CilindroController extends Controller
                         ->orderBy('modelo')
                         ->paginate(20);
 
-        view()->share('cilindros', $cilindros,);
+    foreach($cilindros as $cilindro)
+
+            if($cilindro->estoque > $cilindro->qtde_impressora){
+                $cilindro->cor = 'rgba(39, 174, 96, 0.5)';
+            }
+
+            elseif($cilindro->estoque == $cilindro->qtde_impressora){
+                $cilindro->cor = 'rgba(241, 196, 15, 0.5)';
+            }
+
+            elseif($cilindro->estoque < $cilindro->qtde_impressora){
+                $cilindro->cor = 'rgba(231, 76, 60, 0.5)';
+            }
+
+        view()->share('cilindros', $cilindros);
         $pdf_doc = PDF::loadView('layouts.export_cilindro_pdf', $cilindros);
 
         return $pdf_doc->download('Cilindro.pdf');
@@ -70,6 +84,20 @@ class CilindroController extends Controller
         $cilindros = Cilindro::select('cilindro.*')
                         ->orderBy('modelo')
                         ->paginate(20);
+
+        foreach($cilindros as $cilindro)
+
+        if($cilindro->estoque > $cilindro->qtde_impressora){
+            $cilindro->cor = 'rgba(39, 174, 96, 0.5)';
+        }
+
+        elseif($cilindro->estoque == $cilindro->qtde_impressora){
+            $cilindro->cor = 'rgba(241, 196, 15, 0.5)';
+        }
+
+        elseif($cilindro->estoque < $cilindro->qtde_impressora){
+            $cilindro->cor = 'rgba(231, 76, 60, 0.5)';
+        }
 
         return view('cilindro.showCilindro', ['cilindros' => $cilindros]);
     }
