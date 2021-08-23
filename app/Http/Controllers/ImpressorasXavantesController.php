@@ -32,13 +32,13 @@ class ImpressorasXavantesController extends Controller
         $user = auth()->user();
 
         $impressorasXavantes->save();
-        return redirect('/indexImpressora')->with('msg', 'Impressora cadastrada com sucesso');
+        return redirect('/Impressoras')->with('msg', 'Impressora cadastrada com sucesso');
     }
 
     public function deleteImpressorasXavantes($id)
     {
         ImpressorasXavantes::findOrFail($id)->delete();
-        return redirect('/indexImpressora')->with('msg', 'Impressora excluída com sucesso');
+        return redirect('/Impressoras')->with('msg', 'Impressora excluída com sucesso');
     }
 
     public function editImpressorasXavantes ($id){
@@ -55,7 +55,7 @@ class ImpressorasXavantesController extends Controller
 
         ImpressorasXavantes::findOrFail($request->id)->update($data);
 
-        return redirect('/indexImpressora')->with('msg', 'Impressora editada com sucesso!');
+        return redirect('/Impressoras')->with('msg', 'Impressora editada com sucesso!');
     }
 
     public function exportImpressorasXavantesPDF() {
