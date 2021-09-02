@@ -5,7 +5,7 @@
 @section('content')
 
 
-<div id="events-create-container" class="col-md-10 offset-md-1 col-sm-10">
+<div id="events-create-container" class="col-md-8 offset-md-2 col-sm-10">
     <br>
     <h1>Cadastre a Manutenção</h1>
         <hr>
