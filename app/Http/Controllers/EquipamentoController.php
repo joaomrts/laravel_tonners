@@ -83,6 +83,8 @@ class EquipamentoController extends Controller
         return view('equipamento.indexEquipamento', ['equipamentos' => $equipamentos, 'filters' => $filters]);
     }
 
+
+
     public function cadastroEquipamento()
     {
         return view('equipamento.cadastroEquipamento');

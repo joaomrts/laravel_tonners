@@ -14,12 +14,11 @@ class Equipamento extends Migration
     public function up()
     {
         Schema::create('equipamento', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->increments('id');
             $table->integer('numeroIp');
             $table->string('setor');
             $table->string('equipamento');
-
+            $table->timestamps();
         });
     }
 

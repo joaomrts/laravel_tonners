@@ -47,13 +47,13 @@
                 <td class="tabela-equipamentos-setor" scropt="row">{{ $equipamento->setor }}</td>
                 <td class="tabela-equipamentos-equipamento" scropt="row">{{ $equipamento->equipamento }}</td>
                 <td>
-                <a href="/editEquipamento/{{ $equipamento->id }}" style="margin-left: 5px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
-                <form action="/deleteEquipamento/{{ $equipamento->id }}" method="POST">
+                <a href="/editEquipamento/{{ $equipamento->id }}"title="Editar" style="margin-left: 5px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
+                <a href="/cadastroManutencao/{{$equipamento->id}}"title="Manutenção" style="margin-left: 5px" class="btn btn-success"><ion-icon name="construct-outline"></a>
+                <form action="/deleteEquipamento/{{ $equipamento->id }}"method="POST" title="Excluir">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger delete-btn" onclick="if (!confirm('Deseja realmente excluir?')) { return false }"><ion-icon name="trash-outline"></ion-icon></button>
                 </form>
-                <a href="/cadastroManutencao/{{ $manutencao->id }}" style="margin-left: 5px" class="btn btn-success"><ion-icon name="construct-outline"></a>
                 </td>
             </tr>
             @endforeach

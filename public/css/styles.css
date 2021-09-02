@@ -64,6 +64,31 @@ header{
 }
 
 
+.açoes-manutencao{
+    width: 90px;
+}
+
+.tabela-manutencao-responsavel{
+    width: 80px;
+}
+
+.tabela-manutencao-data{
+    width: 80px;
+}
+
+.tabela-manutencao-tipo{
+    width: 80px;
+}
+
+.tabela-manutencao-servico{
+    width: 80px;
+}
+
+.tabela-manutencao-descricao{
+    width: 80px;
+}
+
+
 
 .açoes-equipamento{
     width: 65px;

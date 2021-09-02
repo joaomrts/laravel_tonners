@@ -9,6 +9,7 @@ use App\Http\Controllers\ImpressorasXavantesController;
 use App\Http\Controllers\ImpressorasMendesJrController;
 use App\Http\Controllers\EquipamentoController;
 use App\Http\Controllers\OfficeController;
+use App\Http\Controllers\ManutencaoController;
 
 
 if(version_compare(PHP_VERSION, '7.2.0', '>=')) {
@@ -96,3 +97,10 @@ Route::post('cadastroOffice/salvar', [OfficeController::class, 'storeOffice'])->
 Route::delete('/deleteOffice/{id}', [OfficeController::class, 'deleteOffice'])->middleware('auth');
 Route::get('/editOffice/{id}', [OfficeController::class, 'editOffice'])->middleware('auth');
 Route::put('/editOffice/update/{id}', [OfficeController::class, 'updateOffice'])->middleware('auth');
+
+
+Route::get('/cadastroManutencao/{id}', [ManutencaoController::class, 'cadastroManutencao'])->middleware('auth');
+Route::post('cadastroManutencao/salvar', [ManutencaoController::class, 'storeManutencao'])->middleware('auth');
+Route::delete('/deleteManutencao/{id}', [ManutencaoController::class, 'deleteManutencao'])->middleware('auth');
+Route::get('/editManutencao/{id}', [ManutencaoController::class, 'editManutencao'])->middleware('auth');
+Route::put('/editManutencao/update/{id}', [ManutencaoController::class, 'updateManutencao'])->middleware('auth');
