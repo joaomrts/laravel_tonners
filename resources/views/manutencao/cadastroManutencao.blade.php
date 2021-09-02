@@ -5,10 +5,10 @@
 @section('content')
 
 
-<div id="events-create-container" class="col-md-5 col-sm-10">
+<div id="events-create-container" class="col-md-10 offset-md-1 col-sm-10">
     <br>
     <h1>Cadastre a Manutenção</h1>
-        <br>
+        <hr>
     @if ($errors->any())
         <ul>
             @foreach ($errors->all() as $error )
@@ -61,8 +61,8 @@
 </div>
 
 
-<div id="events-create-container" class="col-md-7 col-sm-10">
-    <br>
+<div id="events-create-container" class="col-md-10 offset-md-1 col-sm-10">
+    <hr>
     <h1>Manutenções já feitas neste equipamento</h1>
     @if ((count($manutencaos) > 0))
     <div class="col-md-10 col-sm-10 offset-md-1 dashboard-events-container">

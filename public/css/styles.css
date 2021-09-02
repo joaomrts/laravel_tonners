@@ -65,7 +65,7 @@ header{
 
 
 .açoes-manutencao{
-    width: 90px;
+    width: 70px;
 }
 
 .tabela-manutencao-responsavel{
@@ -81,11 +81,11 @@ header{
 }
 
 .tabela-manutencao-servico{
-    width: 80px;
+    width: 150px;
 }
 
 .tabela-manutencao-descricao{
-    width: 80px;
+    width: 100px;
 }
 
 
