@@ -15,7 +15,7 @@ class Manutencao extends Migration
     {
         Schema::create('manutencao', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('equipamento_id')->unsigned();
+            $table->unsigned('equipamento_id');
             $table->foreign('equipamento_id')->references('id')->on('equipamento')->onDelete('cascade');
             $table->string('responsavel');
             $table->date('data');
