@@ -45,8 +45,9 @@
                 <td class="tabela-suprimento-qtde_impressora" scropt="row">{{ $tonner->qtde_impressora }}</td>
                 <td class="tabela-suprimento-estoque" scropt="row" style="background-color: {{ $tonner->cor }}">{{ $tonner->estoque }}</td>
                 <td>
-                <a href="/edit/{{ $tonner->id }}" style="margin-left: 10px"class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
-                <form action="/{{ $tonner->id }}" method="POST">
+                <a href="/edit/{{ $tonner->id }}" title="Editar" style="margin-left: 10px"class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
+                <a href="Suprimentos/compra/{{$tonner->id}}"title="Compra" style="margin-left: 5px" class="btn btn-success"><ion-icon name="cart-outline"></a>
+                <form action="/{{ $tonner->id }}" title="Excluir" method="POST">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger delete-btn" onclick="if (!confirm('Deseja realmente excluir?')) { return false }"><ion-icon name="trash-outline"></ion-icon></button>
@@ -104,6 +105,7 @@
                 <td class="tabela-suprimento-estoque" scropt="row" style="background-color: {{ $tinta->cor }}">{{ $tinta->estoque }}</td>
                 <td>
                 <a href="/editTinta/{{ $tinta->id }}"style="margin-left: 10px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
+                <a href="Suprimentos/compraTinta/{{$tinta->id}}"title="Compra" style="margin-left: 5px" class="btn btn-success"><ion-icon name="cart-outline"></a>
                 <form action="/deleteTinta/{{ $tinta->id }}" method="POST">
                 @csrf
                 @method('DELETE')

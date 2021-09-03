@@ -41,11 +41,12 @@ header{
 }
 
 .btn-success{
+
     border-color: #155724;
 }
 
 .btn-success:hover{
-    border-color:#0c2e14;
+    border-color:#175826;
 }
 
 .btn-dark:hover{
@@ -65,27 +66,27 @@ header{
 
 
 .açoes-manutencao{
-    width: 70px;
+    width: 80px;
 }
 
 .tabela-manutencao-responsavel{
-    width: 80px;
+    width: 70px;
 }
 
 .tabela-manutencao-data{
-    width: 80px;
+    width: 70px;
 }
 
 .tabela-manutencao-tipo{
-    width: 80px;
+    width: 70px;
 }
 
 .tabela-manutencao-servico{
-    width: 150px;
+    width: 200px;
 }
 
 .tabela-manutencao-descricao{
-    width: 100px;
+    width: 200px;
 }
 
 
@@ -144,15 +145,15 @@ header{
 
 
 .açoes-suprimento{
-    width: 100px;
+    width: 120px;
 }
 
 .tabela-suprimento-modelo{
-    width: 400px;
+    width: 300px;
 }
 
 .tabela-suprimento-qtde_impressora{
-    width: 400px;
+    width: 300px;
 }
 
 .tabela-suprimento-estoque{
@@ -160,6 +161,13 @@ header{
 }
 
 
+.tabela-total-qtde{
+    width: 200px;
+}
+
+.tabela-total-valor{
+    width: 200px;
+}
 
 
 .açoes-office{
@@ -289,7 +297,6 @@ header{
 #search-container form{
     width: 50%;
     margin: 0 auto;
-    font-style:italic;
 }
 
 #search-container-equipamento {
@@ -346,7 +353,6 @@ header{
 #search-suprimentos-container form{
     width: 50%;
     margin: 0 auto;
-    font-style:italic;
 }
 
 #search-container-office {
@@ -361,7 +367,6 @@ header{
 #search-container-office form{
     width: 50%;
     margin: 0 auto;
-    font-style:italic;
 }
 
 

@@ -88,7 +88,7 @@
                 <td class="tabela-manutencao-servico" scropt="row">{{ $manutencao->servico }}</td>
                 <td class="tabela-manutencao-descricao" scropt="row">{{ $manutencao->descricao }}</td>
                 <td>
-                <a href="/editManutencao/{{ $manutencao->id }}" style="margin-left: 8px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
+                <a href="/editManutencao/{{ $manutencao->id }}" style="margin-left: 3px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
                 <form action="/deleteManutencao/{{ $manutencao->id }}" method="POST">
                 @csrf
                 @method('DELETE')

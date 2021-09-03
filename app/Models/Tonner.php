@@ -17,4 +17,9 @@ class Tonner extends Model
         'qtde_impressora',
         'estoque',
     ];
+
+    public function compras()
+    {
+        return $this->hasMany(Compras::class);
+    }
 }

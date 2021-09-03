@@ -10,6 +10,8 @@ use App\Http\Controllers\ImpressorasMendesJrController;
 use App\Http\Controllers\EquipamentoController;
 use App\Http\Controllers\OfficeController;
 use App\Http\Controllers\ManutencaoController;
+use App\Http\Controllers\ComprasController;
+use App\Http\Controllers\ComprasTintasController;
 
 
 if(version_compare(PHP_VERSION, '7.2.0', '>=')) {
@@ -104,3 +106,17 @@ Route::post('cadastroManutencao/salvar', [ManutencaoController::class, 'storeMan
 Route::delete('/deleteManutencao/{id}', [ManutencaoController::class, 'deleteManutencao'])->middleware('auth');
 Route::get('/editManutencao/{id}', [ManutencaoController::class, 'editManutencao'])->middleware('auth');
 Route::put('/editManutencao/update/{id}', [ManutencaoController::class, 'updateManutencao'])->middleware('auth');
+
+
+Route::get('Suprimentos/compra/{id}', [ComprasController::class, 'cadastroCompra'])->middleware('auth');
+Route::post('cadastroCompra/salvar', [ComprasController::class, 'storeCompra'])->middleware('auth');
+Route::delete('/deleteCompra/{id}', [ComprasController::class, 'deleteCompra'])->middleware('auth');
+Route::get('/editCompra/{id}', [ComprasController::class, 'editCompra'])->middleware('auth');
+Route::put('/editCompra/update/{id}', [ComprasController::class, 'updateCompra'])->middleware('auth');
+
+
+Route::get('Suprimentos/compraTinta/{id}', [ComprasTintasController::class, 'cadastroCompraTinta'])->middleware('auth');
+Route::post('cadastroCompraTinta/salvar', [ComprasTintasController::class, 'storeCompraTinta'])->middleware('auth');
+Route::delete('/deleteCompraTinta/{id}', [ComprasTintasController::class, 'deleteCompraTinta'])->middleware('auth');
+Route::get('/editCompraTinta/{id}', [ComprasTintasController::class, 'editCompraTinta'])->middleware('auth');
+Route::put('/editCompraTinta/update/{id}', [ComprasTintasController::class, 'updateCompraTinta'])->middleware('auth');
