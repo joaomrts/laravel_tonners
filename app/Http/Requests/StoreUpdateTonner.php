@@ -25,8 +25,6 @@ class StoreUpdateTonner extends FormRequest
     {
         return [
             'modelo', 'qtde_impressora', 'estoque' => 'required',
-            'qtde_impressora' => 'required',
-            'estoque' => 'required'
         ];
     }
 

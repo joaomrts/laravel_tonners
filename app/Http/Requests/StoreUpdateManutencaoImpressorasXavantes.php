@@ -24,10 +24,7 @@ class StoreUpdateManutencaoImpressorasXavantes extends FormRequest
     public function rules()
     {
         return [
-            'responsavel' => 'required',
-            'data' => 'required',
-            'defeito' => 'required',
-            'valor' => 'required',
+            'responsavel', 'data', 'defeito', 'valor' => 'required'
         ];
     }
 
