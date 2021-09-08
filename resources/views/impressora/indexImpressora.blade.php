@@ -48,6 +48,7 @@
                 <td class="tabela-impressora-setor" scropt="row">{{ $impressora->setor }}</td>
                 <td>
                 <a href="/editImpressora/{{ $impressora->id }}" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
+                <a href="/cadastroManutencaoImpressora/{{ $impressora->id }}" style="margin-left: 3px" class="btn btn-success edit-btn"><ion-icon name="construct-outline"></ion-icon></a>
                 <form action="/deleteImpressora/{{ $impressora->id }}" method="POST">
                 @csrf
                 @method('DELETE')
@@ -108,12 +109,13 @@
                 <td class="tabela-impressora-setor-sp" scropt="row">{{ $impressorasXavantes->setor }}</td>
                 <td>
                 <a href="/editImpressorasXavantes/{{ $impressorasXavantes->id }}" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
+                <a href="/cadastroManutencaoImpressorasXavantes/{{ $impressorasXavantes->id }}" style="margin-left: 3px" class="btn btn-success edit-btn"><ion-icon name="construct-outline"></ion-icon></a>
                 <form action="/deleteImpressorasXavantes/{{ $impressorasXavantes->id }}" method="POST">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger delete-btn" onclick="if (!confirm('Deseja realmente excluir?')) { return false }"><ion-icon name="trash-outline"></ion-icon></button>
                 </form>
-                </td>
+            </td>
             </tr>
             @endforeach
         </tbody>
@@ -169,6 +171,7 @@
                 <td class="tabela-impressora-setor-sp" scropt="row">{{ $impressorasMendesJr->setor }}</td>
                 <td>
                 <a href="/editImpressorasMendesJr/{{ $impressorasMendesJr->id }}" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
+
                 <form action="/deleteImpressorasMendesJr/{{ $impressorasMendesJr->id }}" method="POST">
                 @csrf
                 @method('DELETE')

@@ -24,17 +24,14 @@ class StoreUpdateOffice extends FormRequest
     public function rules()
     {
         return [
-            'usuario' => 'required',
-            'setor' => 'required',
-            'versao' => 'required',
-            'conta' => 'required',
+            'usuario', 'setor', 'versao', 'conta' => 'required'
         ];
     }
 
     public function messages()
     {
         return [
-            'required' => 'O campo :attribute é obrigatório.'
+            'required' => 'Campos com "*" são obrigatórios.'
         ];
     }
 }

@@ -24,16 +24,14 @@ class StoreUpdateEquipamento extends FormRequest
     public function rules()
     {
         return [
-        'numeroIp' => 'required',
-        'setor' => 'required',
-        'equipamento' => 'required'
+        'numeroIp', 'setor', 'equipamento' => 'required'
         ];
     }
 
     public function messages()
     {
     return [
-        'required' => 'O campo :attribute é obrigatório.'
+        'required' => 'Campos com "*" são obrigatórios.'
         ];
     }
 }

@@ -48,7 +48,7 @@ class ComprasTintasController extends Controller
 
     public function editCompraTinta($id){
 
-        $compraTinta = Compras::findOrFail($id);
+        $compraTinta = ComprasTintas::findOrFail($id);
 
         return view('comprasTinta.editCompraTinta', ['compraTinta' => $compraTinta]);
     }

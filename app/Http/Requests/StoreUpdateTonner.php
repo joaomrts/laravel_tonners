@@ -24,7 +24,7 @@ class StoreUpdateTonner extends FormRequest
     public function rules()
     {
         return [
-            'modelo' => 'required',
+            'modelo', 'qtde_impressora', 'estoque' => 'required',
             'qtde_impressora' => 'required',
             'estoque' => 'required'
         ];
@@ -33,7 +33,7 @@ class StoreUpdateTonner extends FormRequest
     public function messages()
     {
         return [
-            'required' => 'O campo :attribute é obrigatório.'
+            'required' => 'Campos com "*" são obrigatórios.'
         ];
     }
 }

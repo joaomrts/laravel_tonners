@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Compras Tinta')
+@section('title', 'Compras Cilindro')
 
 @section('js')
 <script type="text/javascript">
@@ -22,10 +22,10 @@
             @endforeach
         </ul>
     @endif
-    <form action="/cadastroCompraTinta/salvar" method="POST">
+    <form action="/cadastroCompraCilindro/salvar" method="POST">
         @csrf
         <div class="form-group">
-            <input type="hidden" class="form-control" name="tinta_id" id="tinta_id" value="{{ $tinta->id }}">
+            <input type="hidden" class="form-control" name="cilindro_id" id="cilindro_id" value="{{ $cilindro->id }}">
         </div>
         <div class="form-group">
             <label for="fornecedor">Fornecedor*</label>
@@ -54,9 +54,12 @@
 
 <div id="events-create-container" class="col-md-10 offset-md-1 col-sm-10">
     <hr>
-    <h1>Compras da Tinta {{$tinta->modelo}}</h1>
-    @if ((count($comprasTintas) > 0))
+    <h1>Compras do Cilindro {{$cilindro->modelo}}</h1>
+    @if ((count($comprasCilindros) > 0))
     <div class="col-md-10 col-sm-10 offset-md-1 dashboard-events-container">
+        <div class="dashboard-tinta-container">
+            <a href="/showCompraCilindro" id="show" style="margin-right: 5px" class="btn btn-outline-dark"><ion-icon name="print-outline"></ion-icon> Imprimir</a>
+        </div>
         <br>
     <table class="table table-striped table table-bordered">
     <br>
@@ -71,16 +74,16 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($comprasTintas as $comprasTinta)
+            @foreach ($comprasCilindros as $comprasCilindro)
             <tr>
-                <td class="tabela-manutencao-responsavel" scropt="row">{{ $comprasTinta->fornecedor }}</td>
-                <td class="tabela-manutencao-data" scropt="row">{{ \Carbon\Carbon::parse($comprasTinta->data)->format('d/m/Y')}}</td>
-                <td class="tabela-manutencao-tipo" scropt="row">{{ $comprasTinta->qtde }}</td>
-                <td class="tabela-manutencao-servico" scropt="row" >R$ {{ number_format($comprasTinta->valor_un, 2, ',', '.')}}</td>
-                <td class="tabela-manutencao-descricao" scropt="row">R$ {{ number_format($comprasTinta->valor_total, 2, ',', '.')}}</td>
+                <td class="tabela-manutencao-responsavel" scropt="row">{{ $comprasCilindro->fornecedor }}</td>
+                <td class="tabela-manutencao-data" scropt="row">{{ \Carbon\Carbon::parse($comprasCilindro->data)->format('d/m/Y')}}</td>
+                <td class="tabela-manutencao-tipo" scropt="row">{{ $comprasCilindro->qtde }}</td>
+                <td class="tabela-manutencao-servico" scropt="row" >R$ {{ number_format($comprasCilindro->valor_un, 2, ',', '.')}}</td>
+                <td class="tabela-manutencao-descricao" scropt="row">R$ {{ number_format($comprasCilindro->valor_total, 2, ',', '.')}}</td>
                 <td>
-                <a href="/editCompraTinta/{{ $comprasTinta->id }}" style="margin-left: 3px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
-                <form action="/deleteCompraTinta/{{ $comprasTinta->id }}" method="POST">
+                <a href="/editCompraCilindro/{{ $comprasCilindro->id }}" style="margin-left: 3px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
+                <form action="/deleteCompraCilindro/{{ $comprasCilindro->id }}" method="POST">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger delete-btn" onclick="if (!confirm('Deseja realmente excluir?')){ return false }"><ion-icon name="trash-outline"></ion-icon></button>
@@ -92,7 +95,7 @@
                 <br>
                     <thead>
                         <tr>
-                            <th scope="col">Total de Tintas Compradas</th>
+                            <th scope="col">Total de Cilindros Comprados</th>
                             <th scope="col">Total em R$</th>
                         </tr>
                     </thead>
@@ -108,13 +111,13 @@
         <br>
 
         <div class="d-flex justify-content-center">
-            {{ $comprasTintas->appends($filters)->links() }}
+            {{ $comprasCilindros->appends($filters)->links() }}
         </div>
     @elseif (count($compras) == 0 && $filters)
         <div class="col-sm-8 col-md-8 offset-md-2">
             <h5><br>Não foi possível retornar resultados com sua busca.
         </div>
-    @elseif (count($comprasTintas)== 0)
+    @elseif (count($comprasCilindros)== 0)
         <div class="col-sm-8 col-md-8 offset-md-2">
         <br>
             <h5 style="text-align: center">Não há compras cadastradas...

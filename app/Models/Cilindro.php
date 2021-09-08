@@ -18,4 +18,8 @@ class Cilindro extends Model
         'estoque',
     ];
 
+    public function comprascilindros()
+    {
+        return $this->hasMany(ComprasCilindros::class);
+    }
 }

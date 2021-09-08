@@ -24,16 +24,14 @@ class StoreUpdateImpressora extends FormRequest
     public function rules()
     {
         return [
-        'modelo' => 'required',
-        'tonner' => 'required',
-        'setor' => 'required'
+        'modelo', 'tonner', 'setor' => 'required'
         ];
     }
 
     public function messages()
     {
     return [
-        'required' => 'O campo :attribute é obrigatório.'
+        'required' => 'Campos com "*" são obrigatórios.'
         ];
     }
 }

@@ -36,6 +36,10 @@
             <label for="valor_un">Valor Unitário*</label>
             <input type="number" step=".01" class="form-control" name="valor_un" id="valor_un" placeholder="Valor unitário..." value="{{ $compra->valor_un }}">
         </div>
+        <div class="form-group">
+            <label for="valor_un">Valor Total*</label>
+            <input type="number" step=".01" class="form-control" name="valor_total" id="valor_total" placeholder="Valor total..." value="{{ $compra->valor_total }}">
+        </div>
         <br>
         <input type="submit" class="btn btn-success" value="Editar Compra">
         <a href="/Suprimentos" class="btn btn-danger">Cancelar</a>
