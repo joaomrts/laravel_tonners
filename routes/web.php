@@ -15,6 +15,7 @@ use App\Http\Controllers\ComprasTintasController;
 use App\Http\Controllers\ComprasCilindrosController;
 use App\Http\Controllers\ManutencaoImpressorasController;
 use App\Http\Controllers\ManutencaoImpressorasXavantesController;
+use App\Http\Controllers\ManutencaoImpressorasMendesJrController;
 
 
 if(version_compare(PHP_VERSION, '7.2.0', '>=')) {
@@ -29,7 +30,7 @@ Route::delete('/{id}', [TonnerController::class, 'delete'])->middleware('auth');
 Route::get('/Suprimentos', [TonnerController::class, 'indexTonner'])->middleware('auth');
 Route::get('/cadastro', [TonnerController::class, 'cadastro'])->middleware('auth');
 Route::post('cadastro/salvar', [TonnerController::class, 'store'])->middleware('auth');
-Route::get('/edit/{id}', [TonnerController::class, 'edit'])->middleware('auth');
+Route::get('Suprimentos/edit/{id}', [TonnerController::class, 'edit'])->middleware('auth');
 Route::put('/edit/update/{id}', [TonnerController::class, 'update'])->middleware('auth');
 
 
@@ -111,7 +112,7 @@ Route::get('/editManutencao/{id}', [ManutencaoController::class, 'editManutencao
 Route::put('/editManutencao/update/{id}', [ManutencaoController::class, 'updateManutencao'])->middleware('auth');
 
 
-Route::get('Suprimentos/compra/{id}', [ComprasController::class, 'cadastroCompra'])->middleware('auth');
+Route::get('Suprimentos/compra/{id}', [ComprasController::class, 'cadastroCompra'])->name('auth');
 Route::post('cadastroCompra/salvar', [ComprasController::class, 'storeCompra'])->middleware('auth');
 Route::delete('/deleteCompra/{id}', [ComprasController::class, 'deleteCompra'])->middleware('auth');
 Route::get('/editCompra/{id}', [ComprasController::class, 'editCompra'])->middleware('auth');
@@ -143,3 +144,9 @@ Route::post('cadastroManutencaoImpressorasXavantes/salvar', [ManutencaoImpressor
 Route::delete('/deleteManutencaoImpressorasXavantes/{id}', [ManutencaoImpressorasXavantesController::class, 'deleteManutencaoImpressorasXavantes'])->middleware('auth');
 Route::get('/editManutencaoImpressorasXavantes/{id}', [ManutencaoImpressorasXavantesController::class, 'editManutencaoImpressorasXavantes'])->middleware('auth');
 Route::put('/editManutencaoImpressorasXavantes/update/{id}', [ManutencaoImpressorasXavantesController::class, 'updateManutencaoImpressorasXavantes'])->middleware('auth');
+
+Route::get('/cadastroManutencaoImpressorasMendesJr/{id}', [ManutencaoImpressorasMendesJrController::class, 'cadastroManutencaoImpressorasMendesJr'])->middleware('auth');
+Route::post('cadastroManutencaoImpressorasMendesJr/salvar', [ManutencaoImpressorasMendesJrController::class, 'storeManutencaoImpressorasMendesJr'])->middleware('auth');
+Route::delete('/deleteManutencaoImpressorasMendesJr/{id}', [ManutencaoImpressorasMendesJrController::class, 'deleteManutencaoImpressorasMendesJr'])->middleware('auth');
+Route::get('/editManutencaoImpressorasMendesJr/{id}', [ManutencaoImpressorasMendesJrController::class, 'editManutencaoImpressorasMendesJr'])->middleware('auth');
+Route::put('/editManutencaoImpressorasMendesJr/update/{id}', [ManutencaoImpressorasMendesJrController::class, 'updateManutencaoImpressorasMendesJr'])->middleware('auth');

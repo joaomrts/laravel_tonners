@@ -13,6 +13,7 @@
 
 <div id="events-create-container" class="col-md-8 offset-md-2 col-sm-10">
     <br>
+    <a href="/Suprimentos" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="arrow-back-outline"></ion-icon> Voltar</a>
     <h1>Cadastre a Compra</h1>
         <hr>
     @if ($errors->any())
@@ -57,16 +58,13 @@
     <h1>Compras do Cilindro {{$cilindro->modelo}}</h1>
     @if ((count($comprasCilindros) > 0))
     <div class="col-md-10 col-sm-10 offset-md-1 dashboard-events-container">
-        <div class="dashboard-tinta-container">
-            <a href="/showCompraCilindro" id="show" style="margin-right: 5px" class="btn btn-outline-dark"><ion-icon name="print-outline"></ion-icon> Imprimir</a>
-        </div>
         <br>
     <table class="table table-striped table table-bordered">
     <br>
         <thead>
             <tr>
-                <th scope="col">Fornecedor</th>
                 <th scope="col">Data</th>
+                <th scope="col">Fornecedor</th>
                 <th scope="col">Quantidade</th>
                 <th scope="col">Valor Unitário</th>
                 <th scope="col">Total</th>
@@ -76,8 +74,8 @@
         <tbody>
             @foreach ($comprasCilindros as $comprasCilindro)
             <tr>
-                <td class="tabela-manutencao-responsavel" scropt="row">{{ $comprasCilindro->fornecedor }}</td>
                 <td class="tabela-manutencao-data" scropt="row">{{ \Carbon\Carbon::parse($comprasCilindro->data)->format('d/m/Y')}}</td>
+                <td class="tabela-manutencao-responsavel" scropt="row">{{ $comprasCilindro->fornecedor }}</td>
                 <td class="tabela-manutencao-tipo" scropt="row">{{ $comprasCilindro->qtde }}</td>
                 <td class="tabela-manutencao-servico" scropt="row" >R$ {{ number_format($comprasCilindro->valor_un, 2, ',', '.')}}</td>
                 <td class="tabela-manutencao-descricao" scropt="row">R$ {{ number_format($comprasCilindro->valor_total, 2, ',', '.')}}</td>

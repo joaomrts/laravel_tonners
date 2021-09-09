@@ -42,8 +42,10 @@ class ComprasController extends Controller
         $compra->valor_un = $valor_un;
         $compra->valor_total = $compra->qtde * $compra->valor_un;
 
+        $url = 'Suprimentos/compra/' . $compra->tonner_id;
+
         $compra->save();
-        return redirect('/Suprimentos')->with('msg', 'Compra cadastrada com sucesso');
+        return redirect($url)->with('msg', 'Compra cadastrada com sucesso');
     }
 
 
@@ -51,22 +53,30 @@ class ComprasController extends Controller
 
         $compra = Compras::findOrFail($id);
 
-        return view('compra.editCompra', ['compra' => $compra]);
+        $url = '/Suprimentos/compra/' . $compra->tonner_id;
+
+        return view('compra.editCompra', compact('compra', 'url'));
     }
 
     public function updateCompra(StoreUpdateCompras $request)
     {
         $data = $request->all();
 
-        Compras::findOrFail($request->id)->update($data);
+        $compra = Compras::findOrFail($request->id);
+        $url = 'Suprimentos/compra/' . $compra->tonner_id;
+        $compra->update($data);
 
-        return redirect('/Suprimentos')->with('msg', 'Compra editada com sucesso');
+        return redirect($url)->with('msg', 'Compra cadastrada com sucesso');
     }
 
     public function deleteCompra($id)
     {
-        Compras::findOrFail($id)->delete();
+        $compra = Compras::findOrFail($id);
 
-        return redirect('/Suprimentos')->with('msg','Compra excluída com sucesso');
+        $url = 'Suprimentos/compra/' . $compra->tonner_id;
+
+        $compra->delete();
+
+        return redirect($url)->with('msg','Compra excluída com sucesso');
     }
 }

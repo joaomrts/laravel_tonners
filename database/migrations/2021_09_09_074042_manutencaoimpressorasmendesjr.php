@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Manutencaoimpressorasxavantes extends Migration
+class Manutencaoimpressorasmendesjr extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class Manutencaoimpressorasxavantes extends Migration
      */
     public function up()
     {
-        Schema::create('manutencaoimpressorasxavantes', function (Blueprint $table) {
+        Schema::create('manutencaoimpressorasmendesjr', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('impressoraXavantes_id')->unsigned();
-            $table->foreign('impressoraXavantes_id')->references('id')->on('impressoras_xavantes')->onDelete('cascade');
+            $table->integer('impressoraMendesJr_id')->unsigned();
+            $table->foreign('impressoraMendesJr_id')->references('id')->on('impressoras_mendes_jr')->onDelete('cascade');
             $table->string('responsavel');
             $table->date('data');
-            $table->string('defeito');
+            $table->string('descricao');
             $table->float('valor');
             $table->timestamps();
         });
@@ -32,6 +32,6 @@ class Manutencaoimpressorasxavantes extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('manutencaoimpressorasxavantes');
+        Schema::dropIfExists('manutencaoimpressorasmendesjr');
     }
 }

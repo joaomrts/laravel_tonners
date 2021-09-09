@@ -7,7 +7,7 @@
 
 <div id="events-create-container" class="col-md-10 offset-md-1">
     <br>
-    <a href="/Suprimentos" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="arrow-back-outline"></ion-icon> Voltar</a>
+    <a href="{{ URL::previous() }}" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="arrow-back-outline"></ion-icon>Voltar</a>
     <h1>Edite a Compra</h1>
         <hr>
     @if ($errors->any())
@@ -42,7 +42,7 @@
         </div>
         <br>
         <input type="submit" class="btn btn-success" value="Editar Compra">
-        <a href="/Suprimentos" class="btn btn-danger">Cancelar</a>
+        <a href="{{ $url }}" class="btn btn-danger">Cancelar</a>
     </form>
 </div>
 

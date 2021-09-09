@@ -16,10 +16,10 @@
             @endforeach
         </ul>
     @endif
-    <form action="/cadastroManutencaoImpressora/salvar" method="POST">
+    <form action="/cadastroManutencaoImpressorasMendesJr/salvar" method="POST">
         @csrf
         <div class="form-group">
-            <input type="hidden" class="form-control" name="impressora_id" id="impressora_id" value="{{ $impressora->id }}">
+            <input type="hidden" class="form-control" name="impressoraMendesJr_id" id="impressoraMendesJr_id" value="{{ $impressora->id }}">
         </div>
         <div class="form-group">
             <label for="responsavel">Responsável*</label>
@@ -31,8 +31,8 @@
             <input type="date" class="form-control" name="data" id="data" class="data">
         </div>
         <div class="form-group">
-            <label for="defeito">Descrição*</label>
-            <input type="text" name="defeito" id="defeito" class="form-control" placeholder="Descrição do defeito..." value="{{ old('defeito') }}">
+            <label for="descricao">Descrição*</label>
+            <input type="text" name="descricao" id="descricao" class="form-control" placeholder="Descrição da manutenção..." value="{{ old('descricao') }}">
         </div>
         <div class="form-group">
             <label for="valor">Valor*</label>
@@ -48,7 +48,7 @@
 <div id="events-create-container" class="col-md-10 offset-md-1 col-sm-10">
     <hr>
     <h1>Manutenções já feitas em: {{ $impressora->modelo }}</h1>
-    @if ((count($manutencaoimpressoras) > 0))
+    @if ((count($manutencaoimpressorasmendesjr) > 0))
     <div class="col-md-10 col-sm-10 offset-md-1 dashboard-events-container">
         <br>
     <table class="table table-striped table table-bordered">
@@ -57,21 +57,21 @@
             <tr>
                 <th scope="col">Data</th>
                 <th scope="col">Responsável</th>
-                <th scope="col">Defeito</th>
+                <th scope="col">Descrição</th>
                 <th scope="col">Valor</th>
                 <th class="açoes-manutencao" scope="col">Ações</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($manutencaoimpressoras as $manutencaoimpressora)
+            @foreach ($manutencaoimpressorasmendesjr as $manutencaoimpressoramendesjr)
             <tr>
-                <td class="tabela-manutencao-data" scropt="row">{{ \Carbon\Carbon::parse($manutencaoimpressora->data)->format('d/m/Y')}}</td>
-                <td class="tabela-manutencao-responsavel" scropt="row">{{ $manutencaoimpressora->responsavel }}</td>
-                <td class="tabela-manutencao-descricao" scropt="row">{{ $manutencaoimpressora->defeito }}</td>
-                <td class="tabela-manutencao-servico" scropt="row">R$ {{ number_format($manutencaoimpressora->valor, 2, ',', '.')}}</td>
+                <td class="tabela-manutencao-responsavel" scropt="row">{{ $manutencaoimpressoramendesjr->responsavel }}</td>
+                <td class="tabela-manutencao-data" scropt="row">{{ \Carbon\Carbon::parse($manutencaoimpressoramendesjr->data)->format('d/m/Y')}}</td>
+                <td class="tabela-manutencao-descricao" scropt="row">{{ $manutencaoimpressoramendesjr->descricao }}</td>
+                <td class="tabela-manutencao-servico" scropt="row">R$ {{ number_format($manutencaoimpressoramendesjr->valor, 2, ',', '.')}}</td>
                 <td>
-                <a href="/editManutencaoImpressora/{{ $manutencaoimpressora->id }}" style="margin-left: 3px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
-                <form action="/deleteManutencaoImpressora/{{ $manutencaoimpressora->id }}" method="POST">
+                <a href="/editManutencaoImpressorasMendesJr/{{ $manutencaoimpressoramendesjr->id }}" style="margin-left: 3px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
+                <form action="/deleteManutencaoImpressorasMendesJr/{{ $manutencaoimpressoramendesjr->id }}" method="POST">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger delete-btn" onclick="if (!confirm('Deseja realmente excluir?')) { return false }"><ion-icon name="trash-outline"></ion-icon></button>
@@ -97,13 +97,13 @@
         </tbody>
     </table>
         <div class="d-flex justify-content-center">
-            {{ $manutencaoimpressoras->appends($filters)->links() }}
+            {{ $manutencaoimpressorasmendesjr->appends($filters)->links() }}
         </div>
-    @elseif (count($manutencaoimpressoras) == 0 && $filters)
+    @elseif (count($manutencaoimpressorasmendesjr) == 0 && $filters)
         <div class="col-sm-8 col-md-8 offset-md-2">
             <h5><br>Não foi possível retornar resultados com sua busca.
         </div>
-    @elseif (count($manutencaoimpressoras)== 0)
+    @elseif (count($manutencaoimpressorasmendesjr)== 0)
         <div class="col-sm-8 col-md-8 offset-md-2">
         <br>
             <h5 style="text-align: center">Não há manutenções cadastradas...

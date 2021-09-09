@@ -56,14 +56,14 @@ class ManutencaoImpressorasController extends Controller
 
         ManutencaoImpressoras::findOrFail($request->id)->update($data);
 
-        return redirect('/Impressoras')->with('msg', 'Manutencao editada com sucesso');
+        return redirect('/Impressoras')->with('msg', 'Manutenção editada com sucesso');
     }
 
     public function deleteManutencaoImpressora($id)
     {
         ManutencaoImpressoras::findOrFail($id)->delete();
 
-        return redirect('/Impressoras')->with('msg','Manutencao excluída com sucesso');
+        return redirect('/Impressoras')->with('msg','Manutenção excluída com sucesso');
     }
 
 }

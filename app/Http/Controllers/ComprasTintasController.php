@@ -42,30 +42,43 @@ class ComprasTintasController extends Controller
         $compraTinta->valor_un = $valor_un;
         $compraTinta->valor_total = $compraTinta->qtde * $compraTinta->valor_un;
 
+        $url = 'Suprimentos/compraTinta/' . $compraTinta->tinta_id;
+
         $compraTinta->save();
-        return redirect('/Suprimentos')->with('msg', 'Compra cadastrada com sucesso');
+        return redirect($url)->with('msg', 'Compra cadastrada com sucesso');
     }
 
     public function editCompraTinta($id){
 
         $compraTinta = ComprasTintas::findOrFail($id);
 
-        return view('comprasTinta.editCompraTinta', ['compraTinta' => $compraTinta]);
+        $url = '/Suprimentos/compraTinta/' . $compraTinta->tinta_id;
+
+        return view('comprasTinta.editCompraTinta', compact('compraTinta', 'url'));
     }
 
     public function updateCompraTinta(StoreUpdateComprasTintas $request)
     {
         $data = $request->all();
 
-        ComprasTintas::findOrFail($request->id)->update($data);
+        $compraTinta = ComprasTintas::findOrFail($request->id);
 
-        return redirect('/Suprimentos')->with('msg', 'Compra editada com sucesso');
+        $url = '/Suprimentos/compraTinta/' . $compraTinta->tinta_id;
+
+        $compraTinta->update($data);
+
+        return redirect($url)->with('msg', 'Compra editada com sucesso');
     }
 
     public function deleteCompraTinta($id)
     {
-        ComprasTintas::findOrFail($id)->delete();
+        $compraTinta = ComprasTintas::findOrFail($id);
 
-        return redirect('/Suprimentos')->with('msg','Compra excluída com sucesso');
+        $url = '/Suprimentos/compraTinta/' . $compraTinta->tinta_id;
+
+        $compraTinta->delete();
+
+        return redirect($url)->with('msg','Compra excluída com sucesso');
     }
 }
+

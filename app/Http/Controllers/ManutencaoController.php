@@ -51,14 +51,14 @@ class ManutencaoController extends Controller
 
         Manutencao::findOrFail($request->id)->update($data);
 
-        return redirect('/')->with('msg', 'Manutencao editada com sucesso');
+        return redirect('/')->with('msg', 'Manutenção editada com sucesso');
     }
 
     public function deleteManutencao($id)
     {
         Manutencao::findOrFail($id)->delete();
 
-        return redirect('/')->with('msg','Manutencao excluída com sucesso');
+        return redirect('/')->with('msg','Manutenção excluída com sucesso');
     }
 
 }

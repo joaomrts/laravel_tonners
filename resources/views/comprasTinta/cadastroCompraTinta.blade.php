@@ -13,6 +13,7 @@
 
 <div id="events-create-container" class="col-md-8 offset-md-2 col-sm-10">
     <br>
+    <a href="/Suprimentos" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="arrow-back-outline"></ion-icon> Voltar</a>
     <h1>Cadastre a Compra</h1>
         <hr>
     @if ($errors->any())
@@ -62,8 +63,8 @@
     <br>
         <thead>
             <tr>
-                <th scope="col">Fornecedor</th>
                 <th scope="col">Data</th>
+                <th scope="col">Fornecedor</th>
                 <th scope="col">Quantidade</th>
                 <th scope="col">Valor Unitário</th>
                 <th scope="col">Total</th>
@@ -73,8 +74,8 @@
         <tbody>
             @foreach ($comprasTintas as $comprasTinta)
             <tr>
-                <td class="tabela-manutencao-responsavel" scropt="row">{{ $comprasTinta->fornecedor }}</td>
                 <td class="tabela-manutencao-data" scropt="row">{{ \Carbon\Carbon::parse($comprasTinta->data)->format('d/m/Y')}}</td>
+                <td class="tabela-manutencao-responsavel" scropt="row">{{ $comprasTinta->fornecedor }}</td>
                 <td class="tabela-manutencao-tipo" scropt="row">{{ $comprasTinta->qtde }}</td>
                 <td class="tabela-manutencao-servico" scropt="row" >R$ {{ number_format($comprasTinta->valor_un, 2, ',', '.')}}</td>
                 <td class="tabela-manutencao-descricao" scropt="row">R$ {{ number_format($comprasTinta->valor_total, 2, ',', '.')}}</td>

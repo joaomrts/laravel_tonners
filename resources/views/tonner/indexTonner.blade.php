@@ -45,7 +45,7 @@
                 <td class="tabela-suprimento-qtde_impressora" scropt="row">{{ $tonner->qtde_impressora }}</td>
                 <td class="tabela-suprimento-estoque" scropt="row" style="background-color: {{ $tonner->cor }}">{{ $tonner->estoque }}</td>
                 <td>
-                <a href="/edit/{{ $tonner->id }}" title="Editar" style="margin-left: 5px"class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
+                <a href="Suprimentos/edit/{{ $tonner->id }}" title="Editar" style="margin-left: 5px"class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
                 <a href="Suprimentos/compra/{{$tonner->id}}"title="Compra" style="margin-left: 5px" class="btn btn-success"><ion-icon name="cart-outline"></a>
                 <form action="/{{ $tonner->id }}" title="Excluir" method="POST">
                 @csrf

@@ -55,9 +55,9 @@ header{
 }
 
 .msg {
-    background-color: #c7ebd0;
-    color: #155724;
-    border: 1px solid #AEE7BB;
+    background-color: #adecbd;
+    color: #10421c;
+    border: 1px solid #92e6a5;
     width: 100%;
     margin-bottom: 0;
     text-align: center;
@@ -228,7 +228,7 @@ header{
 
 #navbar{
     justify-content: space-between;
-    background-color:#33383f;
+    background-color:#505d6d;
     padding: 20px 0;
     display: flex;
 }
@@ -640,7 +640,7 @@ padding: 5px;
 
 footer {
 text-align: center;
-background-color:#33383f;
+background-color:#505d6d;
 color: #FFF;
 padding: 30px;
 position: absolute;

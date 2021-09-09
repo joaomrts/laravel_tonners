@@ -16,4 +16,9 @@ class ImpressorasMendesJr extends Model
         'tonner',
         'setor',
     ];
+
+    public function manutencaoimpressorasmendesjr()
+    {
+        return $this->hasMany(ManutencaoImpressorasMendesJr::class);
+    }
 }

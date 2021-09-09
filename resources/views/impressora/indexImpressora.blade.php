@@ -171,7 +171,7 @@
                 <td class="tabela-impressora-setor-sp" scropt="row">{{ $impressorasMendesJr->setor }}</td>
                 <td>
                 <a href="/editImpressorasMendesJr/{{ $impressorasMendesJr->id }}" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
-
+                <a href="/cadastroManutencaoImpressorasMendesJr/{{ $impressorasMendesJr->id }}" style="margin-left: 3px" class="btn btn-success edit-btn"><ion-icon name="construct-outline"></ion-icon></a>
                 <form action="/deleteImpressorasMendesJr/{{ $impressorasMendesJr->id }}" method="POST">
                 @csrf
                 @method('DELETE')

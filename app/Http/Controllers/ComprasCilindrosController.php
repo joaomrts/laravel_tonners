@@ -40,30 +40,42 @@ class ComprasCilindrosController extends Controller
         $compraCilindro->valor_un = $valor_un;
         $compraCilindro->valor_total = $compraCilindro->qtde * $compraCilindro->valor_un;
 
+        $url = '/Suprimentos/compraCilindro/' . $compraCilindro->cilindro_id;
+
         $compraCilindro->save();
-        return redirect('/Suprimentos')->with('msg', 'Compra cadastrada com sucesso');
+        return redirect($url)->with('msg', 'Compra cadastrada com sucesso');
     }
 
     public function editCompraCilindro($id){
 
         $compraCilindro = ComprasCilindros::findOrFail($id);
 
-        return view('comprasCilindro.editCompraCilindro', compact('compraCilindro'));
+        $url = '/Suprimentos/compraCilindro/' . $compraCilindro->cilindro_id;
+
+        return view('comprasCilindro.editCompraCilindro', compact('compraCilindro', 'url'));
     }
 
     public function updateCompraCilindro(StoreUpdateComprasCilindros $request)
     {
         $data = $request->all();
 
-        ComprasCilindros::findOrFail($request->id)->update($data);
+        $compraCilindro = ComprasCilindros::findOrFail($request->id);
 
-        return redirect('/Suprimentos')->with('msg', 'Compra editada com sucesso');
+        $url = '/Suprimentos/compraCilindro/' . $compraCilindro->cilindro_id;
+
+        $compraCilindro->update($data);
+
+        return redirect($url)->with('msg', 'Compra editada com sucesso');
     }
 
     public function deleteCompraCilindro($id)
     {
-        ComprasCilindros::findOrFail($id)->delete();
+        $compraCilindro = ComprasCilindros::findOrFail($id);
 
-        return redirect('/Suprimentos')->with('msg','Compra excluída com sucesso');
+        $url = '/Suprimentos/compraCilindro/' . $compraCilindro->cilindro_id;
+
+        $compraCilindro->delete();
+
+        return redirect($url)->with('msg','Compra excluída com sucesso');
     }
 }
