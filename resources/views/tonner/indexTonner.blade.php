@@ -17,7 +17,8 @@
         <table class="table table-striped table table-bordered">
             <div class="dashboard-tinta-container">
                 <br>
-                <a href="/Office" class="btn btn-dark"><ion-icon name="logo-windows"></ion-icon> Office</a>
+                <a href="/Suprimentos/compras" class="btn btn-dark"><ion-icon name="cart"></ion-icon> Compras</a>
+                <a href="/Office" class="btn btn-dark" style="margin-right: 5px"><ion-icon name="logo-windows"></ion-icon> Office</a>
                 <a href="/Impressoras" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="print-outline"></ion-icon> Impressoras</a>
             </div>
             <a href="/" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="home-outline"></ion-icon> Início</a></h5>

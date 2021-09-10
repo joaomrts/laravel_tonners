@@ -25,7 +25,7 @@ class ImpressoraController extends Controller
                                 ->orderBy('setor')
                                 ->paginate(50);
 
-        return view('impressora.indexImpressora', ['impressoras' => $impressoras, 'impressorasXavantess' => $impressorasXavantess, 'impressorasMendesJrs' => $impressorasMendesJrs]);
+        return view('impressora.indexImpressora', compact('impressoras', 'impressorasXavantess', 'impressorasMendesJrs'));
     }
 
     public function search(Request $request)
@@ -50,7 +50,7 @@ class ImpressoraController extends Controller
                             ->orderBy('setor')
                             ->paginate(50);
 
-        return view('impressora.indexImpressora', ['impressoras' => $impressoras, 'filters' => $filters, 'impressorasXavantess' => $impressorasXavantess, 'impressorasMendesJrs' => $impressorasMendesJrs]);
+        return view('impressora.indexImpressora',compact('impressoras', 'filters', 'impressorasXavantess', 'impressorasMendesJrs'));
     }
 
     public function cadastroImpressora()
@@ -83,7 +83,7 @@ class ImpressoraController extends Controller
 
         $impressora  = Impressora::findOrFail($id);
 
-        return view('impressora.editImpressora',['impressora' => $impressora ]);
+        return view('impressora.editImpressora', compact('impressora'));
     }
 
     public function updateImpressora(StoreUpdateImpressora $request)
@@ -114,7 +114,7 @@ class ImpressoraController extends Controller
                         ->orderBy('setor')
                         ->paginate(50);
 
-        return view('impressora.showImpressora', ['impressoras' => $impressoras]);
+        return view('impressora.showImpressora', compact('impressoras'));
 
     }
 }

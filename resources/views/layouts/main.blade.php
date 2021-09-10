@@ -37,7 +37,7 @@
                     <a href="/" class="navbar-brand">
                         <img src="/img/logo.png" alt="logo">
                     </a>
-                    <h1>Controle de T.I.</h1>
+                    <h1 style="margin-left: 110px">Controle de T.I.</h1>
                     <ul class="navbar-nav">
                         @auth
                         <div class="btn-group" style="margin-right: 20px">

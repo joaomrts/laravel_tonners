@@ -52,7 +52,7 @@ class ComprasCilindrosController extends Controller
 
         $url = '/Suprimentos/compraCilindro/' . $compraCilindro->cilindro_id;
 
-        return view('comprasCilindro.editCompraCilindro', compact('compraCilindro', 'url'));
+        return view('comprasCilindro.editCompraCIlindro', compact('compraCilindro', 'url'));
     }
 
     public function updateCompraCilindro(StoreUpdateComprasCilindros $request)
@@ -72,7 +72,7 @@ class ComprasCilindrosController extends Controller
     {
         $compraCilindro = ComprasCilindros::findOrFail($id);
 
-        $url = '/Suprimentos/compraCilindro/' . $compraCilindro->cilindro_id;
+        $url = '/Suprimentos/compraCilindro/' .$compraCilindro->cilindro_id;
 
         $compraCilindro->delete();
 

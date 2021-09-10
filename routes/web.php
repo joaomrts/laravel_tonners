@@ -16,6 +16,7 @@ use App\Http\Controllers\ComprasCilindrosController;
 use App\Http\Controllers\ManutencaoImpressorasController;
 use App\Http\Controllers\ManutencaoImpressorasXavantesController;
 use App\Http\Controllers\ManutencaoImpressorasMendesJrController;
+use App\Http\Controllers\TodasComprasController;
 
 
 if(version_compare(PHP_VERSION, '7.2.0', '>=')) {
@@ -150,3 +151,5 @@ Route::post('cadastroManutencaoImpressorasMendesJr/salvar', [ManutencaoImpressor
 Route::delete('/deleteManutencaoImpressorasMendesJr/{id}', [ManutencaoImpressorasMendesJrController::class, 'deleteManutencaoImpressorasMendesJr'])->middleware('auth');
 Route::get('/editManutencaoImpressorasMendesJr/{id}', [ManutencaoImpressorasMendesJrController::class, 'editManutencaoImpressorasMendesJr'])->middleware('auth');
 Route::put('/editManutencaoImpressorasMendesJr/update/{id}', [ManutencaoImpressorasMendesJrController::class, 'updateManutencaoImpressorasMendesJr'])->middleware('auth');
+
+Route::get('/Suprimentos/compras', [TodasComprasController::class, 'compras'])->middleware('auth');
