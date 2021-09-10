@@ -34,31 +34,43 @@ class ManutencaoController extends Controller
         $manutencao->servico = $request->servico;
         $manutencao->descricao = $request->descricao;
 
+        $url = 'cadastroManutencao/' . $manutencao->equipamento_id;
+
         $manutencao->save();
-        return redirect('/')->with('msg', 'Manutenção cadastrada com sucesso');
+        return redirect($url)->with('msg', 'Manutenção cadastrada com sucesso');
     }
 
     public function editManutencao($id){
 
         $manutencao = Manutencao::findOrFail($id);
 
-        return view('manutencao.editManutencao', ['manutencao' => $manutencao]);
+        $url = '/cadastroManutencao/' . $manutencao->equipamento_id;
+
+        return view('manutencao.editManutencao', compact('manutencao', 'url'));
     }
 
     public function updateManutencao(StoreUpdateManutencao $request)
     {
         $data = $request->all();
 
-        Manutencao::findOrFail($request->id)->update($data);
+        $manutencao = Manutencao::findOrFail($request->id);
 
-        return redirect('/')->with('msg', 'Manutenção editada com sucesso');
+        $url = 'cadastroManutencao/' . $manutencao->equipamento_id;
+
+        $manutencao->update($data);
+
+        return redirect($url)->with('msg', 'Manutenção editada com sucesso');
     }
 
     public function deleteManutencao($id)
     {
-        Manutencao::findOrFail($id)->delete();
+        $manutencao = Manutencao::findOrFail($id);
 
-        return redirect('/')->with('msg','Manutenção excluída com sucesso');
+        $url = 'cadastroManutencao/' . $manutencao->equipamento_id;
+
+        $manutencao->delete();
+
+        return redirect($url)->with('msg','Manutenção excluída com sucesso');
     }
 
 }

@@ -7,6 +7,7 @@
 
 <div id="events-create-container" class="col-md-8 offset-md-2 col-sm-10">
     <br>
+    <a href="/Impressoras" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="arrow-back-outline"></ion-icon> Voltar</a>
     <h1>Cadastre a Manutenção</h1>
         <hr>
     @if ($errors->any())

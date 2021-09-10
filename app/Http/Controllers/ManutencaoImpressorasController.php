@@ -39,31 +39,43 @@ class ManutencaoImpressorasController extends Controller
         $manutencaoImpressora->defeito = $request->defeito;
         $manutencaoImpressora->valor = $request->valor;
 
+        $url = 'cadastroManutencaoImpressora/' . $manutencaoImpressora->impressora_id;
+
         $manutencaoImpressora->save();
-        return redirect('/Impressoras')->with('msg', 'Manutenção cadastrada com sucesso');
+        return redirect($url)->with('msg', 'Manutenção cadastrada com sucesso');
     }
 
     public function editManutencaoImpressora($id){
 
         $manutencaoImpressora = ManutencaoImpressoras::findOrFail($id);
 
-        return view('manutencaoImpressora.editManutencaoImpressora', compact('manutencaoImpressora'));
+        $url = '/cadastroManutencaoImpressora/' . $manutencaoImpressora->impressora_id;
+
+        return view('manutencaoImpressora.editManutencaoImpressora', compact('manutencaoImpressora', 'url'));
     }
 
     public function updateManutencaoImpressora(StoreUpdateManutencaoImpressoras $request)
     {
         $data = $request->all();
 
-        ManutencaoImpressoras::findOrFail($request->id)->update($data);
+        $manutencaoImpressora = ManutencaoImpressoras::findOrFail($request->id);
 
-        return redirect('/Impressoras')->with('msg', 'Manutenção editada com sucesso');
+        $url = '/cadastroManutencaoImpressora/' . $manutencaoImpressora->impressora_id;
+
+        $manutencaoImpressora->update($data);
+
+        return redirect($url)->with('msg', 'Manutenção editada com sucesso');
     }
 
     public function deleteManutencaoImpressora($id)
     {
-        ManutencaoImpressoras::findOrFail($id)->delete();
+        $manutencaoImpressora = ManutencaoImpressoras::findOrFail($id);
 
-        return redirect('/Impressoras')->with('msg','Manutenção excluída com sucesso');
+        $url = '/cadastroManutencaoImpressora/' . $manutencaoImpressora->impressora_id;
+
+        $manutencaoImpressora->delete();
+
+        return redirect($url)->with('msg','Manutenção excluída com sucesso');
     }
 
 }

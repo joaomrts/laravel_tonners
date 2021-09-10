@@ -40,30 +40,42 @@ class ManutencaoImpressorasMendesJrController extends Controller
         $manutencaoImpressoraMendesJr->descricao = $request->descricao;
         $manutencaoImpressoraMendesJr->valor = $request->valor;
 
+        $url = '/cadastroManutencaoImpressorasMendesJr/' . $manutencaoImpressoraMendesJr->impressoraMendesJr_id;
+
         $manutencaoImpressoraMendesJr->save();
-        return redirect('/Impressoras')->with('msg', 'Manutenção cadastrada com sucesso');
+        return redirect($url)->with('msg', 'Manutenção cadastrada com sucesso');
     }
 
     public function editManutencaoImpressorasMendesJr($id){
 
         $manutencaoImpressorasMendesJr = ManutencaoImpressorasMendesJr::findOrFail($id);
 
-        return view('manutencaoImpressorasMendesJr.editManutencaoImpressora', compact('manutencaoImpressorasMendesJr'));
+        $url = '/cadastroManutencaoImpressorasMendesJr/' . $manutencaoImpressorasMendesJr->impressoraMendesJr_id;
+
+        return view('manutencaoImpressorasMendesJr.editManutencaoImpressora', compact('manutencaoImpressorasMendesJr', 'url'));
     }
 
     public function updateManutencaoImpressorasMendesJr(StoreUpdateManutencaoImpressorasMendesJr $request)
     {
         $data = $request->all();
 
-        ManutencaoImpressorasMendesJr::findOrFail($request->id)->update($data);
+        $manutencao = ManutencaoImpressorasMendesJr::findOrFail($request->id);
 
-        return redirect('/Impressoras')->with('msg', 'Manutencao editada com sucesso');
+        $url = '/cadastroManutencaoImpressorasMendesJr/' . $manutencao->impressoraMendesJr_id;
+
+        $manutencao->update($data);
+
+        return redirect($url)->with('msg', 'Manutencao editada com sucesso');
     }
 
     public function deleteManutencaoImpressorasMendesJr($id)
     {
-        ManutencaoImpressorasMendesJr::findOrFail($id)->delete();
+        $manutencao = ManutencaoImpressorasMendesJr::findOrFail($id);
 
-        return redirect('/Impressoras')->with('msg','Manutencao excluída com sucesso');
+        $url = '/cadastroManutencaoImpressorasMendesJr/' . $manutencao->impressoraMendesJr_id;
+
+        $manutencao->delete();
+
+        return redirect($url)->with('msg','Manutencao excluída com sucesso');
     }
 }

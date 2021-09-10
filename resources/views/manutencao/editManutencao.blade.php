@@ -7,7 +7,7 @@
 
 <div id="events-create-container" class="col-md-10 offset-md-1">
     <br>
-    <a href="/" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="arrow-back-outline"></ion-icon> Voltar</a>
+    <a href="{{ $url }}" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="arrow-back-outline"></ion-icon> Voltar</a>
     <h1>Edite a Manutenção</h1>
         <hr>
     @if ($errors->any())
@@ -31,7 +31,6 @@
         <div class="form-group">
             <label for="title">Tipo*</label>
           <select name="tipo" id="tipo" class="form-control">
-              <option value="">{{ $manutencao->tipo }}</option>
               <option value="Preventiva">Preventiva</option>
               <option value="Corretiva">Corretiva</option>
           </select>
@@ -39,7 +38,6 @@
         <div class="form-group">
             <label for="title">Serviço*</label>
           <select name="servico" id="servico" class="form-control">
-              <option value="">{{ $manutencao->servico }}</option>
               <option value="Formatação">Formatação</option>
               <option value="Limpeza de Hardware">Limpeza de Hardware</option>
               <option value="Troca de Hardware - Defeito">Troca de Hardware - Defeito</option>
@@ -54,7 +52,7 @@
         </div>
         <br>
         <input type="submit" class="btn btn-success" value="Editar Manutenção">
-        <a href="/" class="btn btn-danger">Cancelar</a>
+        <a href="{{ $url }}" class="btn btn-danger">Cancelar</a>
     </form>
 </div>
 

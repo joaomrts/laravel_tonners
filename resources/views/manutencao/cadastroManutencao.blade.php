@@ -7,6 +7,7 @@
 
 <div id="events-create-container" class="col-md-8 offset-md-2 col-sm-10">
     <br>
+    <a href="/" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="arrow-back-outline"></ion-icon>Voltar</a>
     <h1>Cadastre a Manutenção</h1>
         <hr>
     @if ($errors->any())
@@ -33,7 +34,6 @@
         <div class="form-group">
             <label for="title">Tipo*</label>
           <select name="tipo" id="tipo" class="form-control">
-              <option value=""></option>
               <option value="Preventiva">Preventiva</option>
               <option value="Corretiva">Corretiva</option>
           </select>
@@ -41,7 +41,6 @@
         <div class="form-group">
             <label for="title">Serviço*</label>
           <select name="servico" id="servico" class="form-control">
-              <option value=""></option>
               <option value="Formatação">Formatação</option>
               <option value="Limpeza de Hardware">Limpeza de Hardware</option>
               <option value="Troca de Hardware - Defeito">Troca de Hardware - Defeito</option>

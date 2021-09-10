@@ -130,7 +130,6 @@
 <br>
 </div>
 
-
 <div class="col-md-10 col-sm-10 offset-md-1 dashboard-events-container">
     @if(count($cilindros)>0)
     <br>

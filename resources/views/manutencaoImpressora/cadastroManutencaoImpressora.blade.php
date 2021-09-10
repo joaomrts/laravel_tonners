@@ -7,6 +7,7 @@
 
 <div id="events-create-container" class="col-md-8 offset-md-2 col-sm-10">
     <br>
+    <a href="/Impressoras" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="arrow-back-outline"></ion-icon> Voltar</a>
     <h1>Cadastre a Manutenção</h1>
         <hr>
     @if ($errors->any())
@@ -28,7 +29,7 @@
         <div class="form-group">
             <label for="data">Data*</label>
             <br>
-            <input type="date" class="form-control" name="data" id="data" class="data">
+            <input type="date" class="form-control" name="data" id="data" class="data" value="{{ old('data') }}">
         </div>
         <div class="form-group">
             <label for="defeito">Descrição*</label>

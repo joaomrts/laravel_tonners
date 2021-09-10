@@ -40,30 +40,43 @@ class ManutencaoImpressorasXavantesController extends Controller
         $manutencaoImpressoraXavantes->defeito = $request->defeito;
         $manutencaoImpressoraXavantes->valor = $request->valor;
 
+        $url = 'cadastroManutencaoImpressorasXavantes/' . $manutencaoImpressoraXavantes->impressoraXavantes_id;
+
         $manutencaoImpressoraXavantes->save();
-        return redirect('/Impressoras')->with('msg', 'Manutenção cadastrada com sucesso');
+
+        return redirect($url)->with('msg', 'Manutenção cadastrada com sucesso');
     }
 
     public function editManutencaoImpressorasXavantes($id){
 
         $manutencaoImpressorasXavantes = ManutencaoImpressorasXavantes::findOrFail($id);
 
-        return view('manutencaoImpressorasXavantes.editManutencaoImpressora', compact('manutencaoImpressorasXavantes'));
+        $url = '/cadastroManutencaoImpressorasXavantes/' . $manutencaoImpressorasXavantes->impressoraXavantes_id;
+
+        return view('manutencaoImpressorasXavantes.editManutencaoImpressora', compact('manutencaoImpressorasXavantes', 'url'));
     }
 
     public function updateManutencaoImpressorasXavantes(StoreUpdateManutencaoImpressorasXavantes $request)
     {
         $data = $request->all();
 
-        ManutencaoImpressorasXavantes::findOrFail($request->id)->update($data);
+        $manutencao = ManutencaoImpressorasXavantes::findOrFail($request->id);
 
-        return redirect('/Impressoras')->with('msg', 'Manutencao editada com sucesso');
+        $url = '/cadastroManutencaoImpressorasXavantes/' . $manutencao->impressoraXavantes_id;
+
+        $manutencao->update($data);
+
+        return redirect($url)->with('msg', 'Manutencao editada com sucesso');
     }
 
     public function deleteManutencaoImpressorasXavantes($id)
     {
-        ManutencaoImpressorasXavantes::findOrFail($id)->delete();
+        $manutencao = ManutencaoImpressorasXavantes::findOrFail($id);
 
-        return redirect('/Impressoras')->with('msg','Manutencao excluída com sucesso');
+        $url = '/cadastroManutencaoImpressorasXavantes/' . $manutencao->impressoraXavantes_id;
+
+        $manutencao->delete();
+
+        return redirect($url)->with('msg','Manutencao excluída com sucesso');
     }
 }
