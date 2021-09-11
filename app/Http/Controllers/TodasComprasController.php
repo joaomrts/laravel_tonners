@@ -19,12 +19,18 @@ class TodasComprasController extends Controller
                    ->paginate(30);
 
         $tintas = ComprasTintas::select('comprastintas.*')
-                  ->orderBy('data', 'asc')
+                  ->orderBy('data', 'desc')
                   ->paginate(30);
 
         $cilindros = ComprasCilindros::select('comprascilindros.*')
-                     ->orderBy('data', 'asc')
+                     ->orderBy('data', 'desc')
                      ->paginate(30);
+
+        $compraTonner = $tonners->count('id');
+
+        $compraTinta = $tintas->count('id');
+
+        $compraCilindro = $cilindros->count('id');
 
 
         $qtdeTonners = $tonners->sum('qtde');
@@ -41,11 +47,13 @@ class TodasComprasController extends Controller
         $valorCilindros = $cilindros->sum('valor_total');
 
 
-
+        $compraTotal = $compraTonner + $compraTinta + $compraCilindro;
+        $itensTotal = $qtdeTonners + $qtdeTintas + $qtdeCilindros;
         $valorTotal = $valorTonners + $valorTintas + $valorCilindros;
-        $qtdeTotal = $qtdeTonners + $qtdeTintas + $qtdeCilindros;
+        $media = $valorTotal / $compraTotal;
 
 
-        return view('compra.todasCompras', compact('tonners', 'tintas', 'cilindros', 'qtdeTonners', 'qtdeTintas', 'qtdeCilindros', 'valorTonners', 'valorTintas', 'valorCilindros', 'valorTotal', 'qtdeTotal'));
+
+        return view('compra.todasCompras', compact('tonners', 'tintas', 'cilindros', 'qtdeTonners', 'qtdeTintas', 'qtdeCilindros', 'valorTonners', 'valorTintas', 'valorCilindros', 'valorTotal', 'compraTotal', 'itensTotal', 'media'));
     }
 }

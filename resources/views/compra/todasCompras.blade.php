@@ -13,13 +13,8 @@
         <br>
         <br>
 <table class="table table-striped table table-bordered">
-    <h1 > Tonners
+    <h1> Tonners
         <hr>
-        <div class="dashboard-tinta-container">
-            <a href="impressora/create-pdf" type="button" class="btn btn-outline-dark"><ion-icon name="cloud-download-outline"></ion-icon> Download Pdf</a>
-            <a href="/showImpressora" id="show" style="margin-right: 5px" class="btn btn-outline-dark"><ion-icon name="print-outline"></ion-icon> Imprimir</a></h5>
-        </div>
-        <br>
     </h1>
         <br>
             <thead>
@@ -59,11 +54,14 @@
             </tbody>
         </table>
     @elseif (count($tonners)== 0)
-    <div class="col-sm-10 col-md-10 offset-md-1">
+    <div class="col-sm-10 col-md-10 offset-md-1 dashboard-events-container">
+        <br>
+        <h1 style="text-align: center">|Tonners</h1>
     <br>
         <h5><br>Não há compras cadastradas
     <hr>
-        <a href="/cadastroCompra/{id}" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Compra</a></h5>
+        <a href="/Suprimentos" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Compra</a></h5>
+        <br>
     </div>
     @endif
 </div>
@@ -75,12 +73,7 @@
         <br>
 <table class="table table-striped table table-bordered">
     <h1 style="text-align: center"> Tintas
-        <hr>
-        <div class="dashboard-tinta-container">
-            <a href="impressora/create-pdf" type="button" class="btn btn-outline-dark"><ion-icon name="cloud-download-outline"></ion-icon> Download Pdf</a>
-            <a href="/showImpressora" id="show" style="margin-right: 5px" class="btn btn-outline-dark"><ion-icon name="print-outline"></ion-icon> Imprimir</a></h5>
-        </div>
-        <br>
+<hr>
     </h1>
         <br>
             <thead>
@@ -120,15 +113,17 @@
             </tbody>
         </table>
     @elseif (count($tinta)== 0)
-    <div class="col-sm-10 col-md-10 offset-md-1">
+    <div class="col-sm-10 col-md-10 offset-md-1 dashboard-events-container">
+        <br>
+        <h1 style="text-align: center">Tintas</h1>
     <br>
         <h5><br>Não há compras cadastradas
     <hr>
-        <a href="/cadastroCompra/{id}" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Compra</a></h5>
+        <a href="/Suprimentos" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Compra</a></h5>
+        <br>
     </div>
     @endif
 </div>
-
 
 
 @if(count($cilindros)>0)
@@ -138,11 +133,6 @@
 <table class="table table-striped table table-bordered">
     <h1 style="text-align: center"> Cilindros
         <hr>
-        <div class="dashboard-tinta-container">
-            <a href="impressora/create-pdf" type="button" class="btn btn-outline-dark"><ion-icon name="cloud-download-outline"></ion-icon> Download Pdf</a>
-            <a href="/showImpressora" id="show" style="margin-right: 5px" class="btn btn-outline-dark"><ion-icon name="print-outline"></ion-icon> Imprimir</a></h5>
-        </div>
-        <br>
     </h1>
         <br>
             <thead>
@@ -182,30 +172,36 @@
             </tbody>
         </table>
         <br>
-        <table class="table table-bordered table-dark">
-            <h1 style="text-align: center"> Total
-                <hr>
-            <br>
-                <thead>
-                    <tr>
-                        <th scope="col">Total de Compras</th>
-                        <th scope="col">Total em R$</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="bg-success tabela-total-qtde" scope="row">{{ $qtdeTotal }}</td>
-                        <td class="bg-success tabela-total-valor" scope="row" scropt="row">R$ {{ number_format($valorTotal, 2, ',', '.')}}</td>
-                    </tr>
-                </tbody>
-            </table>
     @elseif (count($cilindro)== 0)
-    <div class="col-sm-10 col-md-10 offset-md-1">
+    <div class="col-sm-10 col-md-10 offset-md-1 dashboard-events-container">
+        <br>
+        <h1 style="text-align: center"> Cilindros</h1>
     <br>
         <h5><br>Não há compras cadastradas
     <hr>
-        <a href="/cadastroCompra/{id}" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Compra</a></h5>
+        <a href="/Suprimentos" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Compra</a></h5>
+        <br>
     </div>
     @endif
+    <table class="table table-bordered table-dark">
+        <h1 style="text-align: center"> Total
+            <hr>
+            <thead>
+                <tr>
+                    <th scope="col">Total de Compras</th>
+                    <th scope="col">Total de Itens Comprados</th>
+                    <th scope="col">Total em R$</th>
+                    <th scope="col">Valor Médio por Compra</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="bg-success tabela-total-qtde" scope="row">{{ $compraTotal }}</td>
+                    <td class="bg-success tabela-total-qtde" scope="row">{{ $itensTotal  }}</td>
+                    <td class="bg-success tabela-total-valor" scope="row" scropt="row">R$ {{ number_format($valorTotal, 2, ',', '.')}}</td>
+                    <td class="bg-success tabela-total-qtde" scope="row">R$ {{ number_format($media, 2, ',', '.') }}</td>
+                </tr>
+            </tbody>
+    </table>
 </div>
 @endsection
