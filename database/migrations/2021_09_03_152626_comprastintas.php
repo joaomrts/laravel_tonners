@@ -17,6 +17,7 @@ class Comprastintas extends Migration
             $table->increments('id');
             $table->integer('tinta_id')->unsigned();
             $table->foreign('tinta_id')->references('id')->on('tinta')->onDelete('cascade');
+            $table->string('modelo');
             $table->string('fornecedor');
             $table->date('data');
             $table->float('qtde');

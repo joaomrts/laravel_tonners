@@ -31,7 +31,7 @@
 
     </head>
     <body>
-        <header>
+        <header class="d-print-none">
             <nav class="navnavbar-expand-lg">
                 <div class="collapse navbar-collapse" id="navbar">
                     <a href="/" class="navbar-brand">
@@ -75,10 +75,9 @@
                 </div>
             </div>
         </main>
-        <footer>
-            <p>Souza e Cambos Confecções &copy; 2021</p>
+        <footer class="d-print-none">
+            <p style="text-align: center">Souza e Cambos Confecções &copy; 2021</p>
         </footer>
         <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
-        @yield('js')
     </body>
 </html>

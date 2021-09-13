@@ -153,3 +153,4 @@ Route::get('/editManutencaoImpressorasMendesJr/{id}', [ManutencaoImpressorasMend
 Route::put('/editManutencaoImpressorasMendesJr/update/{id}', [ManutencaoImpressorasMendesJrController::class, 'updateManutencaoImpressorasMendesJr'])->middleware('auth');
 
 Route::get('/Suprimentos/compras', [TodasComprasController::class, 'compras'])->middleware('auth');
+Route::get('/Suprimentos/compras/imprimir', [TodasComprasController::class, 'showCompras'])->middleware('auth');

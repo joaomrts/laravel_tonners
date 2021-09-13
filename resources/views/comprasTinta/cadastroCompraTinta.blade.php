@@ -29,6 +29,9 @@
             <input type="hidden" class="form-control" name="tinta_id" id="tinta_id" value="{{ $tinta->id }}">
         </div>
         <div class="form-group">
+            <input type="hidden" class="form-control" name="modelo" id="modelo" value="{{ $tinta->modelo  }}">
+        </div>
+        <div class="form-group">
             <label for="fornecedor">Fornecedor*</label>
             <input type="text" class="form-control" name="fornecedor" id="fornecedor" placeholder="Razão social do fornecedor..." value="{{ old('fornecedor') }}">
         </div>
@@ -64,6 +67,7 @@
         <thead>
             <tr>
                 <th scope="col">Data</th>
+                <th scope="col">Modelo</th>
                 <th scope="col">Fornecedor</th>
                 <th scope="col">Quantidade</th>
                 <th scope="col">Valor Unitário</th>
@@ -74,11 +78,12 @@
         <tbody>
             @foreach ($comprasTintas as $comprasTinta)
             <tr>
-                <td class="tabela-manutencao-data" scropt="row">{{ \Carbon\Carbon::parse($comprasTinta->data)->format('d/m/Y')}}</td>
-                <td class="tabela-manutencao-responsavel" scropt="row">{{ $comprasTinta->fornecedor }}</td>
-                <td class="tabela-manutencao-tipo" scropt="row">{{ $comprasTinta->qtde }}</td>
-                <td class="tabela-manutencao-servico" scropt="row" >R$ {{ number_format($comprasTinta->valor_un, 2, ',', '.')}}</td>
-                <td class="tabela-manutencao-descricao" scropt="row">R$ {{ number_format($comprasTinta->valor_total, 2, ',', '.')}}</td>
+                <td class="tabela-compra-tinta-data" scropt="row">{{ \Carbon\Carbon::parse($comprasTinta->data)->format('d/m/Y')}}</td>
+                <td class="tabela-compra-tinta-modelo" scropt="row">{{ $tinta->modelo }}</td>
+                <td class="tabela-compra-tinta-fornecedor" scropt="row">{{ $comprasTinta->fornecedor }}</td>
+                <td class="tabela-compra-tinta-qtde" scropt="row">{{ $comprasTinta->qtde }}</td>
+                <td class="tabela-compra-tinta-un" scropt="row" >R$ {{ number_format($comprasTinta->valor_un, 2, ',', '.')}}</td>
+                <td class="tabela-compra-tinta-total" scropt="row">R$ {{ number_format($comprasTinta->valor_total, 2, ',', '.')}}</td>
                 <td>
                 <a href="/editCompraTinta/{{ $comprasTinta->id }}" style="margin-left: 3px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
                 <form action="/deleteCompraTinta/{{ $comprasTinta->id }}" method="POST">

@@ -91,6 +91,34 @@ header{
 
 
 
+.tabela-compra-tinta-data{
+    width: 70px ;
+}
+
+.tabela-compra-tinta-modelo{
+    width: 150px ;
+}
+
+.tabela-compra-tinta-fornecedor{
+    width: 70px ;
+}
+
+.tabela-compra-tinta-qtde{
+    width: 20px ;
+}
+
+.tabela-compra-tinta-un{
+    width: 150px ;
+}
+
+.tabela-compra-tinta-total{
+    width: 150px ;
+}
+
+
+
+
+
 
 .açoes-equipamento{
     width: 65px;

@@ -29,13 +29,16 @@
             <input type="hidden" class="form-control" name="tonner_id" id="tonner_id" value="{{ $tonner->id }}">
         </div>
         <div class="form-group">
-            <label for="fornecedor">Fornecedor*</label>
-            <input type="text" class="form-control" name="fornecedor" id="fornecedor" placeholder="Razão social do fornecedor..." value="{{ old('fornecedor') }}">
+            <input type="hidden" class="form-control" name="modelo" id="modelo" value="{{ $tonner->modelo }}">
         </div>
         <div class="form-group">
             <label for="data">Data*</label>
             <br>
             <input type="date" class="form-control" name="data" id="data" class="data" value="{{ old('data') }}" >
+        </div>
+        <div class="form-group">
+            <label for="fornecedor">Fornecedor*</label>
+            <input type="text" class="form-control" name="fornecedor" id="fornecedor" placeholder="Razão social do fornecedor..." value="{{ old('fornecedor') }}">
         </div>
         <div class="form-group">
             <label for="qtde">Quantidade*</label>
@@ -64,6 +67,7 @@
         <thead>
             <tr>
                 <th scope="col">Data</th>
+                <th scope="col">Modelo</th>
                 <th scope="col">Fornecedor</th>
                 <th scope="col">Quantidade</th>
                 <th scope="col">Valor Unitário</th>
@@ -74,6 +78,7 @@
         <tbody>
             @foreach ($compras as $compra)
                 <td class="tabela-manutencao-data" scropt="row">{{ \Carbon\Carbon::parse($compra->data)->format('d/m/Y')}}</td>
+                <td class="tabela-manutencao-responsavel" scropt="row">{{ $tonner->modelo }}</td>
                 <td class="tabela-manutencao-responsavel" scropt="row">{{ $compra->fornecedor }}</td>
                 <td class="tabela-manutencao-tipo" scropt="row">{{ $compra->qtde }}</td>
                 <td class="tabela-manutencao-servico" scropt="row" >R$ {{ number_format($compra->valor_un, 2, ',', '.')}}</td>

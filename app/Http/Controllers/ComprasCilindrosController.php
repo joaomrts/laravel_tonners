@@ -33,6 +33,7 @@ class ComprasCilindrosController extends Controller
         $compraCilindro = new ComprasCilindros;
 
         $compraCilindro->cilindro_id = $request->cilindro_id;
+        $compraCilindro->modelo = $request->modelo;
         $compraCilindro->fornecedor = $request->fornecedor;
         $compraCilindro->data = $request->data;
         $compraCilindro->qtde = $request->qtde;

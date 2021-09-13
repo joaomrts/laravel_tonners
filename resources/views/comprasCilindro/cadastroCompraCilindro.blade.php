@@ -29,6 +29,9 @@
             <input type="hidden" class="form-control" name="cilindro_id" id="cilindro_id" value="{{ $cilindro->id }}">
         </div>
         <div class="form-group">
+            <input type="hidden" class="form-control" name="modelo" cilindro_id="modelo" value="{{ $cilindro->modelo }}">
+        </div>
+        <div class="form-group">
             <label for="fornecedor">Fornecedor*</label>
             <input type="text" class="form-control" name="fornecedor" id="fornecedor" placeholder="Razão social do fornecedor..." value="{{ old('fornecedor') }}">
         </div>
@@ -64,6 +67,7 @@
         <thead>
             <tr>
                 <th scope="col">Data</th>
+                <th scope="col">Modelo</th>
                 <th scope="col">Fornecedor</th>
                 <th scope="col">Quantidade</th>
                 <th scope="col">Valor Unitário</th>
@@ -75,6 +79,7 @@
             @foreach ($comprasCilindros as $comprasCilindro)
             <tr>
                 <td class="tabela-manutencao-data" scropt="row">{{ \Carbon\Carbon::parse($comprasCilindro->data)->format('d/m/Y')}}</td>
+                <td class="tabela-manutencao-responsavel" scropt="row">{{ $cilindro->modelo }}</td>
                 <td class="tabela-manutencao-responsavel" scropt="row">{{ $comprasCilindro->fornecedor }}</td>
                 <td class="tabela-manutencao-tipo" scropt="row">{{ $comprasCilindro->qtde }}</td>
                 <td class="tabela-manutencao-servico" scropt="row" >R$ {{ number_format($comprasCilindro->valor_un, 2, ',', '.')}}</td>

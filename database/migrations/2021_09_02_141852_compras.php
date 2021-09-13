@@ -17,6 +17,7 @@ class Compras extends Migration
             $table->increments('id');
             $table->integer('tonner_id')->unsigned();
             $table->foreign('tonner_id')->references('id')->on('tonner')->onDelete('cascade');
+            $table->string('modelo');
             $table->string('fornecedor');
             $table->date('data');
             $table->float('qtde');

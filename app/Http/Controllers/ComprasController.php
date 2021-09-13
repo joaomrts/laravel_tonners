@@ -35,6 +35,7 @@ class ComprasController extends Controller
         $compra = new Compras;
 
         $compra->tonner_id = $request->tonner_id;
+        $compra->modelo = $request->modelo;
         $compra->fornecedor = $request->fornecedor;
         $compra->data = $request->data;
         $compra->qtde = $request->qtde;

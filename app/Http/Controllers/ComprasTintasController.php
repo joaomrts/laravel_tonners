@@ -35,6 +35,7 @@ class ComprasTintasController extends Controller
         $compraTinta = new ComprasTintas;
 
         $compraTinta->tinta_id = $request->tinta_id;
+        $compraTinta->modelo = $request->modelo;
         $compraTinta->fornecedor = $request->fornecedor;
         $compraTinta->data = $request->data;
         $compraTinta->qtde = $request->qtde;
