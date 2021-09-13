@@ -16,7 +16,7 @@ class Comprastintas extends Migration
         Schema::create('comprastintas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('tinta_id')->unsigned();
-            $table->foreign('tinta_id')->references('id')->on('tinta')->onDelete('cascade');
+            $table->foreign('tinta_id')->references('id')->on('tinta');
             $table->string('modelo');
             $table->string('fornecedor');
             $table->date('data');

@@ -16,7 +16,7 @@ class Manutencaoimpressoras extends Migration
         Schema::create('manutencaoimpressoras', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('impressora_id')->unsigned();
-            $table->foreign('impressora_id')->references('id')->on('impressora')->onDelete('cascade');
+            $table->foreign('impressora_id')->references('id')->on('impressora');
             $table->string('responsavel');
             $table->date('data');
             $table->string('defeito');

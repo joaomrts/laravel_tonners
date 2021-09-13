@@ -16,7 +16,7 @@ class Compras extends Migration
         Schema::create('compras', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('tonner_id')->unsigned();
-            $table->foreign('tonner_id')->references('id')->on('tonner')->onDelete('cascade');
+            $table->foreign('tonner_id')->references('id')->on('tonner');
             $table->string('modelo');
             $table->string('fornecedor');
             $table->date('data');

@@ -16,7 +16,7 @@ class Comprascilindros extends Migration
         Schema::create('comprascilindros', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('cilindro_id')->unsigned();
-            $table->foreign('cilindro_id')->references('id')->on('cilindro')->onDelete('cascade');
+            $table->foreign('cilindro_id')->references('id')->on('cilindro');
             $table->string('modelo');
             $table->string('fornecedor');
             $table->date('data');
