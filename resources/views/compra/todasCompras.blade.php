@@ -9,7 +9,7 @@
 
     <div class="col-md-10 col-sm-10 offset-md-1 dashboard-events-container">
         <br>
-            <a href="{{ URL::previous() }}" id="show" class="btn btn-dark"><ion-icon name="arrow-back"></ion-icon> Voltar</a></h5>
+            <a href="/Suprimentos" id="show" class="btn btn-dark"><ion-icon name="arrow-back"></ion-icon> Voltar</a></h5>
         <div class="dashboard-tinta-container">
             <a href="/Suprimentos/compras/imprimir" id="show" class="btn btn-outline-dark"><ion-icon name="print-outline"></ion-icon> Imprimir</a></h5>
         </div>
@@ -28,6 +28,7 @@
                     <th scope="col">Quantidade</th>
                     <th scope="col">Valor Unitário</th>
                     <th scope="col">Valor Total</th>
+                    <th class="tabela-compras-acoes">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,6 +40,13 @@
                     <td class="tabela-manutencao-tipo" scropt="row">{{ $tonner->qtde }}</td>
                     <td class="tabela-manutencao-servico" scropt="row" >R$ {{ number_format($tonner->valor_un, 2, ',', '.')}}</td>
                     <td class="tabela-manutencao-descricao" scropt="row">R$ {{ number_format($tonner->valor_total, 2, ',', '.')}}</td>
+                    <td>
+                    <form action="/deleteCompras/{{ $tonner->id }}"method="POST" title="Excluir">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger delete-btn" onclick="if (!confirm('Deseja realmente excluir?')) { return false }"><ion-icon name="trash-outline"></ion-icon></button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
@@ -89,6 +97,7 @@
                     <th scope="col">Quantidade</th>
                     <th scope="col">Valor Unitário</th>
                     <th scope="col">Valor Total</th>
+                    <th class="tabela-compras-acoes">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -100,6 +109,13 @@
                     <td class="tabela-manutencao-tipo" scropt="row">{{ $tinta->qtde }}</td>
                     <td class="tabela-manutencao-servico" scropt="row" >R$ {{ number_format($tinta->valor_un, 2, ',', '.')}}</td>
                     <td class="tabela-manutencao-descricao" scropt="row">R$ {{ number_format($tinta->valor_total, 2, ',', '.')}}</td>
+                    <td>
+                        <form action="/deleteComprasTintas/{{ $tinta->id }}"method="POST" title="Excluir">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger delete-btn" onclick="if (!confirm('Deseja realmente excluir?')) { return false }"><ion-icon name="trash-outline"></ion-icon></button>
+                            </form>
+                        </td>
                 </tr>
             @endforeach
         </tbody>
@@ -150,6 +166,7 @@
                     <th scope="col">Quantidade</th>
                     <th scope="col">Valor Unitário</th>
                     <th scope="col">Valor Total</th>
+                    <th class="tabela-compras-acoes">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -161,6 +178,13 @@
                     <td class="tabela-manutencao-tipo" scropt="row">{{ $cilindro->qtde }}</td>
                     <td class="tabela-manutencao-servico" scropt="row" >R$ {{ number_format($cilindro->valor_un, 2, ',', '.')}}</td>
                     <td class="tabela-manutencao-descricao" scropt="row">R$ {{ number_format($cilindro->valor_total, 2, ',', '.')}}</td>
+                    <td>
+                        <form action="/deleteComprasCilindros/{{ $cilindro->id }}"method="POST" title="Excluir">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger delete-btn" onclick="if (!confirm('Deseja realmente excluir?')) { return false }"><ion-icon name="trash-outline"></ion-icon></button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

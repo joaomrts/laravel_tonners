@@ -154,3 +154,6 @@ Route::put('/editManutencaoImpressorasMendesJr/update/{id}', [ManutencaoImpresso
 
 Route::get('/Suprimentos/compras', [TodasComprasController::class, 'compras'])->middleware('auth');
 Route::get('/Suprimentos/compras/imprimir', [TodasComprasController::class, 'showCompras'])->middleware('auth');
+Route::delete('/deleteCompras/{id}', [TodasComprasController:: class, 'deleteCompras'])->middleware('auth');
+Route::delete('/deleteComprasTintas/{id}', [TodasComprasController:: class, 'deleteComprasTintas'])->middleware('auth');
+Route::delete('/deleteComprasCilindros/{id}', [TodasComprasController:: class, 'deleteComprasCilindros'])->middleware('auth');

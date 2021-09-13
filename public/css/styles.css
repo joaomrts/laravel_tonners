@@ -218,6 +218,10 @@ header{
     width: 350px;
 }
 
+.tabela-compras-acoes{
+    width: 50px;
+}
+
 
 #produto-container .already-joined-msg {
     margin: 15px;

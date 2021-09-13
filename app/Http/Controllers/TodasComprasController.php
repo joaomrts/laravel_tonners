@@ -98,4 +98,26 @@ class TodasComprasController extends Controller
 
         return view('compra.showCompras', compact('tonners', 'tintas', 'cilindros', 'qtdeTonners', 'qtdeTintas', 'qtdeCilindros', 'valorTonners', 'valorTintas', 'valorCilindros', 'valorTotal', 'compraTotal', 'itensTotal', 'media'));
     }
+
+    public function deleteCompras($id)
+    {
+        Compras::findOrFail($id)->delete();
+
+        return redirect('Suprimentos/compras')->with('msg', 'Compra excluída com sucesso');
+    }
+
+    public function deleteComprasTintas($id)
+    {
+        ComprasTintas::findOrFail($id)->delete();
+
+        return redirect('Suprimentos/compras')->with('msg', 'Compra excluída com sucesso');
+    }
+
+    public function deleteComprasCilindros($id)
+    {
+        ComprasCilindros::findOrFail($id)->delete();
+
+        return redirect('Suprimentos/compras')->with('msg', 'Compra excluída com sucesso');
+    }
+
 }
