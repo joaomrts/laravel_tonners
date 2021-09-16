@@ -17,6 +17,7 @@ class Manutencaoimpressorasmendesjr extends Migration
             $table->increments('id');
             $table->integer('impressoraMendesJr_id')->unsigned();
             $table->foreign('impressoraMendesJr_id')->references('id')->on('impressoras_mendes_jr');
+            $table->string('modelo');
             $table->string('responsavel');
             $table->date('data');
             $table->string('descricao');

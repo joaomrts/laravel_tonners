@@ -17,6 +17,7 @@ class Manutencaoimpressoras extends Migration
             $table->increments('id');
             $table->integer('impressora_id')->unsigned();
             $table->foreign('impressora_id')->references('id')->on('impressora');
+            $table->string('modelo');
             $table->string('responsavel');
             $table->date('data');
             $table->string('defeito');

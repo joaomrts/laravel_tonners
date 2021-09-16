@@ -16,11 +16,14 @@ class Manutencao extends Migration
         Schema::create('manutencao', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('equipamento_id')->unsigned();
+            $table->string('numeroIp');
+            $table->string('equipamento');
             $table->string('responsavel');
             $table->date('data');
             $table->string('tipo');
             $table->string('servico');
             $table->string('descricao');
+            $table->float('valor');
             $table->timestamps();
         });
     }

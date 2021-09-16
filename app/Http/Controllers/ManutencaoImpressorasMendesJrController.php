@@ -35,12 +35,13 @@ class ManutencaoImpressorasMendesJrController extends Controller
         $manutencaoImpressoraMendesJr = new ManutencaoImpressorasMendesJr;
 
         $manutencaoImpressoraMendesJr->impressoraMendesJr_id = $request->impressoraMendesJr_id;
+        $manutencaoImpressoraMendesJr->modelo = $request->modelo;
         $manutencaoImpressoraMendesJr->responsavel = $request->responsavel;
         $manutencaoImpressoraMendesJr->data = $request->data;
         $manutencaoImpressoraMendesJr->descricao = $request->descricao;
         $manutencaoImpressoraMendesJr->valor = $request->valor;
 
-        $url = '/cadastroManutencaoImpressorasMendesJr/' . $manutencaoImpressoraMendesJr->impressoraMendesJr_id;
+        $url = '/Impressoras/manutencao/MendesJr/' . $manutencaoImpressoraMendesJr->impressoraMendesJr_id;
 
         $manutencaoImpressoraMendesJr->save();
         return redirect($url)->with('msg', 'Manutenção cadastrada com sucesso');
@@ -50,7 +51,7 @@ class ManutencaoImpressorasMendesJrController extends Controller
 
         $manutencaoImpressorasMendesJr = ManutencaoImpressorasMendesJr::findOrFail($id);
 
-        $url = '/cadastroManutencaoImpressorasMendesJr/' . $manutencaoImpressorasMendesJr->impressoraMendesJr_id;
+        $url = '/Impressoras/manutencao/MendesJr/' . $manutencaoImpressorasMendesJr->impressoraMendesJr_id;
 
         return view('manutencaoImpressorasMendesJr.editManutencaoImpressora', compact('manutencaoImpressorasMendesJr', 'url'));
     }
@@ -61,7 +62,7 @@ class ManutencaoImpressorasMendesJrController extends Controller
 
         $manutencao = ManutencaoImpressorasMendesJr::findOrFail($request->id);
 
-        $url = '/cadastroManutencaoImpressorasMendesJr/' . $manutencao->impressoraMendesJr_id;
+        $url = '/Impressoras/manutencao/MendesJr/' . $manutencao->impressoraMendesJr_id;
 
         $manutencao->update($data);
 
@@ -72,7 +73,7 @@ class ManutencaoImpressorasMendesJrController extends Controller
     {
         $manutencao = ManutencaoImpressorasMendesJr::findOrFail($id);
 
-        $url = '/cadastroManutencaoImpressorasMendesJr/' . $manutencao->impressoraMendesJr_id;
+        $url = '/Impressoras/manutencao/MendesJr/' . $manutencao->impressoraMendesJr_id;
 
         $manutencao->delete();
 

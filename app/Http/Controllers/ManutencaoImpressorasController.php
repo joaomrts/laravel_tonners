@@ -34,12 +34,13 @@ class ManutencaoImpressorasController extends Controller
         $manutencaoImpressora = new ManutencaoImpressoras;
 
         $manutencaoImpressora->impressora_id = $request->impressora_id;
+        $manutencaoImpressora->modelo = $request->modelo;
         $manutencaoImpressora->responsavel = $request->responsavel;
         $manutencaoImpressora->data = $request->data;
         $manutencaoImpressora->defeito = $request->defeito;
         $manutencaoImpressora->valor = $request->valor;
 
-        $url = 'cadastroManutencaoImpressora/' . $manutencaoImpressora->impressora_id;
+        $url = '/Impressoras/manutencao/MG/' . $manutencaoImpressora->impressora_id;
 
         $manutencaoImpressora->save();
         return redirect($url)->with('msg', 'Manutenção cadastrada com sucesso');
@@ -49,7 +50,7 @@ class ManutencaoImpressorasController extends Controller
 
         $manutencaoImpressora = ManutencaoImpressoras::findOrFail($id);
 
-        $url = '/cadastroManutencaoImpressora/' . $manutencaoImpressora->impressora_id;
+        $url = '/Impressoras/manutencao/MG/' . $manutencaoImpressora->impressora_id;
 
         return view('manutencaoImpressora.editManutencaoImpressora', compact('manutencaoImpressora', 'url'));
     }
@@ -60,7 +61,7 @@ class ManutencaoImpressorasController extends Controller
 
         $manutencaoImpressora = ManutencaoImpressoras::findOrFail($request->id);
 
-        $url = '/cadastroManutencaoImpressora/' . $manutencaoImpressora->impressora_id;
+        $url = '/Impressoras/manutencao/MG/' . $manutencaoImpressora->impressora_id;
 
         $manutencaoImpressora->update($data);
 
@@ -71,7 +72,7 @@ class ManutencaoImpressorasController extends Controller
     {
         $manutencaoImpressora = ManutencaoImpressoras::findOrFail($id);
 
-        $url = '/cadastroManutencaoImpressora/' . $manutencaoImpressora->impressora_id;
+        $url = '/Impressoras/manutencao/MG/' . $manutencaoImpressora->impressora_id;
 
         $manutencaoImpressora->delete();
 

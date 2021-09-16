@@ -1833,17 +1833,17 @@
         },
         {
             "name": "laravel/fortify",
-            "version": "v1.7.14",
-            "version_normalized": "1.7.14.0",
+            "version": "v1.8.2",
+            "version_normalized": "1.8.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/fortify.git",
-                "reference": "3e187b3a440f6d41c3b4599ca5d6167a52289a4e"
+                "reference": "a52a980b922694fbf7298ab70cc3da7fb716cfff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/fortify/zipball/3e187b3a440f6d41c3b4599ca5d6167a52289a4e",
-                "reference": "3e187b3a440f6d41c3b4599ca5d6167a52289a4e",
+                "url": "https://api.github.com/repos/laravel/fortify/zipball/a52a980b922694fbf7298ab70cc3da7fb716cfff",
+                "reference": "a52a980b922694fbf7298ab70cc3da7fb716cfff",
                 "shasum": ""
             },
             "require": {
@@ -1858,7 +1858,7 @@
                 "orchestra/testbench": "^6.0",
                 "phpunit/phpunit": "^9.3"
             },
-            "time": "2021-06-29T16:14:35+00:00",
+            "time": "2021-09-07T14:30:59+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2070,17 +2070,17 @@
         },
         {
             "name": "laravel/jetstream",
-            "version": "v2.3.14",
-            "version_normalized": "2.3.14.0",
+            "version": "v2.4.0",
+            "version_normalized": "2.4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/jetstream.git",
-                "reference": "7446fc7c6e62457bf37fef22e0a0e96956dee089"
+                "reference": "69a4bb5523f91214d182315438deb66190317382"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/jetstream/zipball/7446fc7c6e62457bf37fef22e0a0e96956dee089",
-                "reference": "7446fc7c6e62457bf37fef22e0a0e96956dee089",
+                "url": "https://api.github.com/repos/laravel/jetstream/zipball/69a4bb5523f91214d182315438deb66190317382",
+                "reference": "69a4bb5523f91214d182315438deb66190317382",
                 "shasum": ""
             },
             "require": {
@@ -2088,7 +2088,6 @@
                 "illuminate/support": "^8.0",
                 "jenssegers/agent": "^2.6",
                 "laravel/fortify": "^1.6.1",
-                "league/commonmark": "^1.3|^2.0",
                 "php": "^7.3|^8.0"
             },
             "require-dev": {
@@ -2098,7 +2097,7 @@
                 "orchestra/testbench": "^6.0",
                 "phpunit/phpunit": "^9.3"
             },
-            "time": "2021-07-28T10:12:38+00:00",
+            "time": "2021-09-14T16:11:51+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {

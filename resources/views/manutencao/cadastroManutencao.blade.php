@@ -23,13 +23,19 @@
             <input type="hidden" class="form-control" name="equipamento_id" id="equipamento_id" value="{{ $equipamento->id }}">
         </div>
         <div class="form-group">
+            <input type="hidden" class="form-control" name="numeroIp" id="numeroIp" value="{{ $equipamento->numeroIp }}">
+        </div>
+        <div class="form-group">
+            <input type="hidden" class="form-control" name="equipamento" id="equipamento" value="{{ $equipamento->equipamento }}">
+        </div>
+        <div class="form-group">
             <label for="responsavel">Responsável*</label>
             <input type="text" class="form-control" name="responsavel" id="responsavel" placeholder="Nome do responsável..." value="{{ old('responsavel') }}">
         </div>
         <div class="form-group">
             <label for="data">Data*</label>
             <br>
-            <input type="date" class="form-control" name="data" id="data" class="data">
+            <input type="date" class="form-control" name="data" id="data" class="data" value="{{old('data') }}">
         </div>
         <div class="form-group">
             <label for="title">Tipo*</label>
@@ -53,6 +59,10 @@
             <label for="descricao">Descrição*</label>
             <input type="text" name="descricao" id="descricao" class="form-control" placeholder="Descrição da manutenção..." value="{{ old('descricao') }}">
         </div>
+        <div class="form-group">
+            <label for="valor">Valor*</label>
+            <input type="number" step=".01" name="valor" id="valor" class="form-control" placeholder="Valor da manutenção..." value="{{ old('valor') }}">
+        </div>
         <br>
         <input type="submit" class="btn btn-success" value="Cadastrar Manutenção">
         <a href="/" class="btn btn-danger">Cancelar</a>
@@ -75,6 +85,7 @@
                 <th scope="col">Tipo</th>
                 <th scope="col">Serviço</th>
                 <th scope="col">Descrição</th>
+                <th scope="col">Valor</th>
                 <th class="açoes-manutencao" scope="col">Ações</th>
             </tr>
         </thead>
@@ -86,6 +97,7 @@
                 <td class="tabela-manutencao-tipo" scropt="row">{{ $manutencao->tipo }}</td>
                 <td class="tabela-manutencao-servico" scropt="row">{{ $manutencao->servico }}</td>
                 <td class="tabela-manutencao-descricao" scropt="row">{{ $manutencao->descricao }}</td>
+                <td class="tabela-manutencao-data" scropt="row">R$ {{ number_format($manutencao->valor, 2, ',', '.') }}</td>
                 <td>
                 <a href="/editManutencao/{{ $manutencao->id }}" style="margin-left: 3px" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
                 <form action="/deleteManutencao/{{ $manutencao->id }}" method="POST">

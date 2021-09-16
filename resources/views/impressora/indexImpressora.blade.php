@@ -26,6 +26,7 @@
         <hr>
         <a href="/cadastroImpressora" id="cadastro" style="margin-bottom: 18px" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Impressora</a></h5>
         <div class="dashboard-tinta-container">
+            <a href="/Impressoras/manutencao" style="margin-left: 5px" class="btn btn-outline-dark"><ion-icon name="construct-outline"></ion-icon> Manutenções</a>
             <a href="impressora/create-pdf" type="button" class="btn btn-outline-dark"><ion-icon name="cloud-download-outline"></ion-icon> Download Pdf</a>
             <a href="/showImpressora" id="show" style="margin-right: 5px" class="btn btn-outline-dark"><ion-icon name="print-outline"></ion-icon> Imprimir</a></h5>
         </div>
@@ -48,7 +49,7 @@
                 <td class="tabela-impressora-setor" scropt="row">{{ $impressora->setor }}</td>
                 <td>
                 <a href="/editImpressora/{{ $impressora->id }}" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
-                <a href="/cadastroManutencaoImpressora/{{ $impressora->id }}" style="margin-left: 3px" class="btn btn-success edit-btn"><ion-icon name="construct-outline"></ion-icon></a>
+                <a href="/Impressoras/manutencao/MG/{{ $impressora->id }}" style="margin-left: 3px" class="btn btn-success edit-btn"><ion-icon name="construct-outline"></ion-icon></a>
                 <form action="/deleteImpressora/{{ $impressora->id }}" method="POST">
                 @csrf
                 @method('DELETE')
@@ -109,7 +110,7 @@
                 <td class="tabela-impressora-setor-sp" scropt="row">{{ $impressorasXavantes->setor }}</td>
                 <td>
                 <a href="/editImpressorasXavantes/{{ $impressorasXavantes->id }}" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
-                <a href="/cadastroManutencaoImpressorasXavantes/{{ $impressorasXavantes->id }}" style="margin-left: 3px" class="btn btn-success edit-btn"><ion-icon name="construct-outline"></ion-icon></a>
+                <a href="/Impressoras/manutencao/xavantes/{{ $impressorasXavantes->id }}" style="margin-left: 3px" class="btn btn-success edit-btn"><ion-icon name="construct-outline"></ion-icon></a>
                 <form action="/deleteImpressorasXavantes/{{ $impressorasXavantes->id }}" method="POST">
                 @csrf
                 @method('DELETE')
@@ -171,7 +172,7 @@
                 <td class="tabela-impressora-setor-sp" scropt="row">{{ $impressorasMendesJr->setor }}</td>
                 <td>
                 <a href="/editImpressorasMendesJr/{{ $impressorasMendesJr->id }}" class="btn btn-primary edit-btn"><ion-icon name="create-outline"></ion-icon></a>
-                <a href="/cadastroManutencaoImpressorasMendesJr/{{ $impressorasMendesJr->id }}" style="margin-left: 3px" class="btn btn-success edit-btn"><ion-icon name="construct-outline"></ion-icon></a>
+                <a href="/Impressoras/manutencao/MendesJr/{{ $impressorasMendesJr->id }}" style="margin-left: 3px" class="btn btn-success edit-btn"><ion-icon name="construct-outline"></ion-icon></a>
                 <form action="/deleteImpressorasMendesJr/{{ $impressorasMendesJr->id }}" method="POST">
                 @csrf
                 @method('DELETE')

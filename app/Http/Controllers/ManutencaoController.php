@@ -28,11 +28,14 @@ class ManutencaoController extends Controller
         $manutencao = new Manutencao;
 
         $manutencao->equipamento_id = $request->equipamento_id;
+        $manutencao->numeroIp = $request->numeroIp;
+        $manutencao->equipamento = $request->equipamento;
         $manutencao->responsavel = $request->responsavel;
         $manutencao->data = $request->data;
         $manutencao->tipo = $request->tipo;
         $manutencao->servico = $request->servico;
         $manutencao->descricao = $request->descricao;
+        $manutencao->valor = $request->valor;
 
         $url = 'cadastroManutencao/' . $manutencao->equipamento_id;
 

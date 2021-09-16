@@ -27,6 +27,7 @@
         <hr>
         <a href="/cadastroEquipamento" id="cadastro" style="margin-bottom: 18px" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Equipamento</a></h5>
         <div class="dashboard-tinta-container">
+            <a href="/manutencao" style="margin-left: 5px" class="btn btn-outline-dark"><ion-icon name="construct-outline"></ion-icon> Manutenções</a>
             <a href="equipamento/create-pdf" type="button" class="btn btn-outline-dark"><ion-icon name="cloud-download-outline"></ion-icon> Download Pdf</a>
             <a href="/showEquipamento" id="show" style="margin-right: 5px" class="btn btn-outline-dark"><ion-icon name="print-outline"></ion-icon> Imprimir</a></h5>
         </div>

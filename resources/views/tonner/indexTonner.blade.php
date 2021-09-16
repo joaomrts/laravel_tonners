@@ -17,15 +17,15 @@
         <table class="table table-striped table table-bordered">
             <div class="dashboard-tinta-container">
                 <br>
-                <a href="/Suprimentos/compras" class="btn btn-dark"><ion-icon name="cart"></ion-icon> Compras</a>
                 <a href="/Office" class="btn btn-dark" style="margin-right: 5px"><ion-icon name="logo-windows"></ion-icon> Office</a>
                 <a href="/Impressoras" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="print-outline"></ion-icon> Impressoras</a>
             </div>
-            <a href="/" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="home-outline"></ion-icon> Início</a></h5>
+            <a href="/" id="show" style="margin-right: 150px" class="btn btn-dark"><ion-icon name="home-outline"></ion-icon> Início</a></h5>
     <h1>Tonners
         <hr>
         <a href="/cadastro" type="button" style="margin-bottom: 18px" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Tonner</a>
     <div class="dashboard-tinta-container">
+        <a href="/Suprimentos/compras" style="margin-left: 5px" class="btn btn-outline-dark"><ion-icon name="cart"></ion-icon> Compras</a>
         <a href="tonner/create-pdf" type="button" class="btn btn-outline-dark"><ion-icon name="cloud-download-outline"></ion-icon> Download Pdf</a>
         <a href="/showTonner" id="show" style="margin-right: 5px" class="btn btn-outline-dark"><ion-icon name="print-outline"></ion-icon> Imprimir</a></h5>
     </div>

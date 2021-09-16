@@ -14,6 +14,7 @@ class ManutencaoImpressoras extends Model
     protected $fillable = [
         'token',
         'impressora_id',
+        'modelo',
         'responsavel',
         'data',
         'defeito',

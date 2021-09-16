@@ -50,6 +50,10 @@
             <label for="descricao">Descrição*</label>
             <input type="text" name="descricao" id="descricao" class="form-control" placeholder="Descrição da manutenção..." value="{{ $manutencao->descricao }}">
         </div>
+        <div class="form-group">
+            <label for="valor">Valor*</label>
+            <input type="number" step=".01" name="valor" id="valor" class="form-control" placeholder="Valor da manutenção..." value="{{ $manutencao->valor }}">
+        </div>
         <br>
         <input type="submit" class="btn btn-success" value="Editar Manutenção">
         <a href="{{ $url }}" class="btn btn-danger">Cancelar</a>

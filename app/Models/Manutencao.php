@@ -19,5 +19,6 @@ class Manutencao extends Model
         'tipo',
         'servico',
         'descricao',
+        'valor',
     ];
 }

@@ -24,7 +24,7 @@ class StoreUpdateManutencao extends FormRequest
     public function rules()
     {
         return [
-            'responsavel', 'data', 'tipo', 'servico', 'descricao' => 'required'
+            'responsavel', 'data', 'tipo', 'servico', 'descricao', 'valor' => 'required'
         ];
     }
 

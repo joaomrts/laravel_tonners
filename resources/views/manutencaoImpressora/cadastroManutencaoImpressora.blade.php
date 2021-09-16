@@ -23,6 +23,9 @@
             <input type="hidden" class="form-control" name="impressora_id" id="impressora_id" value="{{ $impressora->id }}">
         </div>
         <div class="form-group">
+            <input type="hidden" class="form-control" name="modelo" id="modelo" value="{{ $impressora->modelo }}">
+        </div>
+        <div class="form-group">
             <label for="responsavel">Responsável*</label>
             <input type="text" class="form-control" name="responsavel" id="responsavel" placeholder="Nome do responsável..." value="{{ old('responsavel') }}">
         </div>

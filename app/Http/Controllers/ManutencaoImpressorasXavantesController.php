@@ -35,12 +35,13 @@ class ManutencaoImpressorasXavantesController extends Controller
         $manutencaoImpressoraXavantes = new ManutencaoImpressorasXavantes;
 
         $manutencaoImpressoraXavantes->impressoraXavantes_id = $request->impressoraXavantes_id;
+        $manutencaoImpressoraXavantes->modelo = $request->modelo;
         $manutencaoImpressoraXavantes->responsavel = $request->responsavel;
         $manutencaoImpressoraXavantes->data = $request->data;
         $manutencaoImpressoraXavantes->defeito = $request->defeito;
         $manutencaoImpressoraXavantes->valor = $request->valor;
 
-        $url = 'cadastroManutencaoImpressorasXavantes/' . $manutencaoImpressoraXavantes->impressoraXavantes_id;
+        $url = '/Impressoras/manutencao/xavantes/' . $manutencaoImpressoraXavantes->impressoraXavantes_id;
 
         $manutencaoImpressoraXavantes->save();
 
@@ -51,7 +52,7 @@ class ManutencaoImpressorasXavantesController extends Controller
 
         $manutencaoImpressorasXavantes = ManutencaoImpressorasXavantes::findOrFail($id);
 
-        $url = '/cadastroManutencaoImpressorasXavantes/' . $manutencaoImpressorasXavantes->impressoraXavantes_id;
+        $url = '/Impressoras/manutencao/xavantes/' . $manutencaoImpressorasXavantes->impressoraXavantes_id;
 
         return view('manutencaoImpressorasXavantes.editManutencaoImpressora', compact('manutencaoImpressorasXavantes', 'url'));
     }
@@ -62,7 +63,7 @@ class ManutencaoImpressorasXavantesController extends Controller
 
         $manutencao = ManutencaoImpressorasXavantes::findOrFail($request->id);
 
-        $url = '/cadastroManutencaoImpressorasXavantes/' . $manutencao->impressoraXavantes_id;
+        $url = '/Impressoras/manutencao/xavantes/' . $manutencao->impressoraXavantes_id;
 
         $manutencao->update($data);
 
@@ -73,7 +74,7 @@ class ManutencaoImpressorasXavantesController extends Controller
     {
         $manutencao = ManutencaoImpressorasXavantes::findOrFail($id);
 
-        $url = '/cadastroManutencaoImpressorasXavantes/' . $manutencao->impressoraXavantes_id;
+        $url = '/Impressoras/manutencao/xavantes/' . $manutencao->impressoraXavantes_id;
 
         $manutencao->delete();
 
