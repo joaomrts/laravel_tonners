@@ -60,7 +60,7 @@
             <tbody>
                 <tr>
                     <td class="tabela-total-qtde" scropt="row">{{ $qtdeMG }}</td>
-                    <td class="tabela-total-valor" style="background-color: #c8ffd4" scropt="row">R$ {{ number_format($valor, 2, ',', '.')}}</td>
+                    <td class="tabela-total-valor" style="background-color: #c8ffd4" scropt="row">R$ {{ number_format($valorMG, 2, ',', '.')}}</td>
                 </tr>
             </tbody>
         </table>
