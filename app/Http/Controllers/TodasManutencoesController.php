@@ -64,7 +64,6 @@ class TodasManutencoesController extends Controller
         $valorX = $xavantes->sum('valor');
         $valorMJr = $mendesjrs->sum('valor');
 
-
         $qtde = $qtdeMG + $qtdeX + $qtdeMJr;
         $valor = $valorMG + $valorX + $valorMJr;
 
