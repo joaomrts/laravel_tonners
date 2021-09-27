@@ -11,6 +11,13 @@
     </div>
     <a href="/Suprimentos/compras" class="d-print-none btn btn-outline-dark" style="margin-right: 5px"><ion-icon name="close-circle-outline"></ion-icon> Fechar</a>
     <a href="" class="d-print-none btn btn-outline-dark" onclick="javascript:window.print()" title="Imprimir"><ion-icon name="print-outline"></ion-icon> Imprimir</a>
+<br>
+<br>
+    @if (count($tonners) == 0)
+        <h3 style="text-align: center">Tonners</h3>
+        <hr>
+        <h4>Não há compras cadastradas</h4>
+    @elseif (count($tonners) > 0)
 
     <table class="table table-striped table table-bordered">
         <h2 style="text-align: center"> Tonners
@@ -40,9 +47,14 @@
                 @endforeach
             </tbody>
         </table>
+        @endif
 
 
-
+        @if (count($tintas) == 0)
+            <h3 style="text-align: center">Tintas</h3>
+            <hr>
+            <h4>Não há compras cadastradas</h4>
+        @elseif (count($tintas) > 0)
         <table class="table table-striped table table-bordered">
             <h2 style="text-align: center"> Tintas
                 <hr>
@@ -71,7 +83,13 @@
                     @endforeach
                 </tbody>
             </table>
+            @endif
 
+@if (count($ciliondros) == 0)
+<h3 style="text-align: center">Cilindros</h3>
+<hr>
+<h4>Não há compras cadastradas</h4>
+@elseif (count($cilindros) > 0)
 
             <table class="table table-striped table table-bordered">
                 <h2 style="text-align: center"> Cilindros
@@ -101,6 +119,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                @endif
 
                 <div class="col-sm-12 col-md-12 dashboard-events-container">
                     <table class="table table-bordered table-dark">
@@ -123,6 +142,6 @@
                                 </tr>
                             </tbody>
                     </table>
-</div>
+                </div>
 </html>
 @endsection
