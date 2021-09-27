@@ -11,10 +11,19 @@
     </div>
     <a href="/Impressoras/manutencao" class="d-print-none btn btn-outline-dark" style="margin-right: 5px"><ion-icon name="close-circle-outline"></ion-icon> Fechar</a>
     <a href="" class="d-print-none btn btn-outline-dark" onclick="javascript:window.print()" title="Imprimir"><ion-icon name="print-outline"></ion-icon> Imprimir</a>
+<br>
+<br>
+
+    @if (count($manutencaos) == 0)
+    <h2 style="text-align: center">MG</h2>
+        <hr>
+        <h4>Não há manutenções cadastradas</h4>
+    @elseif(count($manutencaos) > 0)
 
     <table class="table table-striped table table-bordered">
         <h2 style="text-align: center"> MG
             <hr>
+
         </h2>
             <br>
                 <thead>
@@ -38,9 +47,14 @@
                 @endforeach
             </tbody>
         </table>
+        @endif
 
-
-
+<br>
+        @if (count($xavantes) == 0)
+            <h2 style="text-align: center">Xavantes</h2>
+                <hr>
+            <h4>Não há manutenções cadastradas</h4>
+        @elseif (count($xavantes) > 0)
         <table class="table table-striped table table-bordered">
             <h2 style="text-align: center"> Xavantes
                 <hr>
@@ -67,11 +81,18 @@
                     @endforeach
                 </tbody>
             </table>
+            @endif
+<br>
 
+            @if (count($mendesjrs) == 0)
+            <h2 style="text-align: center">Mendes Jr.</h2>
+            <hr>
+            <h4>Não há manutenções cadastradas</h4>
 
+            @elseif (count($mendesjrs) > 0)
             <table class="table table-striped table table-bordered">
                 <h2 style="text-align: center"> Mendes Jr.
-                    <hr>
+                <hr>
                 </h2>
                     <br>
                         <thead>
@@ -84,18 +105,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($cilindros as $cilindro)
+                            @foreach ($mendesjrs as $mendesjr)
                             <tr>
-                                <td class="tabela-manutencao-data" scropt="row">{{ \Carbon\Carbon::parse($cilindro->data)->format('d/m/Y')}}</td>
-                                <td class="tabela-manutencao-responsavel" scropt="row">{{ $cilindro->modelo }}</td>
-                                <td class="tabela-manutencao-responsavel" scropt="row">{{ $cilindro->fornecedor }}</td>
-                                <td class="tabela-manutencao-tipo" scropt="row">{{ $cilindro->qtde }}</td>
-                                <td class="tabela-manutencao-tipo" scropt="row" >R$ {{ number_format($cilindro->valor_un, 2, ',', '.')}}</td>
-                                <td class="tabela-manutencao-tipo" scropt="row">R$ {{ number_format($cilindro->valor_total, 2, ',', '.')}}</td>
+                                <td class="tabela-manutencao-data" scropt="row">{{ \Carbon\Carbon::parse($mendesjr->data)->format('d/m/Y')}}</td>
+                                <td class="tabela-manutencao-descricao" scropt="row">{{ $mendesjr->modelo }}</td>
+                                <td class="tabela-manutencao-responsavel" scropt="row">{{ $mendesjr->responsavel }}</td>
+                                <td class="tabela-manutencao-descricao" scropt="row">{{ $mendesjr->descricao }}</td>
+                                <td class="tabela-manutencao-descricao" scropt="row" >R$ {{ number_format($mendesjr->valor, 2, ',', '.')}}</td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
+                @endif
 
                 <div class="col-sm-12 col-md-12 dashboard-events-container">
                     <table class="table table-bordered table-dark">
