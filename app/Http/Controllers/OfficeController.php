@@ -83,7 +83,6 @@ class OfficeController extends Controller
 
         view()->share('offices', $offices,);
         $pdf_doc = PDF::loadView('layouts.export_office_pdf', $offices);
-
         return $pdf_doc->download('Office.pdf');
     }
 

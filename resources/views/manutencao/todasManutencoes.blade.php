@@ -15,7 +15,7 @@
         </div>
         <br>
         <br>
-<table class="table table-striped table table-bordered">
+<table class="table table-striped table table-bordered" id="tabela">
     <h1> MG
         <hr>
     </h1>
@@ -28,6 +28,9 @@
                     <th scope="col">Descrição</th>
                     <th scope="col">Valor Total</th>
                     <th class="tabela-compras-acoes">Ações</th>
+                </tr>
+                <tr>
+                    <th><input type="text" id="txtColuna1" placeholder="Digite a data.."></th>
                 </tr>
             </thead>
             <tbody>

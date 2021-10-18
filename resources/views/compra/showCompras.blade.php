@@ -21,7 +21,7 @@
 
     <table class="table table-striped table table-bordered">
         <h2 style="text-align: center"> Tonners
-            <hr>
+         <hr>
         </h2>
             <br>
                 <thead>
@@ -85,11 +85,11 @@
             </table>
             @endif
 
-@if (count($ciliondros) == 0)
-<h3 style="text-align: center">Cilindros</h3>
-<hr>
-<h4>Não há compras cadastradas</h4>
-@elseif (count($cilindros) > 0)
+            @if (count($ciliondros) == 0)
+            <h3 style="text-align: center">Cilindros</h3>
+            <hr>
+            <h4>Não há compras cadastradas</h4>
+            @elseif (count($cilindros) > 0)
 
             <table class="table table-striped table table-bordered">
                 <h2 style="text-align: center"> Cilindros
