@@ -11,11 +11,11 @@
     <h1>Cadastre o Equipamento</h1>
         <hr>
     @if ($errors->any())
-        <ul>
             @foreach ($errors->all() as $error )
-                <li>{{ $error }}</li>
+            <div class="alert alert-danger col-sm-12 col-md-3 col-lg-3" role="alert">
+                <p><strong>{{ $error }}</strong></p>
+            </div>
             @endforeach
-        </ul>
     @endif
     <form action="/cadastroEquipamento/salvar" method="POST">
         @csrf

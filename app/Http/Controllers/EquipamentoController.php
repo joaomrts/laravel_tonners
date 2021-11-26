@@ -41,7 +41,7 @@ class EquipamentoController extends Controller
                 $equipamento->cor = 'rgba(241, 196, 15, 0.5)';
             }
 
-        return view('equipamento.indexEquipamento', ['equipamentos' => $equipamentos]);
+        return view('equipamento.indexEquipamento', compact('equipamentos'));
     }
 
     public function searchEquipamento(Request $request)
@@ -80,7 +80,7 @@ class EquipamentoController extends Controller
                 $equipamento->cor = 'rgba(241, 196, 15, 0.5)';
             }
 
-        return view('equipamento.indexEquipamento', ['equipamentos' => $equipamentos, 'filters' => $filters]);
+        return view('equipamento.indexEquipamento', compact('equipamentos', 'filters'));
     }
 
 
@@ -114,7 +114,7 @@ class EquipamentoController extends Controller
 
         $equipamento  = Equipamento::findOrFail($id);
 
-        return view('equipamento.editEquipamento',['equipamento' => $equipamento ]);
+        return view('equipamento.editEquipamento', compact('equipamento'));
     }
 
     public function updateEquipamento(StoreUpdateEquipamento $request)
@@ -123,7 +123,7 @@ class EquipamentoController extends Controller
 
         Equipamento::findOrFail($request->id)->update($data);
 
-        return redirect('/')->with('msg', 'Equipamento editado com sucesso!');
+        return back()->with('msg', 'Equipamento editado com sucesso!');
     }
 
     public function exportEquipamentoPDF() {
@@ -144,6 +144,6 @@ class EquipamentoController extends Controller
                         ->orderBy('numeroIp')
                         ->paginate(255);
 
-        return view('equipamento.showEquipamento', ['equipamentos' => $equipamentos]);
+        return view('equipamento.showEquipamento', compact('equipamento'));
     }
 }

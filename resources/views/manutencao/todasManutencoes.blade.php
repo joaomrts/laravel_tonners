@@ -31,6 +31,10 @@
                 </tr>
                 <tr>
                     <th><input type="text" id="txtColuna1" placeholder="Digite a data.."></th>
+                    <th><input type="text" id="txtColuna2" placeholder="Digite o modelo.."></th>
+                    <th><input type="text" id="txtColuna3" placeholder="Digite o responsável.."></th>
+                    <th><input type="text" id="txtColuna4" placeholder="Digite a descrição.."></th>
+                    <th><input type="text" id="txtColuna5" placeholder="Digite o valor.."></th>
                 </tr>
             </thead>
             <tbody>

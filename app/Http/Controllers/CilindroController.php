@@ -50,7 +50,7 @@ class CilindroController extends Controller
 
         Cilindro::findOrFail($request->id)->update($data);
 
-        return redirect('/Suprimentos')->with('msg', 'Cilindro editado com sucesso!');
+        return redirect()->back()->with('msg', 'Cilindro editado com sucesso!');
     }
 
     public function exportCilindroPDF() {
