@@ -13,7 +13,7 @@ class ImpressorasMendesJrController extends Controller
     public function indexMendesJr()
     {
         $impressorasMendesJrs = ImpressorasMendesJr::all();
-        return view('impressorasMendesJr.indexImpressorasMendesJr', ['impressorasMendesJrs' => $impressorasMendesJrs]);
+        return view('impressorasMendesJr.indexImpressorasMendesJr', compact('impressorasMendesJr'));
     }
 
     public function cadastroImpressorasMendesJr()
@@ -32,20 +32,20 @@ class ImpressorasMendesJrController extends Controller
         $user = auth()->user();
 
         $impressorasMendesJr->save();
-        return redirect('/indexImpressora')->with('msg', 'Impressora cadastrada com sucesso');
+        return redirect('/Impressoras')->with('msg', 'Impressora cadastrada com sucesso');
     }
 
     public function deleteImpressorasMendesJr($id)
     {
         ImpressorasMendesJr::findOrFail($id)->delete();
-        return redirect('/indexImpressora')->with('msg', 'Impressora excluída com sucesso');
+        return redirect('/Impressoras')->with('msg', 'Impressora excluída com sucesso');
     }
 
     public function editImpressorasMendesJr ($id){
 
         $impressorasMendesJr  = ImpressorasMendesJr::findOrFail($id);
 
-        return view('impressorasMendesJr.editImpressorasMendesJr',['impressorasMendesJr' => $impressorasMendesJr ]);
+        return view('impressorasMendesJr.editImpressorasMendesJr', compact('impressorasMendesJr'));
     }
 
     public function updateImpressorasMendesJr(StoreUpdateMendesJr $request)
@@ -75,6 +75,6 @@ class ImpressorasMendesJrController extends Controller
                                 ->orderBy('setor')
                                 ->paginate(20);
 
-        return view('impressorasMendesJr.showImpressorasMendesJr', ['impressorasMendesJrs' => $impressorasMendesJrs]);
+        return view('impressorasMendesJr.showImpressorasMendesJr', compact('impressorasMendesJr'));
     }
 }
