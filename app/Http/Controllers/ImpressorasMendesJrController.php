@@ -54,7 +54,7 @@ class ImpressorasMendesJrController extends Controller
 
         ImpressorasMendesJr::findOrFail($request->id)->update($data);
 
-        return redirect('/indexImpressora')->with('msg', 'Impressora editada com sucesso!');
+        return redirect('/Impressoras')->with('msg', 'Impressora editada com sucesso!');
     }
 
     public function exportImpressorasMendesJrPDF() {
