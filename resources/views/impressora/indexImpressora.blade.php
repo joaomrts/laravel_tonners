@@ -18,6 +18,7 @@
         <br>
 <table class="table table-striped table table-bordered">
     <div class="dashboard-tinta-container">
+        <a href="{{ route('bots') }}"  style="margin-right: 5px" class="btn btn-dark"><ion-icon name="logo-android"></ion-icon> Bots</a>
         <a href="/Office" style="margin-left: 5px" class="btn btn-dark"><ion-icon name="logo-windows"></ion-icon> Office</a>
         <a href="/Suprimentos" class="btn btn-dark"><ion-icon name="color-filter-outline"></ion-icon> Suprimentos</a>
     </div>

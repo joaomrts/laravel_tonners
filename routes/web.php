@@ -19,11 +19,31 @@ use App\Http\Controllers\ManutencaoImpressorasMendesJrController;
 use App\Http\Controllers\TodasComprasController;
 use App\Http\Controllers\TodasManutencoesController;
 use App\Http\Controllers\ManutencoesEquipamentoController;
+use App\Http\Controllers\CandidatosController;
+use App\Http\Controllers\ColaboradorController;
+use App\Http\Controllers\EpiController;
+use App\Http\Controllers\BotsController;
 
 
 if(version_compare(PHP_VERSION, '7.2.0', '>=')) {
     error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 }
+
+
+// rotas sst
+
+Route::get('/sst', [ColaboradorController::class, 'colaborador'])->name('colaborador');
+Route::post('/sst/colaborador/salvar', [ColaboradorController::class, 'salvar'])->name('colaborador.salvar');
+
+Route::get('/sst/epi', [EpiController::class, 'epi'])->name('epi');
+Route::post('/sst/epi/salvar', [EpiController::class, 'salvar'])->name('epi.salvar');
+
+// fim das rotas sst
+
+Route::get('/cipa/votacao', [CandidatosController::class, 'votacao']);
+Route::post('cipa/votacao/salvar', [CandidatosController::class, 'storeVotacao']);
+Route::get('/cipa/resultado', [CandidatosController::class, 'somar'])->middleware('auth');
+
 
 
 Route::any('/Suprimentos', [TonnerController::class,'searchTonner']);
@@ -94,7 +114,7 @@ Route::get('/', [EquipamentoController::class, 'indexEquipamento'])->middleware(
 Route::post('cadastroEquipamento/salvar', [EquipamentoController::class, 'storeEquipamento'])->middleware('auth');
 Route::delete('/deleteEquipamento/{id}', [EquipamentoController::class, 'deleteEquipamento'])->middleware('auth');
 Route::get('/editEquipamento/{id}', [EquipamentoController::class, 'editEquipamento'])->middleware('auth');
-Route::put('/editEquipamento/update/{id}', [EquipamentoController::class, 'updateEquipamento'])->middleware('auth');
+Route::put('/editEquipamento/update/{id}', [EquipamentoController::class, 'updateEquipamento'])->middleware('auth');    
 
 
 Route::any('/Office', [OfficeController::class,'searchOffice']);
@@ -169,3 +189,9 @@ Route::delete('/deleteManutencaoMJr/{id}', [TodasManutencoesController:: class, 
 Route::get('/manutencao', [ManutencoesEquipamentoController::class, 'manutencao'])->middleware('auth');
 Route::get('/manutencao/imprimir', [ManutencoesEquipamentoController::class,  'imprimir'])->middleware('auth');
 Route::delete('manutencao/{id}', [ManutencoesEquipamentoController::class, 'deleteManutencaoEquipamento'])->middleware('auth');
+
+Route::get('/bots', [BotsController::class, 'bots'])->middleware('auth')->name('bots');
+Route::post('bots/cadastro/salvar', [BotsController::class, 'botsSalvar'])->name('bots.salvar')->middleware('auth');
+Route::get('bots/editar/{id}', [BotsController::class, 'botsEditar'])->name('bots.edit')->middleware('auth');
+Route::put('bots/editar/salvar/{id}', [BotsController::class, 'botsUpdate'])->name('bots.edit.salvar')->middleware('auth');
+Route::delete('bots/delete/{id}',[BotsController::class, 'botsDelete'])->name('bots.delete')->middleware('auth');

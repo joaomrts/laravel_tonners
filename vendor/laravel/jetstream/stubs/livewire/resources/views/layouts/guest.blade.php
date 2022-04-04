@@ -20,5 +20,8 @@
         <div class="font-sans text-gray-900 antialiased">
             {{ $slot }}
         </div>
+        <footer class="d-print-none">
+            <p style="text-align: center">Souza e Cambos Confecções &copy; 2022</p>
+        </footer>
     </body>
 </html>

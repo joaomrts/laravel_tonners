@@ -4,8 +4,6 @@
 
 @section('content')
 
-
-
     @if(count($equipamentos)>0)
     <div id="search-container-equipamento" class="col-sm-12 col-md-12">
         <h1>EQUIPAMENTOS</h1>
@@ -16,8 +14,9 @@
     </div>
     <div class="col-md-10 col-sm-10 offset-md-1 dashboard-events-container">
         <br>
-    <table class="table table-bordered">
+    <table class="table table-bordered table-striped">
         <div class="dashboard-tinta-container">
+            <a href="{{ route('bots') }}"  style="margin-right: 5px" class="btn btn-dark"><ion-icon name="logo-android"></ion-icon> Bots</a>
             <a href="/Office"  style="margin-right: 5px" class="btn btn-dark"><ion-icon name="logo-windows"></ion-icon> Office</a>
             <a href="/Suprimentos"  style="margin-right: 5px" class="btn btn-dark"><ion-icon name="color-filter-outline"></ion-icon> Suprimentos</a>
             <a href="/Impressoras" id="show" style="margin-right: 5px" class="btn btn-dark"><ion-icon name="print-outline"></ion-icon> Impressoras</a></h5>
@@ -61,7 +60,7 @@
         </tbody>
     </table>
     <div class="d-flex justify-content-center">
-        {{ $equipamentos->appends($filters)->links() }}
+        {{ $equipamentos->links() }}
     </div>
     @elseif (count($equipamentos) == 0 && $filters)
     <div class="col-sm-10 col-md-10 offset-md-1">

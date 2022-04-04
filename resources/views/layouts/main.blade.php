@@ -25,12 +25,17 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         <script src="{{ asset("jquery.mask.js") }}"></script>
+        <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+
+        {{-- <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> --}}
+	    {{-- <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> --}}
 
         <!-- CSS da aplicação -->
 
         <link rel="stylesheet" href="/css/styles.css">
-        <script src="/js/scripts.js"></script>
-        <script src="/js/script.js"></script>
+       
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script>
 
         <link rel="icon" type="favicon" href="/img/logo.png" />
 
@@ -42,7 +47,7 @@
                     <a href="/" class="navbar-brand">
                         <img src="/img/logo.png" alt="logo">
                     </a>
-                    <h1 style="margin-left: 110px">Controle de T.I.</h1>
+                    <h1 style="margin-left: 110px">Controle T.I.</h1>
                     <ul class="navbar-nav">
                         @auth
                         <div class="btn-group" style="margin-right: 20px">
@@ -81,7 +86,7 @@
             </div>
         </main>
         <footer class="d-print-none">
-            <p style="text-align: center">Souza e Cambos Confecções &copy; 2021</p>
+            <p style="text-align: center">Souza e Cambos Confecções &copy; 2022</p>
         </footer>
         <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     </body>

@@ -20,31 +20,9 @@ header{
 .container-fluid{
     padding: 0;
 }
-
-.btn-primary{
-    background-color: #00aced;
-    border: 1px solid #0089bb;
-
-}
-
-.btn-primary:hover{
-    background-color: #0094ca;
-    border-color: 1px solid #00455e;
-}
-
 .btn-danger{
     border-color: darkred;
 }
-
-.btn-danger:hover{
-    border-color: rgb(66, 0, 0);
-}
-
-.btn-success{
-
-    border-color: #155724;
-}
-
 .btn-success:hover{
     border-color:#175826;
 }

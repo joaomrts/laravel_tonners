@@ -45,4 +45,7 @@
             </div>
         </form>
     </x-jet-authentication-card>
+    <footer class="d-print-none">
+        <p style="text-align: center">Souza e Cambos Confecções &copy; 2022</p>
+    </footer>
 </x-guest-layout>

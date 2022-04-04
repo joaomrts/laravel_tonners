@@ -54,7 +54,7 @@
 <div class="col-md-6 col-sm-12 dashboard-events-container">
     @if(count($tintas)>0)
     <br>
-<table class="table table-striped table table-bordered">
+<table class="table table-striped table-bordered">
     <h1>Tintas
         <hr>
         <a href="/cadastroTinta" id="cadastro" style="margin-bottom: 18px" class="btn btn-success"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Tinta</a></h5>
