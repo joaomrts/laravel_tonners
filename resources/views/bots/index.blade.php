@@ -92,7 +92,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="nome_grupo">Nome do grupo:</label>
-                    <input type="text" class="form-control" name="nome_grupo" id="nome_grupo" placeholder="nome_grupo do grupo" value="{{ old('nome_grupo') }}">
+                    <input type="text" class="form-control" name="nome_grupo" id="nome_grupo" placeholder="Nome do grupo" value="{{ old('nome_grupo') }}">
                 </div>
                 <div class="form-group">
                     <label for="bot_id">Bot ID:</label>
