@@ -16,7 +16,7 @@ class Manutencaoimpressorasxavantes extends Migration
         Schema::create('manutencaoimpressorasxavantes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('impressoraXavantes_id')->unsigned();
-            $table->foreign('impressoraXavantes_id')->references('id')->on('impressoras_xavantes');
+            $table->foreign('impressoraXavantes_id')->references('id')->on('impressorasxavantes');
             $table->string('modelo');
             $table->string('responsavel');
             $table->date('data');
