@@ -71,8 +71,8 @@
         <tbody>
             @foreach ($manutencaoimpressorasmendesjr as $manutencaoimpressoramendesjr)
             <tr>
-                <td class="tabela-manutencao-responsavel" scropt="row">{{ $manutencaoimpressoramendesjr->responsavel }}</td>
-                <td class="tabela-manutencao-data" scropt="row">{{ \Carbon\Carbon::parse($manutencaoimpressoramendesjr->data)->format('d/m/Y')}}</td>
+                <td class="tabela-manutencao-responsavel" scropt="row">{{ \Carbon\Carbon::parse($manutencaoimpressoramendesjr->data)->format('d/m/Y')}}</td>
+                <td class="tabela-manutencao-data" scropt="row">{{ $manutencaoimpressoramendesjr->responsavel }}</td>
                 <td class="tabela-manutencao-descricao" scropt="row">{{ $manutencaoimpressoramendesjr->descricao }}</td>
                 <td class="tabela-manutencao-servico" scropt="row">R$ {{ number_format($manutencaoimpressoramendesjr->valor, 2, ',', '.')}}</td>
                 <td>
@@ -102,13 +102,6 @@
                 </table>
         </tbody>
     </table>
-        <div class="d-flex justify-content-center">
-            {{ $manutencaoimpressorasmendesjr->appends($filters)->links() }}
-        </div>
-    @elseif (count($manutencaoimpressorasmendesjr) == 0 && $filters)
-        <div class="col-sm-8 col-md-8 offset-md-2">
-            <h5><br>Não foi possível retornar resultados com sua busca.
-        </div>
     @elseif (count($manutencaoimpressorasmendesjr)== 0)
         <div class="col-sm-8 col-md-8 offset-md-2">
         <br>

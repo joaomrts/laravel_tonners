@@ -75,6 +75,6 @@ class ImpressorasMendesJrController extends Controller
                                 ->orderBy('setor')
                                 ->paginate(20);
 
-        return view('impressorasMendesJr.showImpressorasMendesJr', compact('impressorasMendesJr'));
+        return view('impressorasMendesJr.showImpressorasMendesJr', compact('impressorasMendesJrs'));
     }
 }

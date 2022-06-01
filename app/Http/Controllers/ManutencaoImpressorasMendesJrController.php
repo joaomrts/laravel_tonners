@@ -17,11 +17,11 @@ class ManutencaoImpressorasMendesJrController extends Controller
 
         $impressora = ImpressorasMendesJr::find($id);
 
-        $manutencaoimpressorasmendesjr = ManutencaoImpressorasMendesJr::where('impressoraMendesJr_id', $id)
+        $manutencaoimpressorasmendesjr = ManutencaoImpressorasMendesJr::where('impressoramendesjr_id', $id)
                         ->orderBy('data', 'asc')
                         ->paginate();
 
-        $impressoras = ManutencaoImpressorasMendesJr::select('valor')->where('impressoraMendesJr_id', $id);
+        $impressoras = ManutencaoImpressorasMendesJr::select('valor')->where('impressoramendesjr_id', $id);
 
         $total_qtde = $impressoras->count('id');
 

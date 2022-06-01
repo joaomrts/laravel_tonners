@@ -113,14 +113,6 @@
         </tbody>
     </table>
         <br>
-
-        <div class="d-flex justify-content-center">
-            {{ $compras->appends($filters)->links() }}
-        </div>
-    @elseif (count($compras) == 0 && $filters)
-        <div class="col-sm-8 col-md-8 offset-md-2">
-            <h5><br>Não foi possível retornar resultados com sua busca.
-        </div>
     @elseif (count($compras)== 0)
         <div class="col-sm-8 col-md-8 offset-md-2">
         <br>

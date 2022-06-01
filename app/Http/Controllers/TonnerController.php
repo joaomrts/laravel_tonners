@@ -113,7 +113,7 @@ class TonnerController extends Controller
             $cilindro->cor = 'rgba(241, 196, 15, 0.5)';
         }
 
-        elseif($cilindro->estoque < $cilndro->qtde_impressora){
+        elseif($cilindro->estoque < $cilindro->qtde_impressora){
             $cilindro->cor = 'rgba(231, 76, 60, 0.5)';
         }
 

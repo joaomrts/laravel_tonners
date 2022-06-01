@@ -102,13 +102,6 @@
                 </table>
         </tbody>
     </table>
-        <div class="d-flex justify-content-center">
-            {{ $manutencaoimpressoras->appends($filters)->links() }}
-        </div>
-    @elseif (count($manutencaoimpressoras) == 0 && $filters)
-        <div class="col-sm-8 col-md-8 offset-md-2">
-            <h5><br>Não foi possível retornar resultados com sua busca.
-        </div>
     @elseif (count($manutencaoimpressoras)== 0)
         <div class="col-sm-8 col-md-8 offset-md-2">
         <br>
