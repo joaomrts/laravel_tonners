@@ -15,8 +15,8 @@ class Manutencaoimpressorasmendesjr extends Migration
     {
         Schema::create('manutencaoimpressorasmendesjr', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('impressoraMendesJr_id')->unsigned();
-            $table->foreign('impressoraMendesJr_id')->references('id')->on('impressorasMendesJr');
+            $table->integer('impressoramendesjr_id')->unsigned();
+            $table->foreign('impressoramendesjr_id')->references('id')->on('impressorasmendesjr');
             $table->string('modelo');
             $table->string('responsavel');
             $table->date('data');
